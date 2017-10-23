@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--Room Code View Controller-->
         <scene sceneID="epi-HI-XwX">
             <objects>
-                <viewController id="rBJ-so-REu" sceneMemberID="viewController">
+                <viewController id="rBJ-so-REu" customClass="RoomCodeViewController" customModule="Werewolf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ra-dw-TzX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,6 +90,9 @@
                         <color key="backgroundColor" red="0.41104679399999999" green="0.41104679399999999" blue="0.41104679399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="UEz-aw-as6"/>
                     </view>
+                    <connections>
+                        <outlet property="roomCodeLabel" destination="VAq-UJ-pmp" id="L4S-kE-qQv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezZ-Un-kHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,6 +141,9 @@
                                 <state key="normal" title="Create Character">
                                     <color key="titleColor" red="0.94923101067816573" green="1" blue="0.97932961505673821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6Hn-6l-xiL" kind="show" id="2Lh-nK-9a1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPc-dQ-nSH">
                                 <rect key="frame" x="16" y="344" width="343" height="30"/>
@@ -146,6 +152,9 @@
                                 <state key="normal" title="Randomize">
                                     <color key="titleColor" red="0.94923101070000004" green="1" blue="0.97932961510000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6Hn-6l-xiL" kind="show" id="cRE-Tl-Ooz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.41104679399999999" green="0.41104679399999999" blue="0.41104679399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -178,8 +187,7 @@
         <!--Item-->
         <scene sceneID="P9C-Sb-p79">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcu-z0-hoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="qJW-LF-Ebh" sceneMemberID="viewController">
+                <viewController id="qJW-LF-Ebh" customClass="RoleRulesReviewViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jOL-dD-1gv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,6 +195,9 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="73h-ae-ok4">
                                 <rect key="frame" x="16" y="581" width="343" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="pageSwitched:" destination="qJW-LF-Ebh" eventType="valueChanged" id="BRm-Xa-XgV"/>
+                                </connections>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g43-0O-dNg">
                                 <rect key="frame" x="86" y="20" width="209" height="40"/>
@@ -203,8 +214,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="22" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ja-Kj-JI3">
                                 <rect key="frame" x="16" y="68" width="343" height="505"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">The the role placeholder text. there are many like it, but this one is mine. It takes the place of a regulare role text. When the app is run it will be replaced by the actual role explaination text. It is very verbose, so I can know it will look alright no matter how long it is. In other words, it needs to be very long in order to do its job properly. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</mutableString>
+                                <string key="text">The the role placeholder text. there are many like it, but this one is mine. It takes the place of a regulare role text. When the app is run it will be replaced by the actual role explaination text. It is very verbose, so I can know it will look alright no matter how long it is. In other words, it needs to be very long in order to do its job properly. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -214,7 +225,13 @@
                         <viewLayoutGuide key="safeArea" id="Mv2-OS-ynA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="COU-yx-slQ"/>
+                    <connections>
+                        <outlet property="pageBar" destination="73h-ae-ok4" id="Piz-AR-Ip5"/>
+                        <outlet property="roleExplaination" destination="2ja-Kj-JI3" id="1Uh-8Y-gpK"/>
+                        <outlet property="roleName" destination="g43-0O-dNg" id="8Eq-X7-KvY"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcu-z0-hoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824.79999999999995" y="715.59220389805103"/>
         </scene>
@@ -327,6 +344,7 @@
         <image name="Werewolf Logo" width="293" height="275"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2Lh-nK-9a1"/>
         <segue reference="zk7-IH-aM1"/>
     </inferredMetricsTieBreakers>
 </document>
