@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Join Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="JoinGameViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="Join">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -36,6 +36,7 @@
                                     <color key="titleColor" red="0.94560514419999997" green="0.93479276109999998" blue="0.95820514899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="gameWasJoined:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0D-rg-Bjt"/>
                                     <segue destination="YuI-h6-JEk" kind="show" id="AHN-Ay-Wsy"/>
                                 </connections>
                             </button>
@@ -55,6 +56,9 @@
                         <color key="tintColor" red="0.52604841319999995" green="0.52604841319999995" blue="0.52604841319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="roomCode" destination="VOH-3Y-YhK" id="DOx-Nz-ERd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,6 +349,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2Lh-nK-9a1"/>
-        <segue reference="zk7-IH-aM1"/>
+        <segue reference="AHN-Ay-Wsy"/>
     </inferredMetricsTieBreakers>
 </document>
