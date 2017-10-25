@@ -12,6 +12,7 @@ class GameSession{
     static var active : GameSession?
     var roomCode: Int
     var activeRoles = ["Villager","Doctor","Werewolf","Seer", "Witch"]
+    var myCharacter: PlayerCharacter?
     init(roomToJoin roomCode: Int) {
         self.roomCode = roomCode
         GameSession.active = self

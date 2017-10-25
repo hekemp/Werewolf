@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="702.99850074962524"/>
         </scene>
-        <!--View Controller-->
+        <!--Character Creation View Controller-->
         <scene sceneID="dbp-67-ynn">
             <objects>
-                <viewController id="YuI-h6-JEk" sceneMemberID="viewController">
+                <viewController id="YuI-h6-JEk" customClass="CharacterCreationViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DLv-at-yM0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,6 +146,7 @@
                                     <color key="titleColor" red="0.94923101067816573" green="1" blue="0.97932961505673821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="doManualCharacterCreation:" destination="YuI-h6-JEk" eventType="touchUpInside" id="wfU-Rl-y8R"/>
                                     <segue destination="6Hn-6l-xiL" kind="show" id="2Lh-nK-9a1"/>
                                 </connections>
                             </button>
@@ -157,6 +158,7 @@
                                     <color key="titleColor" red="0.94923101070000004" green="1" blue="0.97932961510000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="doRandomCharacterCreation:" destination="YuI-h6-JEk" eventType="touchUpInside" id="67s-AA-hXd"/>
                                     <segue destination="6Hn-6l-xiL" kind="show" id="cRE-Tl-Ooz"/>
                                 </connections>
                             </button>
@@ -164,6 +166,12 @@
                         <color key="backgroundColor" red="0.41104679399999999" green="0.41104679399999999" blue="0.41104679399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="0KK-lF-PN5"/>
                     </view>
+                    <connections>
+                        <outlet property="ageField" destination="Fx1-oc-XL8" id="dqS-hi-NYe"/>
+                        <outlet property="genderField" destination="Xaw-ci-BYT" id="dwY-jC-GNA"/>
+                        <outlet property="nameField" destination="CoF-1S-67i" id="Pk9-dh-rhM"/>
+                        <outlet property="occupationField" destination="jmp-qx-czh" id="H4Y-1V-TEZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Man-c8-m9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,7 +288,7 @@
         <!--Item-->
         <scene sceneID="B5W-hU-nXD">
             <objects>
-                <viewController id="4V6-9Z-Epb" sceneMemberID="viewController">
+                <viewController id="4V6-9Z-Epb" customClass="CharacterViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDV-k0-AkH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,6 +346,13 @@
                         <viewLayoutGuide key="safeArea" id="Psa-Dc-JO1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="7o8-h7-YuB"/>
+                    <connections>
+                        <outlet property="characterAge" destination="4og-La-c8U" id="d8D-w6-NwZ"/>
+                        <outlet property="characterGender" destination="zsI-jx-UaR" id="j4J-Sp-8Pg"/>
+                        <outlet property="characterName" destination="7fa-gb-8TO" id="8dY-8U-8wp"/>
+                        <outlet property="characterOccupation" destination="raN-6x-rjY" id="M7F-Zb-UuB"/>
+                        <outlet property="characterRole" destination="vSF-Di-fpc" id="FQ3-9v-S1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfm-ak-pDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
