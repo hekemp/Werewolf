@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jAJ-4R-syc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -588,7 +588,7 @@
         <!--Item-->
         <scene sceneID="d18-6H-car">
             <objects>
-                <viewController id="jAJ-4R-syc" sceneMemberID="viewController">
+                <viewController id="jAJ-4R-syc" customClass="NightSummaryViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yo5-8X-WGW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -613,7 +613,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Sbn-Xz-HpT"/>
                     <connections>
-                        <segue destination="91l-Kb-vu8" kind="show" identifier="goToGameOver" id="7fi-tO-siD"/>
+                        <segue destination="91l-Kb-vu8" kind="show" identifier="goToVillagerGameOver" id="7fi-tO-siD"/>
+                        <segue destination="6Hn-6l-xiL" kind="show" identifier="restartDay" id="dy9-Pw-md7"/>
+                        <segue destination="Kri-Kh-zZR" kind="show" identifier="goToWerewolfGameOver" id="QBF-rH-12g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfX-2P-4EA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -632,7 +634,7 @@
                                 <rect key="frame" x="16" y="278" width="343" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group That Wins Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-NE-lfw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Werewolves Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-NE-lfw">
                                 <rect key="frame" x="16" y="60" width="343" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
@@ -665,7 +667,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vq3-y3-Ysd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3724" y="2869"/>
+            <point key="canvasLocation" x="3205.5999999999999" y="2865.5172413793107"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0NC-Nl-Res">
+            <objects>
+                <viewController id="Kri-Kh-zZR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1o0-4v-EdL" customClass="Join">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Werewolf Logo" translatesAutoresizingMaskIntoConstraints="NO" id="TaO-o2-nG7">
+                                <rect key="frame" x="16" y="278" width="343" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Villagers Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRN-bf-sG2">
+                                <rect key="frame" x="16" y="60" width="343" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.89879054930000002" green="1" blue="0.97537148480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dead: / Alive" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osd-i1-a3V">
+                                <rect key="frame" x="16" y="120" width="343" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.89879054930000002" green="1" blue="0.97537148480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed4-Gt-6wQ">
+                                <rect key="frame" x="112" y="590" width="150" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Play Again?">
+                                    <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="fZi-fQ-lYK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.41104679399999999" green="0.41104679399999999" blue="0.41104679399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.52604841319999995" green="0.52604841319999995" blue="0.52604841319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="V71-3K-DfZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecA-QN-jHN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4298" y="2866"/>
         </scene>
     </scenes>
     <resources>
@@ -674,7 +723,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="ijC-x1-EZp"/>
         <segue reference="nEi-Ee-57e"/>
-        <segue reference="2Lh-nK-9a1"/>
-        <segue reference="AHN-Ay-Wsy"/>
+        <segue reference="dy9-Pw-md7"/>
+        <segue reference="zk7-IH-aM1"/>
+        <segue reference="BSC-Md-pj2"/>
     </inferredMetricsTieBreakers>
 </document>

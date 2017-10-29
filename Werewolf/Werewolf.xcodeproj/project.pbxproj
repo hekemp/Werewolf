@@ -21,6 +21,7 @@
 		CCA525DE1F9E82E3007118B9 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DD1F9E82E3007118B9 /* GameSession.swift */; };
 		CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */; };
 		CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD79AE1FA1022800773964 /* CharacterViewController.swift */; };
+		DBA0FA741FA6597300861C19 /* NightSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		CCA525DD1F9E82E3007118B9 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleRulesReviewViewController.swift; sourceTree = "<group>"; };
 		CCDD79AE1FA1022800773964 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightSummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				CCA525DD1F9E82E3007118B9 /* GameSession.swift */,
 				CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */,
 				CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */,
+				DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */,
 				CC3CEA071F9E44FC00AED6C4 /* ViewController.swift in Sources */,
 				CC3CEA051F9E44FC00AED6C4 /* AppDelegate.swift in Sources */,
+				DBA0FA741FA6597300861C19 /* NightSummaryViewController.swift in Sources */,
 				CCA525DE1F9E82E3007118B9 /* GameSession.swift in Sources */,
 				CC895D5A1F9F01630090D495 /* JoinGameViewController.swift in Sources */,
 				CCA525DA1F9E81C7007118B9 /* RoomCodeViewController.swift in Sources */,
