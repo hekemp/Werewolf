@@ -14,6 +14,9 @@
 		CC3CEA0F1F9E44FC00AED6C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3CEA0D1F9E44FC00AED6C4 /* LaunchScreen.storyboard */; };
 		CC3CEA1A1F9E44FD00AED6C4 /* WerewolfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3CEA191F9E44FD00AED6C4 /* WerewolfTests.swift */; };
 		CC3CEA251F9E44FD00AED6C4 /* WerewolfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3CEA241F9E44FD00AED6C4 /* WerewolfUITests.swift */; };
+		CC46A8301FAB9F4B00487200 /* NominationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC46A82F1FAB9F4B00487200 /* NominationViewController.swift */; };
+		CC46A8321FAB9F5C00487200 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC46A8311FAB9F5C00487200 /* VoteViewController.swift */; };
+		CC46A8341FAB9F7D00487200 /* ExecuteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC46A8331FAB9F7D00487200 /* ExecuteViewController.swift */; };
 		CC895D5A1F9F01630090D495 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D591F9F01620090D495 /* JoinGameViewController.swift */; };
 		CC895D5C1FA0F4990090D495 /* PlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */; };
 		CC895D641FA0FC1D0090D495 /* CharacterCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */; };
@@ -55,6 +58,9 @@
 		CC3CEA201F9E44FD00AED6C4 /* WerewolfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WerewolfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3CEA241F9E44FD00AED6C4 /* WerewolfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolfUITests.swift; sourceTree = "<group>"; };
 		CC3CEA261F9E44FD00AED6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC46A82F1FAB9F4B00487200 /* NominationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominationViewController.swift; sourceTree = "<group>"; };
+		CC46A8311FAB9F5C00487200 /* VoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
+		CC46A8331FAB9F7D00487200 /* ExecuteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteViewController.swift; sourceTree = "<group>"; };
 		CC895D591F9F01620090D495 /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacter.swift; sourceTree = "<group>"; };
 		CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +133,9 @@
 				CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */,
 				CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */,
 				DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */,
+				CC46A82F1FAB9F4B00487200 /* NominationViewController.swift */,
+				CC46A8311FAB9F5C00487200 /* VoteViewController.swift */,
+				CC46A8331FAB9F7D00487200 /* ExecuteViewController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -283,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC46A8321FAB9F5C00487200 /* VoteViewController.swift in Sources */,
 				CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */,
 				CC895D5C1FA0F4990090D495 /* PlayerCharacter.swift in Sources */,
 				CC895D641FA0FC1D0090D495 /* CharacterCreationViewController.swift in Sources */,
@@ -290,7 +300,9 @@
 				CC3CEA071F9E44FC00AED6C4 /* ViewController.swift in Sources */,
 				CC3CEA051F9E44FC00AED6C4 /* AppDelegate.swift in Sources */,
 				DBA0FA741FA6597300861C19 /* NightSummaryViewController.swift in Sources */,
+				CC46A8301FAB9F4B00487200 /* NominationViewController.swift in Sources */,
 				CCA525DE1F9E82E3007118B9 /* GameSession.swift in Sources */,
+				CC46A8341FAB9F7D00487200 /* ExecuteViewController.swift in Sources */,
 				CC895D5A1F9F01630090D495 /* JoinGameViewController.swift in Sources */,
 				CCA525DA1F9E81C7007118B9 /* RoomCodeViewController.swift in Sources */,
 			);

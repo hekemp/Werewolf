@@ -8,15 +8,25 @@
 
 import Foundation
 import UIKit
-class JoinGameViewController: UIViewController {
+class JoinGameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var roomCode: UITextField!
-    @IBAction func gameWasJoined(_ sender: Any) {
-        let _ = GameSession(roomToJoin: Int(roomCode.text!)!)
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.roomCode.delegate = self
+    }
+    
+    @IBAction func gameWasJoined(_ sender: Any) {
+        let _ = GameSession(roomToJoin: Int(roomCode.text!)!)
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let allowedCharacters = CharacterSet.decimalDigits //for digits only
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
     }
     
     override func didReceiveMemoryWarning() {

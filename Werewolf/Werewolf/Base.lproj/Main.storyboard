@@ -274,6 +274,9 @@
                                 <state key="normal" title="End Day">
                                     <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="t3e-Ox-Co1" kind="show" id="e6t-FI-6L0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95446610449699454" green="1" blue="0.0058172726589481583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -285,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="2188" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--Nomination View Controller-->
         <scene sceneID="Xjb-tp-ERA">
             <objects>
-                <viewController id="t3e-Ox-Co1" sceneMemberID="viewController">
+                <viewController id="t3e-Ox-Co1" customClass="NominationViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i5O-ZY-JZ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,10 +339,10 @@
             </objects>
             <point key="canvasLocation" x="2984.8000000000002" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--Vote View Controller-->
         <scene sceneID="vRg-S3-AFT">
             <objects>
-                <viewController id="bP9-G8-qKC" sceneMemberID="viewController">
+                <viewController id="bP9-G8-qKC" customClass="VoteViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X3K-y3-dys">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="3724" y="33"/>
         </scene>
-        <!--View Controller-->
+        <!--Execute View Controller-->
         <scene sceneID="vTo-xa-eyZ">
             <objects>
-                <viewController id="Kbm-WQ-AOw" sceneMemberID="viewController">
+                <viewController id="Kbm-WQ-AOw" customClass="ExecuteViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yoz-jF-ukS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,6 +416,9 @@
                         <color key="backgroundColor" red="1" green="0.059605572920000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="mlR-Rg-GXh"/>
                     </view>
+                    <connections>
+                        <segue destination="VnG-dp-JPH" kind="modal" identifier="transToSeer" id="6yy-vz-27Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0GP-Ro-1Pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
