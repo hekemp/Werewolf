@@ -8,9 +8,18 @@
 
 import Foundation
 import UIKit
+import MultipeerConnectivity
 
 class RoomCodeViewController: UIViewController {
+    
+    
+    @IBAction func willCreateRoom(_ sender: Any) {
+        let createRoomConfirmation = UIAlertAction(title: "Create Game Room?", style: UIAlertActionStyle.default)
+        startHosting(action: createRoomConfirmation)
+        performSegue(withIdentifier: "connected", sender: self)
+    }
     @IBOutlet weak var roomCodeLabel: UILabel!
+    var mcAdvertiserAssistant: MCAdvertiserAssistant!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,7 +32,12 @@ class RoomCodeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let session = GameSession()
-        let roomCode = String(format: "%04d", session.roomCode)
-        roomCodeLabel?.text = roomCode
+        roomCodeLabel?.text = session.roomCodeDisplay()
+    }
+    func startHosting(action: UIAlertAction) {
+        if let mcSession = GameSession.active?.mcSession, let serviceType = GameSession.active?.serviceType!{
+        mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: mcSession)
+        mcAdvertiserAssistant.start()
+        }
     }
 }
