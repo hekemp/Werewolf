@@ -8,11 +8,13 @@
 //  A class for the UI to interface with the gamestate, which can include eventual networking
 
 import Foundation
+import GameKit
 class GameSession{
     static var active : GameSession?
     var roomCode: Int
     var activeRoles = ["Villager","Doctor","Werewolf","Seer", "Witch"]
     var myCharacter: PlayerCharacter?
+    var match: GKMatch?
     init(roomToJoin roomCode: Int) {
         self.roomCode = roomCode
         GameSession.active = self

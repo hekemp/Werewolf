@@ -37,7 +37,7 @@
                                 </state>
                                 <connections>
                                     <action selector="gameWasJoined:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0D-rg-Bjt"/>
-                                    <segue destination="sgU-vJ-u0d" kind="show" id="z6B-RO-rNx"/>
+                                    <segue destination="YuI-h6-JEk" kind="show" id="JeB-9t-Lhf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2u-FV-piO">
@@ -87,7 +87,7 @@
                                     <color key="titleColor" red="0.94560514419999997" green="0.93479276109999998" blue="0.95820514899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sgU-vJ-u0d" kind="show" id="l0o-lQ-BeY"/>
+                                    <segue destination="YuI-h6-JEk" kind="show" id="F24-eC-DVT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,6 +110,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRl-Hl-x0t">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ONP-bW-3Zt">
                                 <rect key="frame" x="16" y="69" width="343" height="578"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -129,13 +136,6 @@
                                     <outlet property="delegate" destination="sgU-vJ-u0d" id="W4F-Eo-Roj"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRl-Hl-x0t">
-                                <rect key="frame" x="16" y="40" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="wyA-ap-x9D"/>
@@ -143,11 +143,12 @@
                     <connections>
                         <outlet property="playersJoinedTable" destination="ONP-bW-3Zt" id="b2B-qI-zTl"/>
                         <outlet property="roomCodeDisplay" destination="WRl-Hl-x0t" id="S8c-MS-t7W"/>
+                        <segue destination="6Hn-6l-xiL" kind="show" identifier="didMatch" id="vA2-l4-GgW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkt-St-HAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="30.134932533733135"/>
+            <point key="canvasLocation" x="825" y="33"/>
         </scene>
         <!--Character Creation View Controller-->
         <scene sceneID="dbp-67-ynn">
@@ -194,7 +195,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doManualCharacterCreation:" destination="YuI-h6-JEk" eventType="touchUpInside" id="wfU-Rl-y8R"/>
-                                    <segue destination="6Hn-6l-xiL" kind="show" id="2Lh-nK-9a1"/>
+                                    <segue destination="sgU-vJ-u0d" kind="show" id="Icg-wP-G3p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPc-dQ-nSH">
@@ -206,7 +207,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doRandomCharacterCreation:" destination="YuI-h6-JEk" eventType="touchUpInside" id="67s-AA-hXd"/>
-                                    <segue destination="6Hn-6l-xiL" kind="show" id="cRE-Tl-Ooz"/>
+                                    <segue destination="sgU-vJ-u0d" kind="show" id="qZF-sg-jg9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -222,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Man-c8-m9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824.79999999999995" y="32.833583208395808"/>
+            <point key="canvasLocation" x="148" y="33"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="R8t-19-q1d">
@@ -911,8 +912,9 @@
         <segue reference="nEi-Ee-57e"/>
         <segue reference="eIh-9D-PPB"/>
         <segue reference="kEc-gC-crd"/>
-        <segue reference="dy9-Pw-md7"/>
-        <segue reference="l0o-lQ-BeY"/>
+        <segue reference="vA2-l4-GgW"/>
+        <segue reference="JeB-9t-Lhf"/>
+        <segue reference="Icg-wP-G3p"/>
         <segue reference="BSC-Md-pj2"/>
     </inferredMetricsTieBreakers>
 </document>

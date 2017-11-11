@@ -17,14 +17,37 @@ class MatchmakingViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.playersJoinedTable.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
         
-        cell.textLabel?.text = self.playersJoined[indexPath.row]
+        cell.textLabel?.text = self.playersJoined[indexPath.row].alias
         
         return cell
     }
-    
+    func doMatchMaking(){
+        let req = GKMatchRequest()
+        req.playerGroup = (GameSession.active?.roomCode)!
+        req.minPlayers = 3
+        req.maxPlayers = 16
+        req.inviteMessage = "join werewolf game?"
+        req.recipientResponseHandler = self.playerDidAcceptRequest;
+        let mm = GKMatchmaker()
+        mm.findMatch(for: req, withCompletionHandler: matchFound)
+    }
+    func playerDidAcceptRequest(player: GKPlayer, response: GKInviteeResponse){
+        if(GKInviteeResponse.inviteeResponseAccepted==response){
+            playersJoined.append(player)
+        }
+    }
+    func matchFound(match: GKMatch?, err: Error?){
+        if let match = match{
+            GameSession.active?.match = match
+            shouldPerformSegue(withIdentifier: "matched", sender: self)
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        doMatchMaking()
+    }
     
     @IBOutlet weak var playersJoinedTable: UITableView!
-    var playersJoined = ["me"]
+    var playersJoined : [GKPlayer] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
