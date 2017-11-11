@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../Werewolf/MatchmakingViewController.swift">
+   </FileRef>
+   <FileRef
       location = "self:Werewolf.xcodeproj">
    </FileRef>
 </Workspace>

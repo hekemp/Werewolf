@@ -24,6 +24,7 @@
 		CCA525DE1F9E82E3007118B9 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DD1F9E82E3007118B9 /* GameSession.swift */; };
 		CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */; };
 		CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD79AE1FA1022800773964 /* CharacterViewController.swift */; };
+		CCDD79B31FB6843100773964 /* MatchmakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */; };
 		DBA0FA741FA6597300861C19 /* NightSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		CCA525DD1F9E82E3007118B9 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleRulesReviewViewController.swift; sourceTree = "<group>"; };
 		CCDD79AE1FA1022800773964 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchmakingViewController.swift; sourceTree = "<group>"; };
 		DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightSummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				CCDD79AE1FA1022800773964 /* CharacterViewController.swift */,
 				CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */,
 				CC895D591F9F01620090D495 /* JoinGameViewController.swift */,
+				CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */,
 				CC3CEA041F9E44FC00AED6C4 /* AppDelegate.swift */,
 				CC3CEA061F9E44FC00AED6C4 /* ViewController.swift */,
 				CC3CEA081F9E44FC00AED6C4 /* Main.storyboard */,
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC46A8321FAB9F5C00487200 /* VoteViewController.swift in Sources */,
+				CCDD79B31FB6843100773964 /* MatchmakingViewController.swift in Sources */,
 				CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */,
 				CC895D5C1FA0F4990090D495 /* PlayerCharacter.swift in Sources */,
 				CC895D641FA0FC1D0090D495 /* CharacterCreationViewController.swift in Sources */,
