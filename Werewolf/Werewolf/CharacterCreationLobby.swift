@@ -1,56 +1,59 @@
 //
-//  CharacterCreationViewController.swift
+//  CharacterCreationLobby.swift
 //  Werewolf
 //
-//  Created by macbook_user on 10/25/17.
+//  Created by Heather Kemp on 11/12/17.
 //  Copyright © 2017 CS4980-Werewolf. All rights reserved.
 //
 
 import Foundation
-import UIKit
 import MultipeerConnectivity
 
-class CharacterCreationViewController: UIViewController, MCSessionDelegate {
-    @IBOutlet weak var nameField: UITextField?
-    @IBOutlet weak var ageField: UITextField?
-    @IBOutlet weak var genderField: UITextField?
-    @IBOutlet weak var occupationField: UITextField?
+class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var villageListView: UITableView!
     
     var villageList = [String]()
     
     var mcSession: MCSession!
     
-    @IBAction func doRandomCharacterCreation(_ sender: Any) {
-        let name = "randomName"
-        let age = "randomAge"
-        let gender = "randomGender"
-        let occupation = "randomOccupation"
-        let role = "testrole"
-        self.villageList.append(name)
-        sendText(name + "," + role)
-        //GameSession.active?.myCharacter = PlayerCharacter(name: name, age: age, gender: gender, occupation: occupation, role: role)
-
-    }
-    @IBAction func doManualCharacterCreation(_ sender: Any) {
-        let name = nameField?.text
-        let age = ageField?.text
-        let gender = genderField?.text
-        let occupation = occupationField?.text
-        let role = "testrole"
-        self.villageList.append(name!)
-        sendText(name! + "," + role)
-        //GameSession.active?.myCharacter = PlayerCharacter(name: name!, age: age!, gender: gender!, occupation: occupation!, role: role)
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(villageList)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // Three required UITableViewDataSource functions
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1 //villageList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellNum:Int = indexPath.row
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
+        cell.textLabel!.text = villageList[cellNum]
+        return cell
+    }
+    
+    // two optional UITableViewDelegate functions
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("did select row \(indexPath.row)")
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        print("will select row \(indexPath.row)")
+        return indexPath
     }
     
     // Do not need to edit
@@ -133,12 +136,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("preparing for segue: \(String(describing: segue.identifier))")
-        let destVC: CharacterCreationLobby = segue.destination as! CharacterCreationLobby
-            destVC.mcSession = mcSession
-            destVC.villageList = self.villageList
-    }
     
     
 }
+

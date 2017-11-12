@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jAJ-4R-syc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,8 +37,7 @@
                                     <color key="titleColor" red="0.94560514419999997" green="0.93479276109999998" blue="0.95820514899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="gameWasJoined:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0D-rg-Bjt"/>
-                                    <segue destination="YuI-h6-JEk" kind="show" id="JeB-9t-Lhf"/>
+                                    <action selector="joinRoomClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bJY-cv-Jrr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2u-FV-piO">
@@ -48,7 +48,7 @@
                                     <color key="titleColor" red="0.94560514419999997" green="0.93479276109999998" blue="0.95820514899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rBJ-so-REu" kind="show" id="w73-g0-4iK"/>
+                                    <action selector="createRoomClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4u-Rg-Mkj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,11 +58,12 @@
                     </view>
                     <connections>
                         <outlet property="roomCode" destination="VOH-3Y-YhK" id="DOx-Nz-ERd"/>
+                        <segue destination="Vph-o6-X1j" kind="show" identifier="moveToCharacterCreation" id="DeD-J7-HGR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-556" y="33"/>
+            <point key="canvasLocation" x="-1241" y="33"/>
         </scene>
         <!--Room Code View Controller-->
         <scene sceneID="epi-HI-XwX">
@@ -102,58 +103,10 @@
             </objects>
             <point key="canvasLocation" x="-556" y="716"/>
         </scene>
-        <!--Matchmaking View Controller-->
-        <scene sceneID="f0I-1T-LwT">
-            <objects>
-                <viewController id="sgU-vJ-u0d" customClass="MatchmakingViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1w1-a5-5mO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRl-Hl-x0t">
-                                <rect key="frame" x="16" y="40" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ONP-bW-3Zt">
-                                <rect key="frame" x="16" y="69" width="343" height="578"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TGg-yq-kif">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TGg-yq-kif" id="qBw-g0-cvi">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="sgU-vJ-u0d" id="ehh-Ap-IX9"/>
-                                    <outlet property="delegate" destination="sgU-vJ-u0d" id="W4F-Eo-Roj"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="wyA-ap-x9D"/>
-                    </view>
-                    <connections>
-                        <outlet property="playersJoinedTable" destination="ONP-bW-3Zt" id="b2B-qI-zTl"/>
-                        <outlet property="roomCodeDisplay" destination="WRl-Hl-x0t" id="S8c-MS-t7W"/>
-                        <segue destination="6Hn-6l-xiL" kind="show" identifier="didMatch" id="vA2-l4-GgW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rkt-St-HAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="825" y="33"/>
-        </scene>
-        <!--Character Creation View Controller-->
+        <!--CharacterCreationViewController-->
         <scene sceneID="dbp-67-ynn">
             <objects>
-                <viewController id="YuI-h6-JEk" customClass="CharacterCreationViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CharacterCreationViewController" id="YuI-h6-JEk" customClass="CharacterCreationViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DLv-at-yM0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,7 +148,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doManualCharacterCreation:" destination="YuI-h6-JEk" eventType="touchUpInside" id="wfU-Rl-y8R"/>
-                                    <segue destination="sgU-vJ-u0d" kind="show" id="Icg-wP-G3p"/>
+                                    <segue destination="PZY-dd-s6C" kind="show" id="3vU-cj-SJJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPc-dQ-nSH">
@@ -207,7 +160,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doRandomCharacterCreation:" destination="YuI-h6-JEk" eventType="touchUpInside" id="67s-AA-hXd"/>
-                                    <segue destination="sgU-vJ-u0d" kind="show" id="qZF-sg-jg9"/>
+                                    <segue destination="PZY-dd-s6C" kind="show" id="PwB-RA-OAJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -223,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Man-c8-m9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="33"/>
+            <point key="canvasLocation" x="126" y="33"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="R8t-19-q1d">
@@ -242,7 +195,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNl-xb-dKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="33"/>
+            <point key="canvasLocation" x="1486" y="33"/>
         </scene>
         <!--Item-->
         <scene sceneID="P9C-Sb-p79">
@@ -298,7 +251,7 @@
         <!--Item-->
         <scene sceneID="m4X-89-ejd">
             <objects>
-                <viewController id="JmR-uq-KwG" sceneMemberID="viewController">
+                <viewController id="JmR-uq-KwG" customClass="VillageViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nw4-35-WdE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,6 +267,20 @@
                                 <rect key="frame" x="16" y="49" width="343" height="493"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customcell" id="x4e-Cb-GfH">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x4e-Cb-GfH" id="Mwr-vq-JR8">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Nw4-35-WdE" id="lyB-8p-hWS"/>
+                                    <outlet property="delegate" destination="Nw4-35-WdE" id="l78-Al-SFo"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ut6-Lc-QoH">
                                 <rect key="frame" x="69" y="550" width="236" height="55"/>
@@ -331,6 +298,9 @@
                         <viewLayoutGuide key="safeArea" id="iGb-Rl-k6g"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1GH-0r-gh1"/>
+                    <connections>
+                        <outlet property="villageList" destination="Ime-jB-j0X" id="1bM-CO-ZbI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-F9-ZPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -543,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfm-ak-pDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512.8" y="715.59220389805103"/>
+            <point key="canvasLocation" x="1554" y="725"/>
         </scene>
         <!--Item-->
         <scene sceneID="l8y-Wj-Mr3">
@@ -903,18 +873,105 @@
             </objects>
             <point key="canvasLocation" x="4298" y="2866"/>
         </scene>
+        <!--CharacterCreationViewController-->
+        <scene sceneID="o6C-gq-JFZ">
+            <objects>
+                <viewController title="CharacterCreationViewController" id="Vph-o6-X1j" customClass="LobbyViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DaK-g6-iGl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Players: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTT-7x-sbb">
+                                <rect key="frame" x="107" y="300" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdU-9k-vdv">
+                                <rect key="frame" x="144" y="354" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68584419077206815" green="0.68490910564069507" blue="0.7012427137305699" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Begin Game!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.92650749877406935" green="1" blue="0.94191238807719146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="Vph-o6-X1j" eventType="touchUpInside" id="xau-7L-gQp"/>
+                                    <segue destination="YuI-h6-JEk" kind="show" identifier="startCharacterCreation" id="ReF-HA-5DL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.41104679399999999" green="0.41104679399999999" blue="0.41104679399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="UGn-O2-0gp"/>
+                    </view>
+                    <connections>
+                        <outlet property="theLabel" destination="mTT-7x-sbb" id="uvj-5T-ete"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4HR-hk-KBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-556" y="33"/>
+        </scene>
+        <!--CharacterCreationViewController-->
+        <scene sceneID="qsP-U4-rf6">
+            <objects>
+                <viewController title="CharacterCreationViewController" id="PZY-dd-s6C" customClass="CharacterCreationLobby" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OLw-nu-cFK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0je-5J-oD0">
+                                <rect key="frame" x="143" y="546" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68584419080000003" green="0.68490910559999996" blue="0.70124271370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Begin Game!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.92650749880000005" green="1" blue="0.9419123881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="PZY-dd-s6C" eventType="touchUpInside" id="flQ-tb-AFf"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s4s-xB-aBM">
+                                <rect key="frame" x="30" y="45" width="309" height="449"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customcell" id="g5L-Ue-ylU">
+                                        <rect key="frame" x="0.0" y="28" width="309" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g5L-Ue-ylU" id="byf-TM-wSL">
+                                            <rect key="frame" x="0.0" y="0.0" width="309" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OLw-nu-cFK" id="I1f-wB-go6"/>
+                                    <outlet property="delegate" destination="OLw-nu-cFK" id="y5K-bK-sEN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.41104679399999999" green="0.41104679399999999" blue="0.41104679399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Y0x-KT-eJH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yr2-Au-7rU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824.79999999999995" y="-699.40029985007504"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Werewolf Logo" width="293" height="275"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3vU-cj-SJJ"/>
         <segue reference="ijC-x1-EZp"/>
         <segue reference="nEi-Ee-57e"/>
         <segue reference="eIh-9D-PPB"/>
         <segue reference="kEc-gC-crd"/>
-        <segue reference="vA2-l4-GgW"/>
-        <segue reference="JeB-9t-Lhf"/>
-        <segue reference="Icg-wP-G3p"/>
+        <segue reference="ReF-HA-5DL"/>
         <segue reference="BSC-Md-pj2"/>
     </inferredMetricsTieBreakers>
 </document>

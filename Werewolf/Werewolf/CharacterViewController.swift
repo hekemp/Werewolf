@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 
 class CharacterViewController: UIViewController {
+    
     @IBOutlet weak var characterName: UILabel!
     @IBOutlet weak var characterAge: UILabel!
     @IBOutlet weak var characterGender: UILabel!
     @IBOutlet weak var characterOccupation: UILabel!
     @IBOutlet weak var characterRole: UILabel!
+    
+    //
     
     override func viewWillAppear(_ animated: Bool) {
         let character = GameSession.active?.myCharacter
