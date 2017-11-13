@@ -197,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="1486" y="33"/>
         </scene>
-        <!--Item-->
+        <!--Rules-->
         <scene sceneID="P9C-Sb-p79">
             <objects>
                 <viewController id="qJW-LF-Ebh" customClass="RoleRulesReviewViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
@@ -237,7 +237,7 @@
                         <color key="backgroundColor" red="0.95446610450000002" green="1" blue="0.0058172726589999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Mv2-OS-ynA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="COU-yx-slQ"/>
+                    <tabBarItem key="tabBarItem" title="Rules" image="Rules" id="COU-yx-slQ"/>
                     <connections>
                         <outlet property="pageBar" destination="73h-ae-ok4" id="Piz-AR-Ip5"/>
                         <outlet property="roleExplaination" destination="2ja-Kj-JI3" id="1Uh-8Y-gpK"/>
@@ -248,7 +248,7 @@
             </objects>
             <point key="canvasLocation" x="824.79999999999995" y="715.59220389805103"/>
         </scene>
-        <!--Item-->
+        <!--Village-->
         <scene sceneID="m4X-89-ejd">
             <objects>
                 <viewController id="JmR-uq-KwG" customClass="VillageViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
@@ -297,7 +297,7 @@
                         <color key="backgroundColor" red="0.95446610449699454" green="1" blue="0.0058172726589481583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iGb-Rl-k6g"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="1GH-0r-gh1"/>
+                    <tabBarItem key="tabBarItem" title="Village" image="Village" id="1GH-0r-gh1"/>
                     <connections>
                         <outlet property="villageListView" destination="Ime-jB-j0X" id="cR1-EN-uuX"/>
                     </connections>
@@ -442,7 +442,7 @@
             </objects>
             <point key="canvasLocation" x="4485.6000000000004" y="32.833583208395808"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="B5W-hU-nXD">
             <objects>
                 <viewController id="4V6-9Z-Epb" customClass="CharacterViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
@@ -502,7 +502,7 @@
                         <color key="backgroundColor" red="0.95446610450000002" green="1" blue="0.0058172726589999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Psa-Dc-JO1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7o8-h7-YuB"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="7o8-h7-YuB"/>
                     <connections>
                         <outlet property="characterAge" destination="4og-La-c8U" id="d8D-w6-NwZ"/>
                         <outlet property="characterGender" destination="zsI-jx-UaR" id="j4J-Sp-8Pg"/>
@@ -955,6 +955,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Profile" width="30" height="31"/>
+        <image name="Rules" width="30" height="26"/>
+        <image name="Village" width="31" height="30"/>
         <image name="Werewolf Logo" width="293" height="275"/>
     </resources>
     <inferredMetricsTieBreakers>
