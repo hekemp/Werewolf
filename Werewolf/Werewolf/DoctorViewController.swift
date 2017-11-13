@@ -1,21 +1,22 @@
 //
-//  NominationViewController.swift
+//  DoctorViewController.swift
 //  Werewolf
 //
-//  Created by macbook_user on 11/2/17.
+//  Created by Heather Kemp on 11/13/17.
 //  Copyright © 2017 CS4980-Werewolf. All rights reserved.
 //
 
 import Foundation
+
 import UIKit
 import MultipeerConnectivity
 
-class NominationViewController: UIViewController, MCSessionDelegate {
-    
-    var villageList : [[String]] = []
+class DoctorViewController: UIViewController, MCSessionDelegate {
     
     var mcSession: MCSession!
-
+    
+    var villageList = [[String]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mcSession.delegate = self
@@ -27,8 +28,6 @@ class NominationViewController: UIViewController, MCSessionDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
     
     // Do not need to edit
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -98,25 +97,33 @@ class NominationViewController: UIViewController, MCSessionDelegate {
     
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        let textData = data.base64EncodedString()
-        print("Got Data Origin: " + textData)
         
-        if !textData.isEmpty {
-            DispatchQueue.main.async { [unowned self] in
-                print(textData)
-                
+        
+        if data != nil {
+            do {
+                let actualString = String(data: data, encoding: String.Encoding.utf8)
+                print(actualString)
+                DispatchQueue.main.async { [unowned self] in
+                    let characterArray = actualString!.components(separatedBy: ",")
+                    
+                    let name    = characterArray[0]
+                    let role = characterArray[1]
+                    self.villageList.append([name, role])
+                }
             }
+            
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue: \(String(describing: segue.identifier))")
-        let destVC: VoteViewController = segue.destination as! VoteViewController
-            destVC.mcSession = mcSession
-            destVC.villageList = self.villageList
+        let destVC: PotionViewController = segue.destination as! PotionViewController
+        destVC.mcSession = mcSession
+        destVC.villageList = self.villageList
         
         
     }
     
     
 }
+

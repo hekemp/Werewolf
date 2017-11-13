@@ -44,6 +44,7 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillDisappear(_ animated: Bool) {
         GameSession.active?.villageList = self.villageList
+        GameSession.active?.mySession = self.mcSession
     }
     
     override func didReceiveMemoryWarning() {

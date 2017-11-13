@@ -8,12 +8,18 @@
 
 import Foundation
 import UIKit
+import MultipeerConnectivity
 
 class ExecuteViewController: UIViewController {
+    
+    var villageList : [[String]] = []
+    
+    var mcSession: MCSession!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let timer = Timer.scheduledTimer(timeInterval: 15.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
+        let timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
     }
     
     @objc func timeToMoveOn(){
@@ -27,5 +33,14 @@ class ExecuteViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("preparing for segue: \(String(describing: segue.identifier))")
+        let destVC: SeerViewController = segue.destination as! SeerViewController
+        destVC.mcSession = mcSession
+        destVC.villageList = self.villageList
+        
+        
     }
 }

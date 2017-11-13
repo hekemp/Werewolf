@@ -290,7 +290,7 @@
                                     <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t3e-Ox-Co1" kind="show" id="e6t-FI-6L0"/>
+                                    <segue destination="t3e-Ox-Co1" kind="show" identifier="moveToNominations" id="e6t-FI-6L0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -518,7 +518,7 @@
         <!--Item-->
         <scene sceneID="l8y-Wj-Mr3">
             <objects>
-                <viewController id="VnG-dp-JPH" sceneMemberID="viewController">
+                <viewController id="VnG-dp-JPH" customClass="SeerViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2S6-9C-ssF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -559,7 +559,7 @@
         <!--Item-->
         <scene sceneID="LIP-0D-hud">
             <objects>
-                <viewController id="Iry-3m-jZW" sceneMemberID="viewController">
+                <viewController id="Iry-3m-jZW" customClass="WerewolfViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WlR-BQ-fdl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -600,7 +600,7 @@
         <!--Item-->
         <scene sceneID="IB9-bU-NTR">
             <objects>
-                <viewController id="Ada-Lb-8mu" sceneMemberID="viewController">
+                <viewController id="Ada-Lb-8mu" customClass="DoctorViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AmE-Mv-WJ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -641,7 +641,7 @@
         <!--Item-->
         <scene sceneID="06Z-gm-Dts">
             <objects>
-                <viewController id="ZhH-A4-N4W" sceneMemberID="viewController">
+                <viewController id="ZhH-A4-N4W" customClass="PoisonViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dsc-vY-GRa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -693,7 +693,7 @@
         <!--Item-->
         <scene sceneID="w8X-dl-46u">
             <objects>
-                <viewController id="3gd-yz-Pk6" sceneMemberID="viewController">
+                <viewController id="3gd-yz-Pk6" customClass="PotionViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lt2-di-dqJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

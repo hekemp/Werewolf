@@ -9,11 +9,14 @@
 
 import Foundation
 import GameKit
+import MultipeerConnectivity
+
 class GameSession{
     static var active : GameSession?
     var activeRoles = ["Villager","Doctor","Werewolf","Seer", "Witch"]
     var villageList : [[String]]?
     var myCharacter: PlayerCharacter?
+    var mySession: MCSession?
     var match: GKMatch?
     init(){
         GameSession.active = self

@@ -8,14 +8,20 @@
 
 import Foundation
 import UIKit
+import MultipeerConnectivity
+
 class NightSummaryViewController: UIViewController {
     
-    var humansAlive = 1
-    var werewolvesAlive = 2
+    var humansAlive = 4
+    var werewolvesAlive = 0
+    
+    var mcSession: MCSession!
+    
+    var villageList = [[String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
+        _ = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -36,6 +42,11 @@ class NightSummaryViewController: UIViewController {
             self.performSegue(withIdentifier: "restartDay", sender: self)
         }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        GameSession.active?.villageList = self.villageList
+        GameSession.active?.mySession = self.mcSession
     }
     
     

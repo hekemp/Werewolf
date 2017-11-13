@@ -25,6 +25,11 @@
 		CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */; };
 		CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD79AE1FA1022800773964 /* CharacterViewController.swift */; };
 		CCDD79B31FB6843100773964 /* MatchmakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */; };
+		DB679DBE1FB9E53600524C9D /* SeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB679DBD1FB9E53600524C9D /* SeerViewController.swift */; };
+		DB679DC01FB9E5A900524C9D /* WerewolfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB679DBF1FB9E5A900524C9D /* WerewolfViewController.swift */; };
+		DB679DC21FB9E5C000524C9D /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB679DC11FB9E5C000524C9D /* DoctorViewController.swift */; };
+		DB679DC41FB9E5E200524C9D /* PotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB679DC31FB9E5E200524C9D /* PotionViewController.swift */; };
+		DB679DC61FB9E62C00524C9D /* PoisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB679DC51FB9E62C00524C9D /* PoisonViewController.swift */; };
 		DBA0FA741FA6597300861C19 /* NightSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */; };
 		DBBBE1D51FB7B0C700D01726 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */; };
 		DBBBE1D71FB8954000D01726 /* VillageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE1D61FB8953F00D01726 /* VillageViewController.swift */; };
@@ -73,6 +78,11 @@
 		CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleRulesReviewViewController.swift; sourceTree = "<group>"; };
 		CCDD79AE1FA1022800773964 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchmakingViewController.swift; sourceTree = "<group>"; };
+		DB679DBD1FB9E53600524C9D /* SeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeerViewController.swift; sourceTree = "<group>"; };
+		DB679DBF1FB9E5A900524C9D /* WerewolfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolfViewController.swift; sourceTree = "<group>"; };
+		DB679DC11FB9E5C000524C9D /* DoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
+		DB679DC31FB9E5E200524C9D /* PotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionViewController.swift; sourceTree = "<group>"; };
+		DB679DC51FB9E62C00524C9D /* PoisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonViewController.swift; sourceTree = "<group>"; };
 		DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightSummaryViewController.swift; sourceTree = "<group>"; };
 		DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		DBBBE1D61FB8953F00D01726 /* VillageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageViewController.swift; sourceTree = "<group>"; };
@@ -127,27 +137,32 @@
 		CC3CEA031F9E44FC00AED6C4 /* Werewolf */ = {
 			isa = PBXGroup;
 			children = (
-				CCDD79AE1FA1022800773964 /* CharacterViewController.swift */,
-				CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */,
-				CC895D591F9F01620090D495 /* JoinGameViewController.swift */,
-				DBBBE1D81FB89E6600D01726 /* CharacterCreationLobby.swift */,
-				CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */,
-				CC3CEA041F9E44FC00AED6C4 /* AppDelegate.swift */,
-				CC3CEA061F9E44FC00AED6C4 /* ViewController.swift */,
-				DBBBE1D61FB8953F00D01726 /* VillageViewController.swift */,
 				CC3CEA081F9E44FC00AED6C4 /* Main.storyboard */,
+				CC895D591F9F01620090D495 /* JoinGameViewController.swift */,
 				DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */,
+				CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */,
+				DBBBE1D81FB89E6600D01726 /* CharacterCreationLobby.swift */,
+				CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */,
+				CCDD79AE1FA1022800773964 /* CharacterViewController.swift */,
+				DBBBE1D61FB8953F00D01726 /* VillageViewController.swift */,
+				CC46A82F1FAB9F4B00487200 /* NominationViewController.swift */,
+				CC46A8311FAB9F5C00487200 /* VoteViewController.swift */,
+				CC46A8331FAB9F7D00487200 /* ExecuteViewController.swift */,
+				DB679DBD1FB9E53600524C9D /* SeerViewController.swift */,
+				DB679DBF1FB9E5A900524C9D /* WerewolfViewController.swift */,
+				DB679DC11FB9E5C000524C9D /* DoctorViewController.swift */,
+				DB679DC31FB9E5E200524C9D /* PotionViewController.swift */,
+				DB679DC51FB9E62C00524C9D /* PoisonViewController.swift */,
+				DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */,
 				CC3CEA0B1F9E44FC00AED6C4 /* Assets.xcassets */,
 				CC3CEA0D1F9E44FC00AED6C4 /* LaunchScreen.storyboard */,
 				CC3CEA101F9E44FC00AED6C4 /* Info.plist */,
 				CCA525D91F9E81C7007118B9 /* RoomCodeViewController.swift */,
 				CCA525DD1F9E82E3007118B9 /* GameSession.swift */,
-				CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */,
 				CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */,
-				DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */,
-				CC46A82F1FAB9F4B00487200 /* NominationViewController.swift */,
-				CC46A8311FAB9F5C00487200 /* VoteViewController.swift */,
-				CC46A8331FAB9F7D00487200 /* ExecuteViewController.swift */,
+				CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */,
+				CC3CEA041F9E44FC00AED6C4 /* AppDelegate.swift */,
+				CC3CEA061F9E44FC00AED6C4 /* ViewController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -309,11 +324,14 @@
 				CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */,
 				CC895D5C1FA0F4990090D495 /* PlayerCharacter.swift in Sources */,
 				CC895D641FA0FC1D0090D495 /* CharacterCreationViewController.swift in Sources */,
+				DB679DC01FB9E5A900524C9D /* WerewolfViewController.swift in Sources */,
 				CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */,
 				CC3CEA071F9E44FC00AED6C4 /* ViewController.swift in Sources */,
+				DB679DC61FB9E62C00524C9D /* PoisonViewController.swift in Sources */,
 				CC3CEA051F9E44FC00AED6C4 /* AppDelegate.swift in Sources */,
 				DBA0FA741FA6597300861C19 /* NightSummaryViewController.swift in Sources */,
 				DBBBE1D71FB8954000D01726 /* VillageViewController.swift in Sources */,
+				DB679DC21FB9E5C000524C9D /* DoctorViewController.swift in Sources */,
 				DBBBE1D91FB89E6600D01726 /* CharacterCreationLobby.swift in Sources */,
 				CC46A8301FAB9F4B00487200 /* NominationViewController.swift in Sources */,
 				DBBBE1D51FB7B0C700D01726 /* LobbyViewController.swift in Sources */,
@@ -321,6 +339,8 @@
 				CC46A8341FAB9F7D00487200 /* ExecuteViewController.swift in Sources */,
 				CC895D5A1F9F01630090D495 /* JoinGameViewController.swift in Sources */,
 				CCA525DA1F9E81C7007118B9 /* RoomCodeViewController.swift in Sources */,
+				DB679DBE1FB9E53600524C9D /* SeerViewController.swift in Sources */,
+				DB679DC41FB9E5E200524C9D /* PotionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

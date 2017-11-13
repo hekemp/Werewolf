@@ -18,10 +18,14 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     var villageList : [[String]] = []
     
     var mcSession: MCSession!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let villageList = GameSession.active?.villageList{
             self.villageList = villageList
+        }
+        if let mcSession = GameSession.active?.mySession{
+            self.mcSession = mcSession
         }
     }
     override func viewDidLoad() {
@@ -60,6 +64,17 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
     print("will select row \(indexPath.row)")
     return indexPath
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("preparing for segue: \(String(describing: segue.identifier))")
+        let destVC: NominationViewController = segue.destination as! NominationViewController
+        if segue.identifier == "moveToNominations" {
+            destVC.mcSession = mcSession
+            destVC.villageList = self.villageList
+            
+        }
+        
     }
     
 
