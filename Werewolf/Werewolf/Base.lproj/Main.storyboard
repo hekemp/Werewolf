@@ -564,7 +564,7 @@
                                     <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ada-Lb-8mu" kind="show" id="7S5-Sa-nNh"/>
+                                    <action selector="confirmButtonClicked:" destination="Iry-3m-jZW" eventType="touchUpInside" id="QRb-XN-Wnh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Werewolf, Kill:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tG-BS-eDe">
@@ -580,7 +580,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="jDy-48-PGv"/>
                     <connections>
+                        <outlet property="confirmButton" destination="4rr-8k-LET" id="DS3-l3-maS"/>
                         <outlet property="tableView" destination="ptH-uv-ypn" id="Tnz-Hm-5RJ"/>
+                        <segue destination="Ada-Lb-8mu" kind="show" identifier="toDoctor" id="J3F-aL-QzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wp9-6t-xXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
