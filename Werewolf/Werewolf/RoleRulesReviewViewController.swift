@@ -30,9 +30,27 @@ class RoleRulesReviewViewController: UIViewController {
         roleName.text = currentRole
         roleExplaination.text = currentRoleText
     }
+    @IBAction func leftSwipeReceived(_ sender: UISwipeGestureRecognizer) {
+        if(pageBar.currentPage+1<=pageBar.numberOfPages){
+            pageBar.currentPage += 1
+            setPage()
+        }
+    }
+    @IBAction func rightSwipeReceived(_ sender: Any) {
+        if(pageBar.currentPage>0){
+            pageBar.currentPage -= 1
+            setPage()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let rightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(RoleRulesReviewViewController.rightSwipeReceived(_:)))
+        rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(rightSwipeGestureRecognizer)
+        let leftSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(RoleRulesReviewViewController.leftSwipeReceived(_:)))
+        leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(leftSwipeGestureRecognizer)
     }
     override func viewWillAppear(_ animated: Bool) {
         roles = GameSession.active?.activeRoles
