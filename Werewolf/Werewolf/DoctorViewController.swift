@@ -18,6 +18,9 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     @IBOutlet weak var confirmButton: UIButton!
     
+    
+    
+    
     var mcSession: MCSession!
     
     var villageList = [[String]]()
@@ -34,7 +37,7 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         super.viewDidLoad()
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(WerewolfViewController.updateStatus), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(DoctorViewController.updateStatus), userInfo: nil, repeats: true)
         let character = GameSession.active?.myCharacter
         myRole = character?.role
     }

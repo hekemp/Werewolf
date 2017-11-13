@@ -18,6 +18,8 @@ class GameSession{
     var myCharacter: PlayerCharacter?
     var mySession: MCSession?
     var match: GKMatch?
+    var canUsePotion = true
+    var canUsePoison = true
     init(){
         GameSession.active = self
     }

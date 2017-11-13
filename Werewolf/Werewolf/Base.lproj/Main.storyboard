@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -754,7 +754,7 @@
                                     <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZhH-A4-N4W" kind="show" id="nEi-Ee-57e"/>
+                                    <action selector="confirmButtonClicked:" destination="3gd-yz-Pk6" eventType="touchUpInside" id="u2s-3e-qkF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-rW-itH">
@@ -765,7 +765,7 @@
                                     <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZhH-A4-N4W" kind="show" id="3YL-hY-L7d"/>
+                                    <action selector="abstainButtonClicked:" destination="3gd-yz-Pk6" eventType="touchUpInside" id="DI5-4T-doi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Witch, Use Your Potion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aq3-Ie-x5S">
@@ -781,7 +781,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="2Kw-cj-k1g"/>
                     <connections>
+                        <outlet property="abstainButton" destination="yaq-rW-itH" id="2kA-IF-9qi"/>
+                        <outlet property="confirmButton" destination="zgX-5O-Fma" id="k26-kx-wwj"/>
                         <outlet property="tableView" destination="Yxf-6E-GOU" id="nI6-n2-zoS"/>
+                        <segue destination="ZhH-A4-N4W" kind="show" identifier="toPoison" id="1g5-sf-F9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcs-zU-gdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1009,7 +1012,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="3vU-cj-SJJ"/>
         <segue reference="ijC-x1-EZp"/>
-        <segue reference="nEi-Ee-57e"/>
         <segue reference="eIh-9D-PPB"/>
         <segue reference="kEc-gC-crd"/>
         <segue reference="gGa-PV-oUk"/>

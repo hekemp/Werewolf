@@ -13,6 +13,9 @@ import MultipeerConnectivity
 
 class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var confirmButton: UIButton!
+    
+    @IBOutlet weak var abstainButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,10 +25,52 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     var resultList = [String]()
     
+    var voteList = [[String]]()
+    
+    var timer: Timer!
+    
+    var myRole : String?
+    
+    var canUse : Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(PotionViewController.updateStatus), userInfo: nil, repeats: true)
+        let character = GameSession.active?.myCharacter
+        myRole = character?.role
+        if let canUse = GameSession.active?.canUsePotion{
+             self.canUse = canUse
+        }
+    }
+    
+    @objc func updateStatus() {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
+            finalTally()
+        }
+    }
+    
+    func finalTally() {
+        timer.invalidate()
+        
+        var potionVote = -1
+        
+        for player in voteList {
+            if player[1] == "Witch"{
+                
+                potionVote = Int(player[0])!
+                
+            }
+        }
+        
+
+       resultList.append(String(potionVote))
+        
+        print(resultList)
+        
+        performSegue(withIdentifier: "toPoison", sender: self)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,7 +158,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
                     
                     let name    = characterArray[0]
                     let role = characterArray[1]
-                    self.villageList.append([name, role])
+                    self.voteList.append([name, role])
                 }
             }
             
@@ -144,6 +189,17 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
         cell.textLabel!.text = villageList[cellNum][0]
+        
+        if(myRole! == "Witch") {
+            if (cellNum == Int(resultList[0])){
+                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+            }
+        }
+        
+        else if (cellNum == 0) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
+        
         return cell
     }
     
@@ -157,6 +213,42 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         return indexPath
     }
     
+    @IBAction func abstainButtonClicked(_ sender: Any) {
+        tableView.allowsSelection = false
+        self.voteList.append([String(-1),myRole!])
+        sendText(String(-1) + "," + myRole!)
+        confirmButton.isEnabled = false
+        abstainButton.isEnabled = false
+    }
+    
+    @IBAction func confirmButtonClicked(_ sender: Any) {
+        
+        var voteIndex : Int
+        if canUse! {
+            voteIndex = (tableView.indexPathForSelectedRow! as NSIndexPath).row
+            canUse = false
+            GameSession.active?.canUsePotion = false
+        }
+        else{
+            voteIndex = -1
+        }
+        
+        print(voteIndex)
+        
+        tableView.allowsSelection = false
+        self.voteList.append([String(voteIndex),myRole!])
+        sendText(String(voteIndex) + "," + myRole!)
+        confirmButton.isEnabled = false
+        abstainButton.isEnabled = false
+    }
+    
     
 }
 
+// GETTING VAR IN GAME SESSION
+// if let villageList = GameSession.active?.villageList{
+// self.villageList = villageList
+
+
+// SETTING VAR IN GAME SESSION
+// GameSession.active?.myCharacter = PlayerCharacter(name: name, age: age, gender: gender, occupation: occupation, role: role)
