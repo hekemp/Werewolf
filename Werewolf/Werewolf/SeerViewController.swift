@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import MultipeerConnectivity
 
-class SeerViewController: UIViewController, MCSessionDelegate {
+class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var mcSession: MCSession!
     
@@ -122,6 +122,33 @@ class SeerViewController: UIViewController, MCSessionDelegate {
         destVC.villageList = self.villageList
         
         
+    }
+    
+    // Three required UITableViewDataSource functions
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return villageList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellNum:Int = indexPath.row
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
+        cell.textLabel!.text = villageList[cellNum][0]
+        return cell
+    }
+    
+    // two optional UITableViewDelegate functions
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("did select row \(indexPath.row)")
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        print("will select row \(indexPath.row)")
+        return indexPath
     }
     
     
