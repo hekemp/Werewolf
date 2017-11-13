@@ -25,7 +25,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let age = "randomAge"
         let gender = "randomGender"
         let occupation = "randomOccupation"
-        let role = "Seer"
+        let role = "Doctor"
         self.villageList.append([name,role])
         sendText(name + "," + role)
         let _ = GameSession()

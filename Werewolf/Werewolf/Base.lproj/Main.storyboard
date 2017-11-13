@@ -624,7 +624,7 @@
                                     <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3gd-yz-Pk6" kind="show" id="6t0-aX-hzW"/>
+                                    <action selector="confirmButtonClicked:" destination="Ada-Lb-8mu" eventType="touchUpInside" id="YX0-JZ-CFe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Doctor, Save:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHl-5P-zMF">
@@ -640,7 +640,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="7zg-Lc-9j8"/>
                     <connections>
+                        <outlet property="confirmButton" destination="kQI-Hr-xUL" id="njF-yq-RjQ"/>
                         <outlet property="tableView" destination="8cf-bG-Bgr" id="V3k-UI-qaV"/>
+                        <segue destination="3gd-yz-Pk6" kind="show" identifier="toPotion" id="zAq-VJ-ovm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dsm-l5-iqx" userLabel="First Responder" sceneMemberID="firstResponder"/>

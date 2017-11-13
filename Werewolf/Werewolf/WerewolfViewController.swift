@@ -62,6 +62,8 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
             }
         }
         
+        // don't have to cover if a werewolf doesn't exist/0 votes, because if there are  0 werewolves
+        // then the game ends before we get to this point
         var maxVotes = countingVotes.max()!
         
         
