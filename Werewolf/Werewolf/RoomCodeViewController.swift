@@ -23,7 +23,7 @@ class RoomCodeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let session = GameSession()
-        let roomCode = String(format: "%04d", session.roomCode)
-        roomCodeLabel?.text = roomCode
+        //let roomCode = String(format: "%04d", session.roomCode)
+        //roomCodeLabel?.text = roomCode
     }
 }

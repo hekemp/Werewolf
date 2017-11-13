@@ -11,16 +11,11 @@ import Foundation
 import GameKit
 class GameSession{
     static var active : GameSession?
-    var roomCode: Int
     var activeRoles = ["Villager","Doctor","Werewolf","Seer", "Witch"]
+    var villageList : [String]?
     var myCharacter: PlayerCharacter?
     var match: GKMatch?
-    init(roomToJoin roomCode: Int) {
-        self.roomCode = roomCode
-        GameSession.active = self
-    }
     init(){
-        roomCode = Int(arc4random_uniform(9999))
         GameSession.active = self
     }
 }

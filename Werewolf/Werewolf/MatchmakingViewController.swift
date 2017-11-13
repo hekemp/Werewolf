@@ -23,7 +23,7 @@ class MatchmakingViewController: UIViewController, UITableViewDelegate, UITableV
     }
     func doMatchMaking(){
         let req = GKMatchRequest()
-        req.playerGroup = (GameSession.active?.roomCode)!
+        //req.playerGroup = (GameSession.active?.roomCode)!
         req.minPlayers = 3
         req.maxPlayers = 16
         req.inviteMessage = "join werewolf game?"
@@ -52,7 +52,7 @@ class MatchmakingViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.playersJoinedTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.roomCodeDisplay.text = "\(GameSession.active!.roomCode)"
+        //self.roomCodeDisplay.text = "\(GameSession.active!.roomCode)"
 
     }
     

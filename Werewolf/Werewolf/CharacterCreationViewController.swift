@@ -28,7 +28,8 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let role = "testrole"
         self.villageList.append(name)
         sendText(name + "," + role)
-        //GameSession.active?.myCharacter = PlayerCharacter(name: name, age: age, gender: gender, occupation: occupation, role: role)
+        let _ = GameSession()
+        GameSession.active?.myCharacter = PlayerCharacter(name: name, age: age, gender: gender, occupation: occupation, role: role)
 
     }
     @IBAction func doManualCharacterCreation(_ sender: Any) {

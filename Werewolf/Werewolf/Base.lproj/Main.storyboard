@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -278,8 +278,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Nw4-35-WdE" id="lyB-8p-hWS"/>
-                                    <outlet property="delegate" destination="Nw4-35-WdE" id="l78-Al-SFo"/>
+                                    <outlet property="dataSource" destination="JmR-uq-KwG" id="zMi-4T-TPZ"/>
+                                    <outlet property="delegate" destination="JmR-uq-KwG" id="ctm-s6-THo"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ut6-Lc-QoH">
@@ -299,7 +299,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1GH-0r-gh1"/>
                     <connections>
-                        <outlet property="villageList" destination="Ime-jB-j0X" id="1bM-CO-ZbI"/>
+                        <outlet property="villageListView" destination="Ime-jB-j0X" id="cR1-EN-uuX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-F9-ZPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -930,7 +930,7 @@
                                     <color key="titleShadowColor" red="0.92650749880000005" green="1" blue="0.9419123881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="startGame:" destination="PZY-dd-s6C" eventType="touchUpInside" id="flQ-tb-AFf"/>
+                                    <segue destination="6Hn-6l-xiL" kind="show" id="06A-54-h2S"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s4s-xB-aBM">
@@ -948,14 +948,17 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="OLw-nu-cFK" id="I1f-wB-go6"/>
-                                    <outlet property="delegate" destination="OLw-nu-cFK" id="y5K-bK-sEN"/>
+                                    <outlet property="dataSource" destination="PZY-dd-s6C" id="3Aa-SR-bTl"/>
+                                    <outlet property="delegate" destination="PZY-dd-s6C" id="3tG-MQ-fIO"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.41104679399999999" green="0.41104679399999999" blue="0.41104679399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Y0x-KT-eJH"/>
                     </view>
+                    <connections>
+                        <outlet property="villageListView" destination="s4s-xB-aBM" id="IDs-Xj-wfi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yr2-Au-7rU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -971,6 +974,7 @@
         <segue reference="nEi-Ee-57e"/>
         <segue reference="eIh-9D-PPB"/>
         <segue reference="kEc-gC-crd"/>
+        <segue reference="06A-54-h2S"/>
         <segue reference="ReF-HA-5DL"/>
         <segue reference="BSC-Md-pj2"/>
     </inferredMetricsTieBreakers>

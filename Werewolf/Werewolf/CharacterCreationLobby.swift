@@ -23,6 +23,9 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        GameSession.active?.villageList = self.villageList
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,7 +39,7 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 //villageList.count
+        return villageList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

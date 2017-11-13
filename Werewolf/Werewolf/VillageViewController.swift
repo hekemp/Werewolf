@@ -15,10 +15,15 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var villageListView: UITableView!
     
-    var villageList = [String]()
+    var villageList : [String] = []
     
     var mcSession: MCSession!
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let villageList = GameSession.active?.villageList{
+            self.villageList = villageList
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
