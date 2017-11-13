@@ -12,8 +12,7 @@ import MultipeerConnectivity
 
 
 class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDelegate, MCBrowserViewControllerDelegate {
-    
-    @IBOutlet weak var roomCode: UITextField!
+
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
@@ -24,7 +23,6 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.roomCode.delegate = self
         
         peerID = MCPeerID(displayName: UIDevice.current.name)
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .optional)

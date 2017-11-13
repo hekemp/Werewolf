@@ -21,7 +21,7 @@ class NightSummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
+        _ = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
         
         // Do any additional setup after loading the view, typically from a nib.
     }

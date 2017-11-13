@@ -22,13 +22,6 @@
                                 <rect key="frame" x="16" y="20" width="343" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Room Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VOH-3Y-YhK">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQm-7Y-wQJ">
                                 <rect key="frame" x="114" y="356" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -57,51 +50,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="roomCode" destination="VOH-3Y-YhK" id="DOx-Nz-ERd"/>
                         <segue destination="Vph-o6-X1j" kind="show" identifier="moveToCharacterCreation" id="DeD-J7-HGR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1241" y="33"/>
-        </scene>
-        <!--Room Code View Controller-->
-        <scene sceneID="epi-HI-XwX">
-            <objects>
-                <viewController id="rBJ-so-REu" customClass="RoomCodeViewController" customModule="Werewolf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9Ra-dw-TzX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder for room code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-UJ-pmp">
-                                <rect key="frame" x="16" y="323" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZo-zf-UZD">
-                                <rect key="frame" x="135" y="352" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.64971259719999996" green="0.64971259719999996" blue="0.64971259719999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Start Game">
-                                    <color key="titleColor" red="0.94560514419999997" green="0.93479276109999998" blue="0.95820514899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YuI-h6-JEk" kind="show" id="F24-eC-DVT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.41104679399999999" green="0.41104679399999999" blue="0.41104679399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="UEz-aw-as6"/>
-                    </view>
-                    <connections>
-                        <outlet property="roomCodeLabel" destination="VAq-UJ-pmp" id="L4S-kE-qQv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ezZ-Un-kHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-556" y="716"/>
         </scene>
         <!--CharacterCreationViewController-->
         <scene sceneID="dbp-67-ynn">
@@ -967,7 +921,6 @@
         <segue reference="eIh-9D-PPB"/>
         <segue reference="kEc-gC-crd"/>
         <segue reference="gGa-PV-oUk"/>
-        <segue reference="F24-eC-DVT"/>
         <segue reference="BSC-Md-pj2"/>
     </inferredMetricsTieBreakers>
 </document>

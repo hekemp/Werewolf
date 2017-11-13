@@ -20,7 +20,6 @@
 		CC895D5A1F9F01630090D495 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D591F9F01620090D495 /* JoinGameViewController.swift */; };
 		CC895D5C1FA0F4990090D495 /* PlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */; };
 		CC895D641FA0FC1D0090D495 /* CharacterCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */; };
-		CCA525DA1F9E81C7007118B9 /* RoomCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525D91F9E81C7007118B9 /* RoomCodeViewController.swift */; };
 		CCA525DE1F9E82E3007118B9 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DD1F9E82E3007118B9 /* GameSession.swift */; };
 		CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */; };
 		CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD79AE1FA1022800773964 /* CharacterViewController.swift */; };
@@ -73,7 +72,6 @@
 		CC895D591F9F01620090D495 /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacter.swift; sourceTree = "<group>"; };
 		CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationViewController.swift; sourceTree = "<group>"; };
-		CCA525D91F9E81C7007118B9 /* RoomCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCodeViewController.swift; sourceTree = "<group>"; };
 		CCA525DD1F9E82E3007118B9 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleRulesReviewViewController.swift; sourceTree = "<group>"; };
 		CCDD79AE1FA1022800773964 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				CC3CEA0B1F9E44FC00AED6C4 /* Assets.xcassets */,
 				CC3CEA0D1F9E44FC00AED6C4 /* LaunchScreen.storyboard */,
 				CC3CEA101F9E44FC00AED6C4 /* Info.plist */,
-				CCA525D91F9E81C7007118B9 /* RoomCodeViewController.swift */,
 				CCA525DD1F9E82E3007118B9 /* GameSession.swift */,
 				CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */,
 				CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */,
@@ -338,7 +335,6 @@
 				CCA525DE1F9E82E3007118B9 /* GameSession.swift in Sources */,
 				CC46A8341FAB9F7D00487200 /* ExecuteViewController.swift in Sources */,
 				CC895D5A1F9F01630090D495 /* JoinGameViewController.swift in Sources */,
-				CCA525DA1F9E81C7007118B9 /* RoomCodeViewController.swift in Sources */,
 				DB679DBE1FB9E53600524C9D /* SeerViewController.swift in Sources */,
 				DB679DC41FB9E5E200524C9D /* PotionViewController.swift in Sources */,
 			);

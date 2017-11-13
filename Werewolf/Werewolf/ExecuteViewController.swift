@@ -19,7 +19,7 @@ class ExecuteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
+        let timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
     }
     
     @objc func timeToMoveOn(){
