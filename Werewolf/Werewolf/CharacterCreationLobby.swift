@@ -9,20 +9,39 @@
 import Foundation
 import MultipeerConnectivity
 
-class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableViewDataSource, MCSessionDelegate {
     
     @IBOutlet weak var villageListView: UITableView!
     
-    var villageList = [String]()
+    var villageList = [[String]]()
     
     var mcSession: MCSession!
+    
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(villageList)
+        mcSession.delegate = self
+        
+        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(CharacterCreationLobby.updateStatus), userInfo: nil, repeats: true)
+
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    @objc func updateStatus() {
+        print(mcSession.connectedPeers.count)
+        if mcSession.connectedPeers.count + 1 == villageList.count {
+            performSegueToVillage()
+        }
+    }
+    
+    func performSegueToVillage() {
+        performSegue(withIdentifier: "moveToVillage", sender: self)
+        
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         GameSession.active?.villageList = self.villageList
     }
@@ -45,7 +64,7 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-        cell.textLabel!.text = villageList[cellNum]
+        cell.textLabel!.text = villageList[cellNum][0]
         return cell
     }
     
@@ -127,15 +146,21 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
     
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        let textData = data.base64EncodedString()
-        print("Got Data" + textData)
         
-        if !textData.isEmpty {
-            DispatchQueue.main.async { [unowned self] in
-                print(textData)
-                self.villageList.append(textData)
-                
+        
+        if data != nil {
+            do {
+                let actualString = String(data: data, encoding: String.Encoding.utf8)
+                print(actualString)
+                DispatchQueue.main.async { [unowned self] in
+                    let characterArray = actualString!.components(separatedBy: ",")
+                    
+                    let name    = characterArray[0]
+                    let role = characterArray[1]
+                    self.villageList.append([name, role])
+                }
             }
+            
         }
     }
     

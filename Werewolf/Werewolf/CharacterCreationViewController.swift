@@ -16,7 +16,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     @IBOutlet weak var genderField: UITextField?
     @IBOutlet weak var occupationField: UITextField?
     
-    var villageList = [String]()
+    var villageList = [[String]]()
     
     var mcSession: MCSession!
     
@@ -26,7 +26,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let gender = "randomGender"
         let occupation = "randomOccupation"
         let role = "testrole"
-        self.villageList.append(name)
+        self.villageList.append([name,role])
         sendText(name + "," + role)
         let _ = GameSession()
         GameSession.active?.myCharacter = PlayerCharacter(name: name, age: age, gender: gender, occupation: occupation, role: role)
@@ -38,13 +38,15 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let gender = genderField?.text
         let occupation = occupationField?.text
         let role = "testrole"
-        self.villageList.append(name!)
+        self.villageList.append([name!, role])
         sendText(name! + "," + role)
-        //GameSession.active?.myCharacter = PlayerCharacter(name: name!, age: age!, gender: gender!, occupation: occupation!, role: role)
+        let _ = GameSession()
+        GameSession.active?.myCharacter = PlayerCharacter(name: name!, age: age!, gender: gender!, occupation: occupation!, role: role)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -122,16 +124,22 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        let textData = data.base64EncodedString()
-        print("Got Data" + textData)
         
-        if !textData.isEmpty {
-            DispatchQueue.main.async { [unowned self] in
-                print(textData)
-                self.villageList.append(textData)
-                
+        
+        if data != nil {
+            do {
+                let actualString = String(data: data, encoding: String.Encoding.utf8)
+                print(actualString)
+                DispatchQueue.main.async { [unowned self] in
+                    let characterArray = actualString!.components(separatedBy: ",")
+                    
+                    let name    = characterArray[0]
+                    let role = characterArray[1]
+                self.villageList.append([name, role])
             }
         }
+
+    }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

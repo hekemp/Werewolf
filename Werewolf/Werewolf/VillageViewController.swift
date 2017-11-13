@@ -15,7 +15,7 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var villageListView: UITableView!
     
-    var villageList : [String] = []
+    var villageList : [[String]] = []
     
     var mcSession: MCSession!
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +48,7 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellNum:Int = indexPath.row
     let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-    cell.textLabel!.text = villageList[cellNum]
+    cell.textLabel!.text = villageList[cellNum][0]
     return cell
     }
     

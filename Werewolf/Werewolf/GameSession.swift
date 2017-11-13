@@ -12,7 +12,7 @@ import GameKit
 class GameSession{
     static var active : GameSession?
     var activeRoles = ["Villager","Doctor","Werewolf","Seer", "Witch"]
-    var villageList : [String]?
+    var villageList : [[String]]?
     var myCharacter: PlayerCharacter?
     var match: GKMatch?
     init(){

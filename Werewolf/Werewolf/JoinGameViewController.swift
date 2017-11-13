@@ -108,7 +108,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDe
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         let textData = data.base64EncodedString()
-        print("Got Data" + textData)
+        print("Got Data Origin: " + textData)
         
         if !textData.isEmpty {
             DispatchQueue.main.async { [unowned self] in
@@ -149,6 +149,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDe
     func performSegueToCharacterCreation() {
         performSegue(withIdentifier: "moveToCharacterCreation", sender: self)
         
+        
         //moveToCharacterCreation
     }
  
@@ -159,6 +160,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDe
             destVC.mcSession = mcSession
             
         }
+        
     }
     
     @objc func updateStatus() {
