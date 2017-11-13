@@ -16,16 +16,71 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var confirmButton: UIButton!
+    
     var mcSession: MCSession!
     
     var villageList = [[String]]()
     
     var resultList = [String]()
     
+    var voteList = [[String]]()
+    
+    var timer: Timer!
+    
+    var myRole : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(WerewolfViewController.updateStatus), userInfo: nil, repeats: true)
+        let character = GameSession.active?.myCharacter
+        myRole = character?.role
+    }
+    
+    @objc func updateStatus() {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
+            finalTally()
+        }
+    }
+    
+    func finalTally() {
+        timer.invalidate()
+        
+        var countingVotes = [Int]()
+        
+        for _ in villageList {
+            countingVotes.append(0)
+        }
+        
+        
+        for player in voteList {
+            if player[1] == "Doctor"{
+                
+                countingVotes[Int(player[0])!] += 1
+                
+            }
+        }
+        
+        if(countingVotes.max()! != 0)
+        
+        {var maxVotes = countingVotes.max()!
+        
+        
+        var maxVotesLocation = countingVotes.index(of: maxVotes)!
+        
+        
+            resultList.append(String(maxVotesLocation))}
+        
+        else {
+            resultList.append(String(-1))
+        }
+        
+        print(resultList)
+        
+        performSegue(withIdentifier: "toPotion", sender: self)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -104,6 +159,7 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         
         
+        
         if data != nil {
             do {
                 let actualString = String(data: data, encoding: String.Encoding.utf8)
@@ -113,7 +169,7 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
                     
                     let name    = characterArray[0]
                     let role = characterArray[1]
-                    self.villageList.append([name, role])
+                    self.voteList.append([name, role])
                 }
             }
             
@@ -144,6 +200,11 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
         cell.textLabel!.text = villageList[cellNum][0]
+        
+        if (cellNum == 0) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
+        
         return cell
     }
     
@@ -157,6 +218,14 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         return indexPath
     }
     
+    @IBAction func confirmButtonClicked(_ sender: Any) {
+        // vote for self
+        let voteIndex:Int = (tableView.indexPathForSelectedRow! as NSIndexPath).row
+        tableView.allowsSelection = false
+        self.voteList.append([String(voteIndex),myRole!])
+        sendText(String(voteIndex) + "," + myRole!)
+        confirmButton.isEnabled = false
+    }
     
 }
 

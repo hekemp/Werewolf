@@ -20,6 +20,8 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDe
     
     var timer: Timer!
     
+    var villageList = [[String]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -105,14 +107,19 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDe
     
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        let textData = data.base64EncodedString()
-        print("Got Data Origin: " + textData)
-        
-        if !textData.isEmpty {
-            DispatchQueue.main.async { [unowned self] in
-                print(textData)
-                
+        if data != nil {
+            do {
+                let actualString = String(data: data, encoding: String.Encoding.utf8)
+                print(actualString)
+                DispatchQueue.main.async { [unowned self] in
+                    let characterArray = actualString!.components(separatedBy: ",")
+                    
+                    let name    = characterArray[0]
+                    let role = characterArray[1]
+                    self.villageList.append([name, role])
+                }
             }
+            
         }
     }
     
@@ -156,6 +163,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDe
         let destVC: LobbyViewController = segue.destination as! LobbyViewController
         if segue.identifier == "moveToCharacterCreation" {
             destVC.mcSession = mcSession
+            destVC.villageList = self.villageList
             
         }
         
