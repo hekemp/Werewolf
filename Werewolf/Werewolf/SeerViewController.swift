@@ -56,10 +56,6 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         
         let selectedCell = self.tableView.cellForRow(at: indexLocation)
         
-        self.tableView.reloadRows(at: [indexLocation], with: UITableViewRowAnimation.fade)
-        
-        
-
         
         if myRole == "Seer" {
             let bgColorView = UIView()
@@ -70,6 +66,8 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
                 bgColorView.backgroundColor = UIColor.green
             }
             
+            bgColorView.isOpaque = true
+            bgColorView.alpha = 0.5
             selectedCell!.backgroundView = bgColorView
             selectedCell!.selectedBackgroundView = bgColorView
             
@@ -77,6 +75,8 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         else {
             let bgColorView = UIView()
             bgColorView.backgroundColor = UIColor.green
+            bgColorView.isOpaque = true
+            bgColorView.alpha = 0.5
             selectedCell!.backgroundView = bgColorView
             selectedCell!.selectedBackgroundView = bgColorView
             
