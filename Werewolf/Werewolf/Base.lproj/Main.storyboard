@@ -504,7 +504,7 @@
                                     <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Iry-3m-jZW" kind="show" action="showDetailViewController:sender:" id="gxk-AE-LXz"/>
+                                    <action selector="confirmSelected:" destination="VnG-dp-JPH" eventType="touchUpInside" id="7yt-Gn-qry"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seer, Reveal:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKo-qq-hxi">
@@ -519,6 +519,11 @@
                         <viewLayoutGuide key="safeArea" id="6cQ-po-86w"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="NT7-oo-odx"/>
+                    <connections>
+                        <outlet property="confirmButton" destination="oS5-nb-24c" id="6hD-OG-KFJ"/>
+                        <outlet property="tableView" destination="tJ4-q4-qWj" id="yUU-ze-G4i"/>
+                        <segue destination="Iry-3m-jZW" kind="show" identifier="toWerewolf" id="KZg-ff-pk2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPT-Zo-Gfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -574,6 +579,9 @@
                         <viewLayoutGuide key="safeArea" id="jNa-mf-7aK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="jDy-48-PGv"/>
+                    <connections>
+                        <outlet property="tableView" destination="ptH-uv-ypn" id="Tnz-Hm-5RJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wp9-6t-xXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -629,6 +637,9 @@
                         <viewLayoutGuide key="safeArea" id="BUC-Zt-lxd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="7zg-Lc-9j8"/>
+                    <connections>
+                        <outlet property="tableView" destination="8cf-bG-Bgr" id="V3k-UI-qaV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dsm-l5-iqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -695,6 +706,9 @@
                         <viewLayoutGuide key="safeArea" id="in8-Dq-URF"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="DZN-Yc-dcf"/>
+                    <connections>
+                        <outlet property="tableView" destination="W91-uI-5QA" id="V0W-Zg-IoD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqa-I3-8cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -761,6 +775,9 @@
                         <viewLayoutGuide key="safeArea" id="ccW-Rx-qHE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="2Kw-cj-k1g"/>
+                    <connections>
+                        <outlet property="tableView" destination="Yxf-6E-GOU" id="nI6-n2-zoS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcs-zU-gdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

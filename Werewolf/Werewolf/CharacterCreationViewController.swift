@@ -25,7 +25,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let age = "randomAge"
         let gender = "randomGender"
         let occupation = "randomOccupation"
-        let role = "testrole"
+        let role = "Seer"
         self.villageList.append([name,role])
         sendText(name + "," + role)
         let _ = GameSession()
@@ -37,7 +37,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let age = ageField?.text
         let gender = genderField?.text
         let occupation = occupationField?.text
-        let role = "testrole"
+        let role = "Werewolf"
         self.villageList.append([name!, role])
         sendText(name! + "," + role)
         let _ = GameSession()
@@ -143,7 +143,6 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("preparing for segue: \(String(describing: segue.identifier))")
         let destVC: CharacterCreationLobby = segue.destination as! CharacterCreationLobby
             destVC.mcSession = mcSession
             destVC.villageList = self.villageList

@@ -13,14 +13,87 @@ import MultipeerConnectivity
 
 class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var confirmButton: UIButton!
+    
     var mcSession: MCSession!
     
     var villageList = [[String]]()
     
+    var voteList = [[String]]()
+    
+    var resultList = [String]()
+    
+    var myRole : String?
+    
+    var myVote : Int!
+    
+    var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mcSession.delegate = self
+        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(SeerViewController.updateStatus), userInfo: nil, repeats: true)
+        let character = GameSession.active?.myCharacter
+        myRole = character?.role
+
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @objc func updateStatus() {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
+            finalTally()
+        }
+    }
+    
+    func finalTally() {
+        timer.invalidate()
+        
+        let indexLocation = IndexPath(row: myVote, section: 0)
+        
+        let selectedCell = self.tableView.cellForRow(at: indexLocation)
+        
+        self.tableView.reloadRows(at: [indexLocation], with: UITableViewRowAnimation.fade)
+        
+        
+
+        
+        if myRole == "Seer" {
+            let bgColorView = UIView()
+            if villageList[myVote][1] == "Werewolf"{
+                bgColorView.backgroundColor = UIColor.red
+            }
+            else{
+                bgColorView.backgroundColor = UIColor.green
+            }
+            
+            selectedCell!.backgroundView = bgColorView
+            selectedCell!.selectedBackgroundView = bgColorView
+            
+        }
+        else {
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.green
+            selectedCell!.backgroundView = bgColorView
+            selectedCell!.selectedBackgroundView = bgColorView
+            
+        }
+        
+      
+        
+        
+        
+        
+        timer = Timer.scheduledTimer(timeInterval:5.0, target:self, selector:#selector(SeerViewController.performSegueToWerewolf), userInfo: nil, repeats: false)
+    }
+    
+    @objc func performSegueToWerewolf() {
+        
+        performSegue(withIdentifier: "toWerewolf", sender: self)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -106,9 +179,9 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
                 DispatchQueue.main.async { [unowned self] in
                     let characterArray = actualString!.components(separatedBy: ",")
                     
-                    let name    = characterArray[0]
+                    let vote    = characterArray[0]
                     let role = characterArray[1]
-                    self.villageList.append([name, role])
+                    self.voteList.append([vote, role])
                 }
             }
             
@@ -116,10 +189,10 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("preparing for segue: \(String(describing: segue.identifier))")
         let destVC: WerewolfViewController = segue.destination as! WerewolfViewController
         destVC.mcSession = mcSession
         destVC.villageList = self.villageList
+        destVC.resultList = self.resultList
         
         
     }
@@ -138,6 +211,12 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
         cell.textLabel!.text = villageList[cellNum][0]
+        
+        if (cellNum == 0) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
+    
+        
         return cell
     }
     
@@ -151,6 +230,20 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         return indexPath
     }
     
+    
+    @IBAction func confirmSelected(_ sender: Any) {
+        // vote for self
+        let voteIndex:Int = (tableView.indexPathForSelectedRow! as NSIndexPath).row
+        myVote = voteIndex
+        let vote:String = villageList[voteIndex][0]
+        tableView.allowsSelection = false
+        self.voteList.append([vote,myRole!])
+        sendText(vote + "," + myRole!)
+        confirmButton.isEnabled = false
+    }
+    
+    
+    //toWerewolf
     
 }
 

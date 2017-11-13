@@ -13,9 +13,14 @@ import MultipeerConnectivity
 
 class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var mcSession: MCSession!
     
     var villageList = [[String]]()
+    
+    var resultList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +125,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         let destVC: PoisonViewController = segue.destination as! PoisonViewController
         destVC.mcSession = mcSession
         destVC.villageList = self.villageList
+        destVC.resultList = self.resultList
         
         
     }

@@ -12,12 +12,14 @@ import MultipeerConnectivity
 
 class NightSummaryViewController: UIViewController {
     
-    var humansAlive = 4
+    var humansAlive = 0
     var werewolvesAlive = 0
     
     var mcSession: MCSession!
     
     var villageList = [[String]]()
+    
+    var resultList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,22 @@ class NightSummaryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func checkStatus(){
+        for player in villageList {
+            if player[1] == "Werewolf"{
+                werewolvesAlive = werewolvesAlive + 1
+            }
+            else{
+                humansAlive = humansAlive + 1
+            }
+        }
+        
+    }
+    
     @objc func timeToMoveOn() {
+        
+        checkStatus()
+        
         if(humansAlive < werewolvesAlive){
             self.performSegue(withIdentifier: "goToVillagerGameOver", sender: self)
         }

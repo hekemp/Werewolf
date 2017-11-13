@@ -13,9 +13,13 @@ import MultipeerConnectivity
 
 class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var mcSession: MCSession!
     
     var villageList = [[String]]()
+    
+    var resultList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +124,7 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
         let destVC: DoctorViewController = segue.destination as! DoctorViewController
         destVC.mcSession = mcSession
         destVC.villageList = self.villageList
+        destVC.resultList = self.resultList
         
         
     }
