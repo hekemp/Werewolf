@@ -10,7 +10,27 @@ import Foundation
 import UIKit
 import MultipeerConnectivity
 
-class VoteViewController: UIViewController, MCSessionDelegate {
+class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return villageList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellNum:Int = indexPath.row
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
+        cell.textLabel!.text = villageList[cellNum][0]
+        if (cellNum == 0) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
+        
+        
+        return cell
+    }
     
     var villageList : [[String]] = []
     

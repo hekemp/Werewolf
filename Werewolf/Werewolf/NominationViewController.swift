@@ -10,12 +10,23 @@ import Foundation
 import UIKit
 import MultipeerConnectivity
 
-class NominationViewController: UIViewController, MCSessionDelegate {
+class NominationViewController: UIViewController, MCSessionDelegate, UITableViewDelegate, UITableViewDataSource {
+    
     
     var villageList : [[String]] = []
     
     var mcSession: MCSession!
 
+    @IBOutlet weak var NominationTableView: UITableView!
+    
+    var nominateList = [[String]]()
+    
+    var resultList = [String]()
+    
+    var myVote : Int!
+    
+    @IBOutlet weak var nominateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mcSession.delegate = self
@@ -28,7 +39,45 @@ class NominationViewController: UIViewController, MCSessionDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let villageList = GameSession.active?.villageList{
+            self.villageList = villageList
+        }
+        if let mcSession = GameSession.active?.mySession{
+            self.mcSession = mcSession
+        }
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return villageList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellNum:Int = indexPath.row
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
+        cell.textLabel!.text = villageList[cellNum][0]
+        if (cellNum == 0) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
+        
+        
+        return cell
+    }
+    
+    // two optional UITableViewDelegate functions
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("did select row \(indexPath.row)")
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        print("will select row \(indexPath.row)")
+        return indexPath
+    }
+    
     
     // Do not need to edit
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
