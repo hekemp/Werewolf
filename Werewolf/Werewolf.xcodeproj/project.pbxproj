@@ -20,6 +20,10 @@
 		CC895D5A1F9F01630090D495 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D591F9F01620090D495 /* JoinGameViewController.swift */; };
 		CC895D5C1FA0F4990090D495 /* PlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */; };
 		CC895D641FA0FC1D0090D495 /* CharacterCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */; };
+		CC9A09701FBC9E210072C5CE /* CSV_Database_of_First_Names.csv in Resources */ = {isa = PBXBuildFile; fileRef = CC9A096F1FBC9E210072C5CE /* CSV_Database_of_First_Names.csv */; };
+		CCA0D7FF1FBB72DF00C6E3E0 /* RandomGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0D7FE1FBB72DF00C6E3E0 /* RandomGenerators.swift */; };
+		CCA0D8011FBB78F700C6E3E0 /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0D8001FBB78F700C6E3E0 /* StreamReader.swift */; };
+		CCA0D8031FBBA04000C6E3E0 /* town-name-corpus.csv in Resources */ = {isa = PBXBuildFile; fileRef = CCA0D8021FBBA04000C6E3E0 /* town-name-corpus.csv */; };
 		CCA525DE1F9E82E3007118B9 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DD1F9E82E3007118B9 /* GameSession.swift */; };
 		CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */; };
 		CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD79AE1FA1022800773964 /* CharacterViewController.swift */; };
@@ -72,6 +76,10 @@
 		CC895D591F9F01620090D495 /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		CC895D5B1FA0F4990090D495 /* PlayerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacter.swift; sourceTree = "<group>"; };
 		CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationViewController.swift; sourceTree = "<group>"; };
+		CC9A096F1FBC9E210072C5CE /* CSV_Database_of_First_Names.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CSV_Database_of_First_Names.csv; sourceTree = "<group>"; };
+		CCA0D7FE1FBB72DF00C6E3E0 /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
+		CCA0D8001FBB78F700C6E3E0 /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
+		CCA0D8021FBBA04000C6E3E0 /* town-name-corpus.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "town-name-corpus.csv"; sourceTree = "<group>"; };
 		CCA525DD1F9E82E3007118B9 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		CCA525DF1F9E8AE6007118B9 /* RoleRulesReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleRulesReviewViewController.swift; sourceTree = "<group>"; };
 		CCDD79AE1FA1022800773964 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +143,7 @@
 		CC3CEA031F9E44FC00AED6C4 /* Werewolf */ = {
 			isa = PBXGroup;
 			children = (
+				CCA0D8001FBB78F700C6E3E0 /* StreamReader.swift */,
 				CC3CEA081F9E44FC00AED6C4 /* Main.storyboard */,
 				CC895D591F9F01620090D495 /* JoinGameViewController.swift */,
 				DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */,
@@ -153,6 +162,7 @@
 				DB679DC51FB9E62C00524C9D /* PoisonViewController.swift */,
 				DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */,
 				CC3CEA0B1F9E44FC00AED6C4 /* Assets.xcassets */,
+				CCA0D8021FBBA04000C6E3E0 /* town-name-corpus.csv */,
 				CC3CEA0D1F9E44FC00AED6C4 /* LaunchScreen.storyboard */,
 				CC3CEA101F9E44FC00AED6C4 /* Info.plist */,
 				CCA525DD1F9E82E3007118B9 /* GameSession.swift */,
@@ -160,6 +170,8 @@
 				CCDD79B21FB6843000773964 /* MatchmakingViewController.swift */,
 				CC3CEA041F9E44FC00AED6C4 /* AppDelegate.swift */,
 				CC3CEA061F9E44FC00AED6C4 /* ViewController.swift */,
+				CCA0D7FE1FBB72DF00C6E3E0 /* RandomGenerators.swift */,
+				CC9A096F1FBC9E210072C5CE /* CSV_Database_of_First_Names.csv */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -290,8 +302,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC3CEA0F1F9E44FC00AED6C4 /* LaunchScreen.storyboard in Resources */,
+				CCA0D8031FBBA04000C6E3E0 /* town-name-corpus.csv in Resources */,
 				CC3CEA0C1F9E44FC00AED6C4 /* Assets.xcassets in Resources */,
 				CC3CEA0A1F9E44FC00AED6C4 /* Main.storyboard in Resources */,
+				CC9A09701FBC9E210072C5CE /* CSV_Database_of_First_Names.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +334,8 @@
 				CCDD79B31FB6843100773964 /* MatchmakingViewController.swift in Sources */,
 				CCDD79AF1FA1022800773964 /* CharacterViewController.swift in Sources */,
 				CC895D5C1FA0F4990090D495 /* PlayerCharacter.swift in Sources */,
+				CCA0D8011FBB78F700C6E3E0 /* StreamReader.swift in Sources */,
+				CCA0D7FF1FBB72DF00C6E3E0 /* RandomGenerators.swift in Sources */,
 				CC895D641FA0FC1D0090D495 /* CharacterCreationViewController.swift in Sources */,
 				DB679DC01FB9E5A900524C9D /* WerewolfViewController.swift in Sources */,
 				CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */,

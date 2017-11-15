@@ -15,6 +15,7 @@ class GameSession{
     static var active : GameSession?
     var activeRoles = ["Villager","Doctor","Werewolf","Seer", "Witch"]
     var villageList : [[String]]?
+    var villageName : String?
     var myCharacter: PlayerCharacter?
     var mySession: MCSession?
     var match: GKMatch?

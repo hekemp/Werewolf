@@ -21,10 +21,10 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     var mcSession: MCSession!
     
     @IBAction func doRandomCharacterCreation(_ sender: Any) {
-        let name = "randomName"
-        let age = "randomAge"
-        let gender = "randomGender"
-        let occupation = "randomOccupation"
+        let name = RandomGenerators.gen.getRandomName()
+        let age = RandomGenerators.gen.getRandomAge()
+        let gender = RandomGenerators.gen.getRandomGender()
+        let occupation = RandomGenerators.gen.getRandomOccupation()
         let role = "Doctor"
         self.villageList.append([name,role])
         sendText(name + "," + role)

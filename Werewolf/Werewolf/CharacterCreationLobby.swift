@@ -19,6 +19,8 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
     
     var timer: Timer!
     
+    var randomAge : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(villageList)
@@ -41,7 +43,9 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
         performSegue(withIdentifier: "moveToVillage", sender: self)
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        randomAge = RandomGenerators.gen.getRandomAge() //static constructors are lazy, and making the generaterator takes a while, so force it to start sooner
+    }
     override func viewWillDisappear(_ animated: Bool) {
         GameSession.active?.villageList = self.villageList
         GameSession.active?.mySession = self.mcSession

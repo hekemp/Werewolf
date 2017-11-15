@@ -15,6 +15,7 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var villageListView: UITableView!
     
+    @IBOutlet weak var villageNameDisplay: UILabel!
     var villageList : [[String]] = []
     
     var mcSession: MCSession!
@@ -27,6 +28,10 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let mcSession = GameSession.active?.mySession{
             self.mcSession = mcSession
         }
+        if(GameSession.active?.villageName == nil){
+            GameSession.active?.villageName = RandomGenerators.gen.getRandomVillageName()
+        }
+        villageNameDisplay.text = GameSession.active?.villageName
     }
     override func viewDidLoad() {
         super.viewDidLoad()
