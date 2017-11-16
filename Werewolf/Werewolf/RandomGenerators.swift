@@ -57,7 +57,6 @@ class RandomGenerators{
         while(true){
             let key = c1+c2
             let pdf = mkv[key]
-            print(pdf)
             var choice = Double(randomSrc.nextUniform())
             for (char, prob) in pdf!{
                 if(choice<prob){

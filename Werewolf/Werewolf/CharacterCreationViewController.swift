@@ -17,7 +17,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     @IBOutlet weak var occupationField: UITextField?
     
     var villageList = [[String]]()
-    
+    var villageName : String?
     var mcSession: MCSession!
     
     @IBAction func doRandomCharacterCreation(_ sender: Any) {
@@ -48,8 +48,18 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         super.viewDidLoad()
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        //always gen a village because the first time we have to load the random generator, which takes a while
+        self.villageName = RandomGenerators.gen.getRandomVillageName()
+        if(GameSession.active?.villageName==nil){
+            sendText(villageName!)
+        }
     }
-
+    override func viewWillDisappear(_ animated: Bool) {
+        if(GameSession.active?.villageName==nil){
+            //assign here to prevent race conditions with network
+            GameSession.active?.villageName=self.villageName
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -132,15 +142,21 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
                 print(actualString)
                 DispatchQueue.main.async { [unowned self] in
                     let characterArray = actualString!.components(separatedBy: ",")
-                    
-                    let name    = characterArray[0]
-                    let role = characterArray[1]
-                self.villageList.append([name, role])
+                    if(characterArray.count==2){
+                        let name    = characterArray[0]
+                        let role = characterArray[1]
+                        self.villageList.append([name, role])
+
+                    }
+                    else if(characterArray.count==1){
+                        self.villageName = characterArray[0]
+                    }
             }
         }
 
     }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC: CharacterCreationLobby = segue.destination as! CharacterCreationLobby
