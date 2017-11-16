@@ -19,18 +19,29 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
 
     @IBOutlet weak var NominationTableView: UITableView!
     
-    var nominateList = [[String]]()
+    var voteList = [[String]]()
+    
+    var tempVoteList = [[String]]()
     
     var resultList = [String]()
     
     var myVote : Int!
     
+    var myRole : String?
+    
+    var timer: Timer!
+    
     @IBOutlet weak var nominateButton: UIButton!
+    
+    @IBOutlet weak var abstainButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(NominationViewController.updateStatus), userInfo: nil, repeats: true)
+        let character = GameSession.active?.myCharacter
+        myRole = character?.role
     }
     
     override func didReceiveMemoryWarning() {
@@ -147,25 +158,96 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
     
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        let textData = data.base64EncodedString()
-        print("Got Data Origin: " + textData)
-        
-        if !textData.isEmpty {
-            DispatchQueue.main.async { [unowned self] in
-                print(textData)
-                
+        if data != nil {
+            do {
+                let actualString = String(data: data, encoding: String.Encoding.utf8)
+                print(actualString)
+                DispatchQueue.main.async { [unowned self] in
+                    let characterArray = actualString!.components(separatedBy: ",")
+                    
+                    let name    = characterArray[0]
+                    let role = characterArray[1]
+                    self.voteList.append([name, role])
+                }
             }
+            
         }
     }
+    
+    @objc func updateStatus() {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
+            finalTally()
+        }
+    }
+    
+    func finalTally() {
+        timer.invalidate()
+        var countingVotes = [Int]()
+        
+        for _ in villageList {
+            countingVotes.append(0)
+        }
+        
+        
+        
+        // don't have to cover if a werewolf doesn't exist/0 votes, because if there are  0 werewolves
+        // then the game ends before we get to this point
+        var maxVotes = countingVotes.max()!
+        
+        
+        var maxVotesLocation = countingVotes.index(of: maxVotes)!
+        
+        
+        resultList.append(String(maxVotesLocation))
+        
+        voteList.forEach { item in
+            
+            if(item[0] != "Abstain" ){
+                tempVoteList.append(item)
+            }
+        }
+        voteList = tempVoteList
+        performSegue(withIdentifier: "toVote", sender: self)
+        
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue: \(String(describing: segue.identifier))")
         let destVC: VoteViewController = segue.destination as! VoteViewController
             destVC.mcSession = mcSession
             destVC.villageList = self.villageList
+            print(villageList)
+            destVC.resultList = self.resultList
+            print(resultList)
+            destVC.voteList = self.voteList
+            print(voteList)
         
         
     }
     
+    @IBAction func nominateSelected(_ sender: Any) {
+        
+        let voteIndex:Int = (NominationTableView.indexPathForSelectedRow! as NSIndexPath).row
+        myVote = voteIndex
+        let vote:String = villageList[voteIndex][0]
+        print("vote is" + vote)
+        NominationTableView.allowsSelection = false
+        self.voteList.append([vote,myRole!])
+        sendText(vote + "," + myRole!)
+        nominateButton.isEnabled = false
+        abstainButton.isEnabled = false
+        
+    }
     
+    @IBAction func abstainButtonPressed(_ sender: Any) {
+        
+        let vote:String = "Abstain"
+        print("vote is" + vote)
+        NominationTableView.allowsSelection = false
+        self.voteList.append([vote,myRole!])
+        sendText(vote + "," + myRole!)
+        nominateButton.isEnabled = false
+        abstainButton.isEnabled  = false
+    }
 }

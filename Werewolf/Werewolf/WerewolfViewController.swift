@@ -76,7 +76,6 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
         performSegue(withIdentifier: "toDoctor", sender: self)
 
     }
-    
 
     
     override func didReceiveMemoryWarning() {
