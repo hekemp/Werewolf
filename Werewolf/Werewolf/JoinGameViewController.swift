@@ -31,7 +31,13 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate, MCSessionDe
         mcSession.delegate = self
         
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(JoinGameViewController.updateStatus), userInfo: nil, repeats: true)
+        let queue = OperationQueue()
         
+        queue.addOperation() {
+            // do something in the background
+            RandomGenerators.gen
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {

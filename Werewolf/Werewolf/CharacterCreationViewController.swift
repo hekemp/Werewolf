@@ -16,16 +16,32 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     @IBOutlet weak var genderField: UITextField?
     @IBOutlet weak var occupationField: UITextField?
     
+    var rank = 0
+    var initiative : Int?
+    var peersToGetInitiativeFrom : Int?
     var villageList = [[String]]()
     var villageName : String?
     var mcSession: MCSession!
+    var roles = ["Werewolf", "Doctor", "Seer", "Witch", "Villager"]
     
     @IBAction func doRandomCharacterCreation(_ sender: Any) {
         let name = RandomGenerators.gen.getRandomName()
         let age = RandomGenerators.gen.getRandomAge()
         let gender = RandomGenerators.gen.getRandomGender()
         let occupation = RandomGenerators.gen.getRandomOccupation()
-        let role = "Doctor"
+        rollForInitiative()
+        var role : String
+        if(rank<roles.count){
+            role = roles[rank]
+        }
+        else{
+            if(rank%5 == 0){
+                role = "Werewolf"
+            }
+            else{
+                role = "Villager"
+            }
+        }
         self.villageList.append([name,role])
         sendText(name + "," + role)
         let _ = GameSession()
@@ -37,12 +53,33 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let age = ageField?.text
         let gender = genderField?.text
         let occupation = occupationField?.text
-        let role = "Werewolf"
+        rollForInitiative()
+        var role : String
+        if(rank<roles.count){
+            role = roles[rank]
+        }
+        else{
+            if(rank%5 == 0){
+                role = "Werewolf"
+            }
+            else{
+                role = "Villager"
+            }
+        }
         self.villageList.append([name!, role])
-        sendText(name! + "," + role)
+        sendText("playerdata,"+name! + "," + role)
         let _ = GameSession()
         GameSession.active?.myCharacter = PlayerCharacter(name: name!, age: age!, gender: gender!, occupation: occupation!, role: role)
         
+    }
+    func rollForInitiative(){
+        //assign an increasing number to every user
+        peersToGetInitiativeFrom = mcSession.connectedPeers.count
+        initiative = Int(arc4random_uniform(UInt32.max))
+        sendText("initiative, \(initiative!)")
+        while(peersToGetInitiativeFrom! > 0){
+            sleep(10)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +88,11 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         //always gen a village because the first time we have to load the random generator, which takes a while
         self.villageName = RandomGenerators.gen.getRandomVillageName()
         if(GameSession.active?.villageName==nil){
-            sendText(villageName!)
+            sendText("villagename,\(villageName!)")
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
-        if(GameSession.active?.villageName==nil){
-            //assign here to prevent race conditions with network
-            GameSession.active?.villageName=self.villageName
-        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,7 +141,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     
     // This function should be CALLED when attempting to send the text
     func sendText(_ plainString: String) {
-        print("Sending Data")
+        print("Sending Data: \(plainString)")
         if mcSession.connectedPeers.count > 0 {
             print("Sending Data 2")
             
@@ -142,14 +176,22 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
                 print(actualString)
                 DispatchQueue.main.async { [unowned self] in
                     let characterArray = actualString!.components(separatedBy: ",")
-                    if(characterArray.count==2){
-                        let name    = characterArray[0]
+                    if(characterArray[0]=="initiative"){
+                        let otherInitiative = Int(characterArray[1])!
+                        if(self.initiative!>otherInitiative){
+                            self.rank += 1
+                        }
+                        self.peersToGetInitiativeFrom! -= 1
+                    }
+                    else if(characterArray[0]=="playerdata"){
+                        let name = characterArray[0]
                         let role = characterArray[1]
                         self.villageList.append([name, role])
-
                     }
-                    else if(characterArray.count==1){
-                        self.villageName = characterArray[0]
+                    else if(characterArray[0]=="villagename"){
+                        if(GameSession.active?.villageName==nil){
+                            GameSession.active?.villageName=characterArray[1]
+                        }
                     }
             }
         }
