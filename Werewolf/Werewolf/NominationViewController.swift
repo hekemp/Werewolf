@@ -207,13 +207,28 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
             }
         }
         voteList = tempVoteList
+        if (voteList.isEmpty){
+            
+            performSegue(withIdentifier: "noNominations", sender: self)
+            
+        }
+        else{
         performSegue(withIdentifier: "toVote", sender: self)
-        
+        }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue: \(String(describing: segue.identifier))")
+        
+        if(voteList.isEmpty){
+            
+            let destVC: ExecuteViewController = segue.destination as! ExecuteViewController
+            destVC.mcSession = mcSession
+            destVC.villageList = self.villageList
+            print(villageList)
+        }
+        else{
         let destVC: VoteViewController = segue.destination as! VoteViewController
             destVC.mcSession = mcSession
             destVC.villageList = self.villageList
@@ -222,7 +237,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
             print(resultList)
             destVC.voteList = self.voteList
             print(voteList)
-        
+        }
         
     }
     

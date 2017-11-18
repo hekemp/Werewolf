@@ -327,6 +327,7 @@
                         <outlet property="abstainButton" destination="Vgz-RA-tFQ" id="CbK-JP-s3r"/>
                         <outlet property="nominateButton" destination="DI7-4d-j6R" id="3QY-ci-tb4"/>
                         <segue destination="bP9-G8-qKC" kind="show" identifier="toVote" id="1y5-CT-Ecw"/>
+                        <segue destination="Kbm-WQ-AOw" kind="show" identifier="noNominations" id="Kvf-Wb-FK8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuu-q5-fNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,7 +420,7 @@
                                 <color key="textColor" red="0.1355329535" green="0.09844241796" blue="0.73516434590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Killed: Test Character" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-mu-3e2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No one Killed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-mu-3e2">
                                 <rect key="frame" x="16" y="258" width="343" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -431,7 +432,10 @@
                         <viewLayoutGuide key="safeArea" id="mlR-Rg-GXh"/>
                     </view>
                     <connections>
+                        <outlet property="killedLabel" destination="exZ-mu-3e2" id="EfM-vg-2bY"/>
                         <segue destination="VnG-dp-JPH" kind="modal" identifier="transToSeer" id="6yy-vz-27Y"/>
+                        <segue destination="Kri-Kh-zZR" kind="show" identifier="villagerGameOver" id="DP4-sF-neM"/>
+                        <segue destination="91l-Kb-vu8" kind="show" identifier="werewolfGameOver" id="5BB-J2-E8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0GP-Ro-1Pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1051,9 +1055,11 @@
         <image name="Werewolf Logo" width="293" height="275"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RR0-WP-1p2"/>
         <segue reference="3vU-cj-SJJ"/>
+        <segue reference="DP4-sF-neM"/>
+        <segue reference="5BB-J2-E8o"/>
         <segue reference="ijC-x1-EZp"/>
+        <segue reference="Kvf-Wb-FK8"/>
         <segue reference="dy9-Pw-md7"/>
         <segue reference="BSC-Md-pj2"/>
     </inferredMetricsTieBreakers>

@@ -23,13 +23,17 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     
     var tempVillageList = [[String]]()
     
-    var killedList = [[String]]()
+    var killedList = [String]()
+    
+    var tempKilledList = [String]()
     
     var resultList = [String]()
     
     var myVote : Int!
     
     var myRole : String?
+    
+    var killedVillager : String?
     
     var timer: Timer!
     
@@ -155,8 +159,8 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
                     let characterArray = actualString!.components(separatedBy: ",")
                     
                     let name    = characterArray[0]
-                    let role = characterArray[1]
-                    self.killedList.append([name, role])
+                    //let role = characterArray[1]
+                    self.killedList.append(name)
                 }
             }
             
@@ -177,24 +181,40 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
             countingVotes.append(0)
         }
         
-        
-        
-        // don't have to cover if a werewolf doesn't exist/0 votes, because if there are  0 werewolves
-        // then the game ends before we get to this point
         var maxVotes = countingVotes.max()!
-        
+        print("maxvotes")
+        print(maxVotes)
         
         var maxVotesLocation = countingVotes.index(of: maxVotes)!
-        
+
         
         resultList.append(String(maxVotesLocation))
         
-        // Create dictionary to map value to count
-        var counts = [String: String]()
+        killedList.forEach { item in
+            
+            if(item != "Abstain" ){
+                tempKilledList.append(item)
+            }
+            else{
+                killedVillager = "Abstain"
+            }
+        }
+        killedList = tempKilledList
         
-        // Count the values with using forEach
+        let countedSet = NSCountedSet(array: killedList)
+        let mostFrequent = countedSet.max { countedSet.count(for: $0) < countedSet.count(for: $1) }
         
+        villageList.forEach { item in
+            
+            if(String(describing: mostFrequent) != "Optional(" + item[0] + ")") {
+                tempVillageList.append(item)
+            }
+            else{
+                killedVillager = item[0]
+            }
+        }
         
+        villageList = tempVillageList
         
 
         performSegue(withIdentifier: "toResults", sender: self)
@@ -206,6 +226,9 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let destVC: ExecuteViewController = segue.destination as! ExecuteViewController
         destVC.mcSession = mcSession
         destVC.villageList = self.villageList
+        print(villageList)
+        destVC.killedVillager = self.killedVillager!
+        print(killedVillager)
         
         
     }
@@ -217,8 +240,8 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let vote:String = voteList[voteIndex][0]
         print("vote is" + vote)
         VoteTableView.allowsSelection = false
-        self.killedList.append([vote,myRole!])
-        sendText(vote + "," + myRole!)
+        self.killedList.append(vote)
+        sendText(vote)
         voteButton.isEnabled = false
         abstainButton.isEnabled = false
     }
@@ -228,8 +251,8 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let vote:String = "Abstain"
         print("vote is" + vote)
         VoteTableView.allowsSelection = false
-        self.killedList.append([vote,myRole!])
-        sendText(vote + "," + myRole!)
+        self.killedList.append(vote)
+        sendText(vote)
         voteButton.isEnabled = false
         abstainButton.isEnabled  = false
         
