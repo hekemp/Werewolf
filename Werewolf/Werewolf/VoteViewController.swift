@@ -12,18 +12,50 @@ import MultipeerConnectivity
 
 class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    
+    var villageList : [[String]] = []
+    
+    var countArray : [[String]] = []
+    
+    var mcSession: MCSession!
+    
+    var voteList = [[String]]()
+    
+    var tempVillageList = [[String]]()
+    
+    var killedList = [String]()
+    
+    var tempKilledList = [String]()
+    
+    var resultList = [String]()
+    
+    var myVote : Int!
+    
+    var myRole : String?
+    
+    var killedVillager : String?
+    
+    var timer: Timer!
+    
+    @IBOutlet weak var voteButton: UIButton!
+    
+    @IBOutlet weak var abstainButton: UIButton!
+    
+    @IBOutlet weak var VoteTableView: UITableView!
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return villageList.count
+        return voteList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-        cell.textLabel!.text = villageList[cellNum][0]
+        cell.textLabel!.text = voteList[cellNum][0]
         if (cellNum == 0) {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
@@ -32,14 +64,15 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         return cell
     }
     
-    var villageList : [[String]] = []
     
-    var mcSession: MCSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(NominationViewController.updateStatus), userInfo: nil, repeats: true)
+        let character = GameSession.active?.myCharacter
+        myRole = character?.role
     }
     
     override func didReceiveMemoryWarning() {
@@ -118,15 +151,74 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        let textData = data.base64EncodedString()
-        print("Got Data Origin: " + textData)
+        if data != nil {
+            do {
+                let actualString = String(data: data, encoding: String.Encoding.utf8)
+                print(actualString)
+                DispatchQueue.main.async { [unowned self] in
+                    let characterArray = actualString!.components(separatedBy: ",")
+                    
+                    let name    = characterArray[0]
+                    //let role = characterArray[1]
+                    self.killedList.append(name)
+                }
+            }
+            
+        }
+    }
+    
+    @objc func updateStatus() {
+        if mcSession.connectedPeers.count + 1 == killedList.count {
+            finalTally()
+        }
+    }
+    
+    func finalTally() {
+        timer.invalidate()
+        var countingVotes = [Int]()
         
-        if !textData.isEmpty {
-            DispatchQueue.main.async { [unowned self] in
-                print(textData)
-                
+        for _ in villageList {
+            countingVotes.append(0)
+        }
+        
+        var maxVotes = countingVotes.max()!
+        print("maxvotes")
+        print(maxVotes)
+        
+        var maxVotesLocation = countingVotes.index(of: maxVotes)!
+
+        
+        resultList.append(String(maxVotesLocation))
+        
+        killedList.forEach { item in
+            
+            if(item != "Abstain" ){
+                tempKilledList.append(item)
+            }
+            else{
+                killedVillager = "Abstain"
             }
         }
+        killedList = tempKilledList
+        
+        let countedSet = NSCountedSet(array: killedList)
+        let mostFrequent = countedSet.max { countedSet.count(for: $0) < countedSet.count(for: $1) }
+        
+        villageList.forEach { item in
+            
+            if(String(describing: mostFrequent) != "Optional(" + item[0] + ")") {
+                tempVillageList.append(item)
+            }
+            else{
+                killedVillager = item[0]
+            }
+        }
+        
+        villageList = tempVillageList
+        
+
+        performSegue(withIdentifier: "toResults", sender: self)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -134,7 +226,35 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let destVC: ExecuteViewController = segue.destination as! ExecuteViewController
         destVC.mcSession = mcSession
         destVC.villageList = self.villageList
+        print(villageList)
+        destVC.killedVillager = self.killedVillager!
+        print(killedVillager)
         
+        
+    }
+    
+    @IBAction func voteButtonPressed(_ sender: Any) {
+        
+        let voteIndex:Int = (VoteTableView.indexPathForSelectedRow! as NSIndexPath).row
+        myVote = voteIndex
+        let vote:String = voteList[voteIndex][0]
+        print("vote is" + vote)
+        VoteTableView.allowsSelection = false
+        self.killedList.append(vote)
+        sendText(vote)
+        voteButton.isEnabled = false
+        abstainButton.isEnabled = false
+    }
+    
+    @IBAction func abstainButtonPressed(_ sender: Any) {
+        
+        let vote:String = "Abstain"
+        print("vote is" + vote)
+        VoteTableView.allowsSelection = false
+        self.killedList.append(vote)
+        sendText(vote)
+        voteButton.isEnabled = false
+        abstainButton.isEnabled  = false
         
     }
     
