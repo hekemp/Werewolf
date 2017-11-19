@@ -74,9 +74,9 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     }
     func rollForInitiative(){
         //assign an increasing number to every user
-        peersToGetInitiativeFrom = mcSession.connectedPeers.count
         if(self.initiative == nil){
             self.initiative = Int(arc4random_uniform(UInt32.max))
+            peersToGetInitiativeFrom = mcSession.connectedPeers.count
         }
         sendText("initiative,\(initiative!)")
         while(peersToGetInitiativeFrom! > 0){
