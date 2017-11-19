@@ -29,7 +29,6 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let age = RandomGenerators.gen.getRandomAge()
         let gender = RandomGenerators.gen.getRandomGender()
         let occupation = RandomGenerators.gen.getRandomOccupation()
-        rollForInitiative()
         var role : String
         if(rank<roles.count){
             role = roles[rank]
@@ -53,7 +52,6 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let age = ageField?.text
         let gender = genderField?.text
         let occupation = occupationField?.text
-        rollForInitiative()
         var role : String
         if(rank<roles.count){
             role = roles[rank]
@@ -79,9 +77,6 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
             peersToGetInitiativeFrom = mcSession.connectedPeers.count
         }
         sendText("initiative,\(initiative!)")
-        while(peersToGetInitiativeFrom! > 0){
-            sleep(10)
-        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +87,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         if(GameSession.active?.villageName==nil){
             sendText("villagename,\(villageName!)")
         }
+        rollForInitiative()
     }
     override func viewWillDisappear(_ animated: Bool) {
         
