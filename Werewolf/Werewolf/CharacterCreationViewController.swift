@@ -182,6 +182,8 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
                         let otherInitiative = Int(characterArray[1])!
                         if(self.initiative == nil){
                             self.initiative = Int(arc4random_uniform(UInt32.max))
+                            self.peersToGetInitiativeFrom = self.mcSession.connectedPeers.count
+
                         }
                         if(self.initiative!>otherInitiative){
                             self.rank += 1
