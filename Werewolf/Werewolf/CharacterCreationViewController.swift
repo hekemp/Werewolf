@@ -42,7 +42,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
             }
         }
         self.villageList.append([name,role])
-        sendText(name + "," + role)
+        sendText("playerdata,"+name + "," + role)
         let _ = GameSession()
         GameSession.active?.myCharacter = PlayerCharacter(name: name, age: age, gender: gender, occupation: occupation, role: role)
 
@@ -187,8 +187,8 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
                         self.peersToGetInitiativeFrom! -= 1
                     }
                     else if(characterArray[0]=="playerdata"){
-                        let name = characterArray[0]
-                        let role = characterArray[1]
+                        let name = characterArray[1]
+                        let role = characterArray[2]
                         self.villageList.append([name, role])
                     }
                     else if(characterArray[0]=="villagename"){
