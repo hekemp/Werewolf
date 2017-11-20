@@ -23,7 +23,7 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
     
     var resultList = [String]()
     
-    var voteList = GameSession.active?.werewolfVoteList
+    var voteList = GameSession.active.werewolfVoteList
     
     var timer: Timer!
     
@@ -34,12 +34,12 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(WerewolfViewController.updateStatus), userInfo: nil, repeats: true)
-        let character = GameSession.active?.myCharacter
+        let character = GameSession.active.myCharacter
         myRole = character?.role
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList?.count {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
             finalTally()
         }
     }
@@ -54,7 +54,7 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
         }
         
         
-        for player in voteList! {
+        for player in voteList {
             if player[1] == "Werewolf"{
                 
                 countingVotes[Int(player[0])!] += 1
@@ -177,7 +177,7 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
         // vote for self
         let voteIndex:Int = (tableView.indexPathForSelectedRow! as NSIndexPath).row
         tableView.allowsSelection = false
-        self.voteList!.append([String(voteIndex),myRole!])
+        self.voteList.append([String(voteIndex),myRole!])
         Networking.shared.sendText(String(voteIndex) + "," + myRole!, prefixCode: "Werewolf")
         confirmButton.isEnabled = false
     }

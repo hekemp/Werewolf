@@ -25,7 +25,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     var resultList = [String]()
     
-    var voteList = GameSession.active?.voteList
+    var voteList = GameSession.active.voteList
     
     var timer: Timer!
     
@@ -38,15 +38,14 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(PotionViewController.updateStatus), userInfo: nil, repeats: true)
-        let character = GameSession.active?.myCharacter
+        let character = GameSession.active.myCharacter
         myRole = character?.role
-        if let canUse = GameSession.active?.canUsePotion{
-             self.canUse = canUse
-        }
+        let canUse = GameSession.active.canUsePotion
+        
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList?.count {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
             finalTally()
         }
     }
@@ -56,7 +55,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         
         var potionVote = -1
         
-        for player in voteList! {
+        for player in voteList {
             if player[1] == "Witch"{
                 
                 potionVote = Int(player[0])!
@@ -176,7 +175,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     @IBAction func abstainButtonClicked(_ sender: Any) {
         tableView.allowsSelection = false
-        self.voteList!.append([String(-1),myRole!])
+        self.voteList.append([String(-1),myRole!])
         Networking.shared.sendText(String(-1) + "," + myRole!, prefixCode: "Potion")
         confirmButton.isEnabled = false
         abstainButton.isEnabled = false
@@ -188,7 +187,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         if canUse! {
             voteIndex = (tableView.indexPathForSelectedRow! as NSIndexPath).row
             canUse = false
-            GameSession.active?.canUsePotion = false
+            GameSession.active.canUsePotion = false
         }
         else{
             voteIndex = -1
@@ -197,7 +196,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         print(voteIndex)
         
         tableView.allowsSelection = false
-        self.voteList!.append([String(voteIndex),myRole!])
+        self.voteList.append([String(voteIndex),myRole!])
         Networking.shared.sendText(String(voteIndex) + "," + myRole!, prefixCode: "Potion")
         confirmButton.isEnabled = false
         abstainButton.isEnabled = false

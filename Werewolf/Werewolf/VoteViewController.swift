@@ -23,8 +23,8 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     
     var tempVillageList = [[String]]()
     
-    var killedList = GameSession.active?.killedList
-    
+    var killedList = GameSession.active.killedList
+
     var tempKilledList = [String]()
     
     var resultList = [String]()
@@ -71,7 +71,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(NominationViewController.updateStatus), userInfo: nil, repeats: true)
-        let character = GameSession.active?.myCharacter
+        let character = GameSession.active.myCharacter
         myRole = character?.role
     }
     
@@ -130,7 +130,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == killedList?.count {
+        if mcSession.connectedPeers.count + 1 == killedList.count {
             finalTally()
         }
     }
@@ -152,7 +152,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         
         resultList.append(String(maxVotesLocation))
         
-        killedList?.forEach { item in
+        killedList.forEach { item in
             
             if(item != "Abstain" ){
                 tempKilledList.append(item)
@@ -163,7 +163,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         }
         killedList = tempKilledList
         
-        let countedSet = NSCountedSet(array: killedList!)
+        let countedSet = NSCountedSet(array: killedList)
         let mostFrequent = countedSet.max { countedSet.count(for: $0) < countedSet.count(for: $1) }
         
         villageList.forEach { item in
@@ -202,7 +202,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let vote:String = voteList[voteIndex][0]
         print("vote is" + vote)
         VoteTableView.allowsSelection = false
-        self.killedList!.append(vote)
+        self.killedList.append(vote)
         Networking.shared.sendText(vote, prefixCode: "Vote")
         voteButton.isEnabled = false
         abstainButton.isEnabled = false
@@ -213,7 +213,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let vote:String = "Abstain"
         print("vote is" + vote)
         VoteTableView.allowsSelection = false
-        self.killedList!.append(vote)
+        self.killedList.append(vote)
         Networking.shared.sendText(vote, prefixCode: "Vote")
         voteButton.isEnabled = false
         abstainButton.isEnabled  = false

@@ -22,16 +22,19 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let villageList = GameSession.active?.villageList{
+        if let villageList = GameSession.active.villageList{
             self.villageList = villageList
         }
-        if let mcSession = GameSession.active?.mySession{
+        if let mcSession = GameSession.active.mySession{
             self.mcSession = mcSession
         }
-        if(GameSession.active?.villageName == nil){
-            GameSession.active?.villageName = RandomGenerators.gen.getRandomVillageName()
+        if(GameSession.active.villageName == nil){
+            print("Oh noes it's empty")
+            GameSession.active.villageName = RandomGenerators.gen.getRandomVillageName()
         }
-        villageNameDisplay.text = GameSession.active?.villageName
+        
+        print(GameSession.active.villageName)
+        villageNameDisplay.text = GameSession.active.villageName
     }
     override func viewDidLoad() {
         super.viewDidLoad()

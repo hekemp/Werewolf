@@ -20,7 +20,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
 
     @IBOutlet weak var NominationTableView: UITableView!
     
-    var voteList = GameSession.active?.voteList
+    var voteList = GameSession.active.voteList
     
     var tempVoteList = [[String]]()
     
@@ -41,7 +41,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(NominationViewController.updateStatus), userInfo: nil, repeats: true)
-        let character = GameSession.active?.myCharacter
+        let character = GameSession.active.myCharacter
         myRole = character?.role
     }
     
@@ -52,10 +52,10 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let villageList = GameSession.active?.villageList{
+        if let villageList = GameSession.active.villageList{
             self.villageList = villageList
         }
-        if let mcSession = GameSession.active?.mySession{
+        if let mcSession = GameSession.active.mySession{
             self.mcSession = mcSession
         }
     }
@@ -139,7 +139,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList?.count {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
             finalTally()
         }
     }
@@ -164,14 +164,14 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         
         resultList.append(String(maxVotesLocation))
         
-        voteList?.forEach { item in
+        voteList.forEach { item in
             
             if(item[0] != "Abstain" ){
                 tempVoteList.append(item)
             }
         }
         voteList = tempVoteList
-        if (voteList?.isEmpty)!{
+        if (voteList.isEmpty){
             
             performSegue(withIdentifier: "noNominations", sender: self)
             
@@ -185,7 +185,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue: \(String(describing: segue.identifier))")
         
-        if(voteList?.isEmpty)!{
+        if(voteList.isEmpty){
             
             let destVC: ExecuteViewController = segue.destination as! ExecuteViewController
             destVC.mcSession = mcSession
@@ -199,7 +199,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
             print(villageList)
             destVC.resultList = self.resultList
             print(resultList)
-            destVC.voteList = self.voteList!
+            destVC.voteList = self.voteList
             print(voteList)
         }
         
@@ -212,7 +212,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         let vote:String = villageList[voteIndex][0]
         print("vote is" + vote)
         NominationTableView.allowsSelection = false
-        self.voteList!.append([vote,myRole!])
+        self.voteList.append([vote,myRole!])
         Networking.shared.sendText(vote + "," + myRole!, prefixCode: "Nomination")
         nominateButton.isEnabled = false
         abstainButton.isEnabled = false
@@ -224,7 +224,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         let vote:String = "Abstain"
         print("vote is" + vote)
         NominationTableView.allowsSelection = false
-        self.voteList!.append([vote,myRole!])
+        self.voteList.append([vote,myRole!])
         Networking.shared.sendText(vote + "," + myRole!, prefixCode: "Nomination")
         nominateButton.isEnabled = false
         abstainButton.isEnabled  = false

@@ -12,7 +12,16 @@ import GameKit
 import MultipeerConnectivity
 
 class GameSession{
-    static var active : GameSession?
+    static var active: GameSession {
+        get {
+            if let m = _active {
+                return m
+            } else {
+                return GameSession()
+            }
+        }
+    }
+    static var _active : GameSession?
     var activeRoles = ["Villager","Doctor","Werewolf","Seer", "Witch"]
     var villageList : [[String]]?
     var villageName : String?
@@ -32,7 +41,8 @@ class GameSession{
     var poisonVoteList : [[String]] = []
     var killedList : [String] = []
     init(){
-        GameSession.active = self
+        GameSession._active = self
+        print("Instantiating GameSession")
     }
     
 }

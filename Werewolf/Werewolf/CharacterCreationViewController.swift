@@ -27,11 +27,14 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let gender = RandomGenerators.gen.getRandomGender()
         let occupation = RandomGenerators.gen.getRandomOccupation()
         var role : String
-        if(GameSession.active?.rank! < roles.count){
-            role = roles[(GameSession.active?.rank!)!]
+
+        print(GameSession.active.rank)
+        
+        if((GameSession.active.rank)! < roles.count){
+            role = roles[(GameSession.active.rank!)]
         }
         else{
-            if((GameSession.active?.rank!)!%5 == 0){
+            if((GameSession.active.rank)!%5 == 0){
                 role = "Werewolf"
             }
             else{
@@ -39,9 +42,15 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
             }
         }
         self.villageList!.append([name,role])
+        GameSession.active.villageList!.append([name, role])
         Networking.shared.sendText(name + "," + role, prefixCode: "Playerdata")
-        let _ = GameSession()
-        GameSession.active?.myCharacter = PlayerCharacter(name: name, age: age, gender: gender, occupation: occupation, role: role)
+       // let _ = GameSession()
+        GameSession.active.myCharacter = PlayerCharacter(name: name, age: age, gender: gender, occupation: occupation, role: role)
+        
+        if(GameSession.active.villageName==nil){
+            GameSession.active.villageName = villageName
+            Networking.shared.sendText(villageName!, prefixCode: "VillageName")
+        }
         
     }
     @IBAction func doManualCharacterCreation(_ sender: Any) {
@@ -50,11 +59,11 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let gender = genderField?.text
         let occupation = occupationField?.text
         var role : String
-        if(GameSession.active?.rank! < roles.count){
-            role = roles[(GameSession.active?.rank!)!]
+        if((GameSession.active.rank!) < roles.count){
+            role = roles[(GameSession.active.rank!)]
         }
         else{
-            if((GameSession.active?.rank!)!%5 == 0){
+            if((GameSession.active.rank!)%5 == 0){
                 role = "Werewolf"
             }
             else{
@@ -62,33 +71,41 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
             }
         }
         self.villageList!.append([name!, role])
+        GameSession.active.villageList!.append([name!, role])
         Networking.shared.sendText(name! + "," + role, prefixCode: "Playerdata")
-        let _ = GameSession()
-        GameSession.active?.myCharacter = PlayerCharacter(name: name!, age: age!, gender: gender!, occupation: occupation!, role: role)
+        //let _ = GameSession()
+        GameSession.active.myCharacter = PlayerCharacter(name: name!, age: age!, gender: gender!, occupation: occupation!, role: role)
+        
+        print(GameSession.active.villageName)
+        if(GameSession.active.villageName==nil){
+            GameSession.active.villageName = villageName
+            Networking.shared.sendText(villageName!, prefixCode: "VillageName")
+        }
         
     }
     func rollForInitiative(){
         //assign an increasing number to every user
-        if(GameSession.active?.initiative == nil){
-            GameSession.active?.initiative = Int(arc4random_uniform(UInt32.max))
-            GameSession.active?.peersToGetInitiativeFrom = mcSession.connectedPeers.count
+        if(GameSession.active.initiative == nil){
+            GameSession.active.initiative = Int(arc4random_uniform(UInt32.max))
+            GameSession.active.peersToGetInitiativeFrom = mcSession.connectedPeers.count
         }
-        Networking.shared.sendText(String(describing: GameSession.active?.initiative!), prefixCode: "Initiative")
+        Networking.shared.sendText(String(describing: GameSession.active.initiative!), prefixCode: "Initiative")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(GameSession.active.villageList)
+        
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        self.villageList = GameSession.active?.villageList!
-        GameSession.active?.rank = 0
+        self.villageList = GameSession.active.villageList!
+        GameSession.active.rank = 0
+        print(villageList)
+        print("Loaded")
+        print(GameSession.active.rank)
         self.villageName = RandomGenerators.gen.getRandomVillageName()
-        if(GameSession.active?.villageName==nil){
-            Networking.shared.sendText(villageName!, prefixCode: "VillageName")
-        }
-        rollForInitiative()
-    }
-    override func viewWillDisappear(_ animated: Bool) {
         
+        rollForInitiative()
     }
     
     override func didReceiveMemoryWarning() {
@@ -147,7 +164,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC: CharacterCreationLobby = segue.destination as! CharacterCreationLobby
         destVC.mcSession = mcSession
-        destVC.villageList = self.villageList!
+        //destVC.villageList = self.villageList!
     }
     
     

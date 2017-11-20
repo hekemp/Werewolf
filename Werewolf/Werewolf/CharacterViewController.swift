@@ -20,7 +20,7 @@ class CharacterViewController: UIViewController {
     //
     
     override func viewWillAppear(_ animated: Bool) {
-        let character = GameSession.active?.myCharacter
+        let character = GameSession.active.myCharacter
         characterName.text = character?.name
         characterAge.text = character?.age
         characterGender.text = character?.gender

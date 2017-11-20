@@ -28,13 +28,17 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
         
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(CharacterCreationLobby.updateStatus), userInfo: nil, repeats: true)
 
+        self.villageList = GameSession.active.villageList!
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     @objc func updateStatus() {
-        print(mcSession.connectedPeers.count)
-        if mcSession.connectedPeers.count + 1 == villageList.count {
+ 
+        print("Status: ")
+        print( GameSession.active.villageList)
+        if mcSession.connectedPeers.count + 1 == GameSession.active.villageList?.count {
+            print("Nyoom")
             performSegueToVillage()
         }
     }
@@ -47,8 +51,8 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
         randomAge = RandomGenerators.gen.getRandomAge() //static constructors are lazy, and making the generaterator takes a while, so force it to start sooner
     }
     override func viewWillDisappear(_ animated: Bool) {
-        GameSession.active?.villageList = self.villageList
-        GameSession.active?.mySession = self.mcSession
+
+        GameSession.active.mySession = self.mcSession
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,13 +67,13 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return villageList.count
+        return GameSession.active.villageList!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-        cell.textLabel!.text = villageList[cellNum][0]
+        cell.textLabel!.text = GameSession.active.villageList![cellNum][0]
         return cell
     }
     

@@ -1,0 +1,345 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "CharacterViewController"
+provides-nominal:
+- "8Werewolf23CharacterViewControllerC"
+provides-member:
+- ["8Werewolf23CharacterViewControllerC", ""]
+provides-dynamic-lookup:
+- "characterAge"
+- "characterGender"
+- "characterName"
+- "characterOccupation"
+- "characterRole"
+- "didReceiveMemoryWarning"
+- "viewDidLoad"
+- "viewWillAppear"
+depends-top-level:
+- "AssignmentPrecedence"
+- "Bool"
+- "CharacterViewController"
+- !private "GameSession"
+- "UILabel"
+- "UIViewController"
+depends-member:
+- !private ["So15CALayerDelegateP", "text"]
+- !private ["s7CVarArgP", "GameSession"]
+- !private ["s7CVarArgP", "characterAge"]
+- !private ["s7CVarArgP", "characterGender"]
+- !private ["s7CVarArgP", "characterName"]
+- !private ["s7CVarArgP", "characterOccupation"]
+- !private ["s7CVarArgP", "characterRole"]
+- !private ["s7CVarArgP", "didReceiveMemoryWarning"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "viewDidLoad"]
+- ["s7CVarArgP", ""]
+- ["8Werewolf23CharacterViewControllerC", "Bool"]
+- !private ["8Werewolf23CharacterViewControllerC", "GameSession"]
+- ["8Werewolf23CharacterViewControllerC", "UILabel"]
+- ["8Werewolf23CharacterViewControllerC", "characterAge"]
+- ["8Werewolf23CharacterViewControllerC", "characterGender"]
+- ["8Werewolf23CharacterViewControllerC", "characterName"]
+- ["8Werewolf23CharacterViewControllerC", "characterOccupation"]
+- ["8Werewolf23CharacterViewControllerC", "characterRole"]
+- ["8Werewolf23CharacterViewControllerC", "deinit"]
+- ["8Werewolf23CharacterViewControllerC", "didReceiveMemoryWarning"]
+- ["8Werewolf23CharacterViewControllerC", "init"]
+- ["8Werewolf23CharacterViewControllerC", "viewDidLoad"]
+- ["8Werewolf23CharacterViewControllerC", "viewWillAppear"]
+- !private ["s28CustomDebugStringConvertibleP", "GameSession"]
+- !private ["s28CustomDebugStringConvertibleP", "characterAge"]
+- !private ["s28CustomDebugStringConvertibleP", "characterGender"]
+- !private ["s28CustomDebugStringConvertibleP", "characterName"]
+- !private ["s28CustomDebugStringConvertibleP", "characterOccupation"]
+- !private ["s28CustomDebugStringConvertibleP", "characterRole"]
+- !private ["s28CustomDebugStringConvertibleP", "didReceiveMemoryWarning"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "GameSession"]
+- !private ["s23CustomStringConvertibleP", "characterAge"]
+- !private ["s23CustomStringConvertibleP", "characterGender"]
+- !private ["s23CustomStringConvertibleP", "characterName"]
+- !private ["s23CustomStringConvertibleP", "characterOccupation"]
+- !private ["s23CustomStringConvertibleP", "characterRole"]
+- !private ["s23CustomStringConvertibleP", "didReceiveMemoryWarning"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9EquatableP", "GameSession"]
+- !private ["s9EquatableP", "characterAge"]
+- !private ["s9EquatableP", "characterGender"]
+- !private ["s9EquatableP", "characterName"]
+- !private ["s9EquatableP", "characterOccupation"]
+- !private ["s9EquatableP", "characterRole"]
+- !private ["s9EquatableP", "didReceiveMemoryWarning"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "text"]
+- !private ["s9EquatableP", "viewDidLoad"]
+- ["s9EquatableP", ""]
+- !private ["8Werewolf11GameSessionC", "active"]
+- !private ["8Werewolf11GameSessionC", "myCharacter"]
+- !private ["s8HashableP", "GameSession"]
+- !private ["s8HashableP", "characterAge"]
+- !private ["s8HashableP", "characterGender"]
+- !private ["s8HashableP", "characterName"]
+- !private ["s8HashableP", "characterOccupation"]
+- !private ["s8HashableP", "characterRole"]
+- !private ["s8HashableP", "didReceiveMemoryWarning"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "text"]
+- !private ["s8HashableP", "viewDidLoad"]
+- ["s8HashableP", ""]
+- !private ["So8NSCodingP", "GameSession"]
+- !private ["So8NSCodingP", "characterAge"]
+- !private ["So8NSCodingP", "characterGender"]
+- !private ["So8NSCodingP", "characterName"]
+- !private ["So8NSCodingP", "characterOccupation"]
+- !private ["So8NSCodingP", "characterRole"]
+- !private ["So8NSCodingP", "didReceiveMemoryWarning"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "viewDidLoad"]
+- ["So8NSCodingP", ""]
+- !private ["So26NSExtensionRequestHandlingP", "GameSession"]
+- !private ["So26NSExtensionRequestHandlingP", "characterAge"]
+- !private ["So26NSExtensionRequestHandlingP", "characterGender"]
+- !private ["So26NSExtensionRequestHandlingP", "characterName"]
+- !private ["So26NSExtensionRequestHandlingP", "characterOccupation"]
+- !private ["So26NSExtensionRequestHandlingP", "characterRole"]
+- !private ["So26NSExtensionRequestHandlingP", "didReceiveMemoryWarning"]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- ["So26NSExtensionRequestHandlingP", ""]
+- ["So8NSObjectC", "Bool"]
+- !private ["So8NSObjectC", "GameSession"]
+- ["So8NSObjectC", "UILabel"]
+- ["So8NSObjectC", "characterAge"]
+- ["So8NSObjectC", "characterGender"]
+- ["So8NSObjectC", "characterName"]
+- ["So8NSObjectC", "characterOccupation"]
+- ["So8NSObjectC", "characterRole"]
+- ["So8NSObjectC", "didReceiveMemoryWarning"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "text"]
+- ["So8NSObjectC", "viewDidLoad"]
+- ["So8NSObjectC", "viewWillAppear"]
+- !private ["So16NSObjectProtocolP", "GameSession"]
+- !private ["So16NSObjectProtocolP", "characterAge"]
+- !private ["So16NSObjectProtocolP", "characterGender"]
+- !private ["So16NSObjectProtocolP", "characterName"]
+- !private ["So16NSObjectProtocolP", "characterOccupation"]
+- !private ["So16NSObjectProtocolP", "characterRole"]
+- !private ["So16NSObjectProtocolP", "didReceiveMemoryWarning"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "text"]
+- !private ["So16NSObjectProtocolP", "viewDidLoad"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["8Werewolf15PlayerCharacterC", "age"]
+- !private ["8Werewolf15PlayerCharacterC", "gender"]
+- !private ["8Werewolf15PlayerCharacterC", "name"]
+- !private ["8Werewolf15PlayerCharacterC", "occupation"]
+- !private ["8Werewolf15PlayerCharacterC", "role"]
+- !private ["So29UIAccessibilityIdentificationP", "text"]
+- !private ["So12UIAppearanceP", "text"]
+- !private ["So21UIAppearanceContainerP", "GameSession"]
+- !private ["So21UIAppearanceContainerP", "characterAge"]
+- !private ["So21UIAppearanceContainerP", "characterGender"]
+- !private ["So21UIAppearanceContainerP", "characterName"]
+- !private ["So21UIAppearanceContainerP", "characterOccupation"]
+- !private ["So21UIAppearanceContainerP", "characterRole"]
+- !private ["So21UIAppearanceContainerP", "didReceiveMemoryWarning"]
+- !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- ["So21UIAppearanceContainerP", ""]
+- !private ["So18UIContentContainerP", "GameSession"]
+- !private ["So18UIContentContainerP", "characterAge"]
+- !private ["So18UIContentContainerP", "characterGender"]
+- !private ["So18UIContentContainerP", "characterName"]
+- !private ["So18UIContentContainerP", "characterOccupation"]
+- !private ["So18UIContentContainerP", "characterRole"]
+- !private ["So18UIContentContainerP", "didReceiveMemoryWarning"]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "viewDidLoad"]
+- ["So18UIContentContainerP", ""]
+- !private ["So30UIContentSizeCategoryAdjustingP", "text"]
+- !private ["So17UICoordinateSpaceP", "text"]
+- !private ["So13UIDynamicItemP", "text"]
+- !private ["So18UIFocusEnvironmentP", "GameSession"]
+- !private ["So18UIFocusEnvironmentP", "characterAge"]
+- !private ["So18UIFocusEnvironmentP", "characterGender"]
+- !private ["So18UIFocusEnvironmentP", "characterName"]
+- !private ["So18UIFocusEnvironmentP", "characterOccupation"]
+- !private ["So18UIFocusEnvironmentP", "characterRole"]
+- !private ["So18UIFocusEnvironmentP", "didReceiveMemoryWarning"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So11UIFocusItemP", "text"]
+- !private ["So7UILabelC", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "GameSession"]
+- !private ["So30UIPasteConfigurationSupportingP", "characterAge"]
+- !private ["So30UIPasteConfigurationSupportingP", "characterGender"]
+- !private ["So30UIPasteConfigurationSupportingP", "characterName"]
+- !private ["So30UIPasteConfigurationSupportingP", "characterOccupation"]
+- !private ["So30UIPasteConfigurationSupportingP", "characterRole"]
+- !private ["So30UIPasteConfigurationSupportingP", "didReceiveMemoryWarning"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- ["So11UIResponderC", "Bool"]
+- !private ["So11UIResponderC", "GameSession"]
+- ["So11UIResponderC", "UILabel"]
+- ["So11UIResponderC", "characterAge"]
+- ["So11UIResponderC", "characterGender"]
+- ["So11UIResponderC", "characterName"]
+- ["So11UIResponderC", "characterOccupation"]
+- ["So11UIResponderC", "characterRole"]
+- ["So11UIResponderC", "didReceiveMemoryWarning"]
+- ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "text"]
+- ["So11UIResponderC", "viewDidLoad"]
+- ["So11UIResponderC", "viewWillAppear"]
+- !private ["So30UIResponderStandardEditActionsP", "GameSession"]
+- !private ["So30UIResponderStandardEditActionsP", "characterAge"]
+- !private ["So30UIResponderStandardEditActionsP", "characterGender"]
+- !private ["So30UIResponderStandardEditActionsP", "characterName"]
+- !private ["So30UIResponderStandardEditActionsP", "characterOccupation"]
+- !private ["So30UIResponderStandardEditActionsP", "characterRole"]
+- !private ["So30UIResponderStandardEditActionsP", "didReceiveMemoryWarning"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So16UIStateRestoringP", "GameSession"]
+- !private ["So16UIStateRestoringP", "characterAge"]
+- !private ["So16UIStateRestoringP", "characterGender"]
+- !private ["So16UIStateRestoringP", "characterName"]
+- !private ["So16UIStateRestoringP", "characterOccupation"]
+- !private ["So16UIStateRestoringP", "characterRole"]
+- !private ["So16UIStateRestoringP", "didReceiveMemoryWarning"]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "viewDidLoad"]
+- ["So16UIStateRestoringP", ""]
+- !private ["So18UITraitEnvironmentP", "GameSession"]
+- !private ["So18UITraitEnvironmentP", "characterAge"]
+- !private ["So18UITraitEnvironmentP", "characterGender"]
+- !private ["So18UITraitEnvironmentP", "characterName"]
+- !private ["So18UITraitEnvironmentP", "characterOccupation"]
+- !private ["So18UITraitEnvironmentP", "characterRole"]
+- !private ["So18UITraitEnvironmentP", "didReceiveMemoryWarning"]
+- !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- ["So18UITraitEnvironmentP", ""]
+- !private ["So6UIViewC", "text"]
+- ["So16UIViewControllerC", "Bool"]
+- !private ["So16UIViewControllerC", "GameSession"]
+- ["So16UIViewControllerC", "UILabel"]
+- ["So16UIViewControllerC", "characterAge"]
+- ["So16UIViewControllerC", "characterGender"]
+- ["So16UIViewControllerC", "characterName"]
+- ["So16UIViewControllerC", "characterOccupation"]
+- ["So16UIViewControllerC", "characterRole"]
+- ["So16UIViewControllerC", "didReceiveMemoryWarning"]
+- ["So16UIViewControllerC", "init"]
+- ["So16UIViewControllerC", "viewDidLoad"]
+- ["So16UIViewControllerC", "viewWillAppear"]
+- ["So16UIViewControllerC", ""]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "GameSession"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "characterAge"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "characterGender"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "characterName"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "characterOccupation"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "characterRole"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "didReceiveMemoryWarning"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+depends-nominal:
+- !private "So15CALayerDelegateP"
+- "s7CVarArgP"
+- "8Werewolf23CharacterViewControllerC"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "s9EquatableP"
+- !private "8Werewolf11GameSessionC"
+- "s8HashableP"
+- "So8NSCodingP"
+- "So26NSExtensionRequestHandlingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "8Werewolf15PlayerCharacterC"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- "So18UIContentContainerP"
+- !private "So30UIContentSizeCategoryAdjustingP"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So7UILabelC"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So16UIStateRestoringP"
+- "So18UITraitEnvironmentP"
+- !private "So6UIViewC"
+- "So16UIViewControllerC"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SceneKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/MetalKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GameplayKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/GameKit.framework/Headers/GameKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/MetalKit.framework/Headers/MetalKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GameplayKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/Headers/MultipeerConnectivity.apinotes"
+interface-hash: "dba9ab8f39de25d56c19b56f44ef0b3c"

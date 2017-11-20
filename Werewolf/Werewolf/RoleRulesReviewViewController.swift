@@ -53,7 +53,7 @@ class RoleRulesReviewViewController: UIViewController {
         self.view.addGestureRecognizer(leftSwipeGestureRecognizer)
     }
     override func viewWillAppear(_ animated: Bool) {
-        roles = GameSession.active?.activeRoles
+        roles = GameSession.active.activeRoles
         pageBar.numberOfPages = roles.count
         setPage()
     }

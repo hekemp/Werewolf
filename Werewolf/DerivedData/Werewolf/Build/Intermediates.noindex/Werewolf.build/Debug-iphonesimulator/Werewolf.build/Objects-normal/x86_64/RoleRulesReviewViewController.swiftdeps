@@ -1,0 +1,731 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "RoleRulesReviewViewController"
+provides-nominal:
+- "8Werewolf29RoleRulesReviewViewControllerC"
+provides-member:
+- ["8Werewolf29RoleRulesReviewViewControllerC", ""]
+provides-dynamic-lookup:
+- "didReceiveMemoryWarning"
+- "leftSwipeReceived"
+- "pageBar"
+- "pageSwitched"
+- "rightSwipeReceived"
+- "roleExplaination"
+- "roleName"
+- "viewDidLoad"
+- "viewWillAppear"
+depends-top-level:
+- !private "+"
+- !private "+="
+- !private "-="
+- !private "<="
+- !private ">"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "GameSession"
+- "RoleRulesReviewViewController"
+- "String"
+- "StringLiteralType"
+- "UILabel"
+- "UIPageControl"
+- "UISwipeGestureRecognizer"
+- !private "UISwipeGestureRecognizerDirection"
+- "UIViewController"
+depends-member:
+- !private ["Sa", "count"]
+- !private ["Sa", "subscript"]
+- !private ["s23BidirectionalCollectionP", "count"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s23BidirectionalCollectionP", "subscript"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So15CALayerDelegateP", "addGestureRecognizer"]
+- !private ["So15CALayerDelegateP", "currentPage"]
+- !private ["So15CALayerDelegateP", "numberOfPages"]
+- !private ["So15CALayerDelegateP", "text"]
+- !private ["s7CVarArgP", "GameSession"]
+- !private ["s7CVarArgP", "RoleRulesReviewViewController"]
+- !private ["s7CVarArgP", "UISwipeGestureRecognizer"]
+- !private ["s7CVarArgP", "UISwipeGestureRecognizerDirection"]
+- !private ["s7CVarArgP", "addGestureRecognizer"]
+- !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "currentPage"]
+- !private ["s7CVarArgP", "didReceiveMemoryWarning"]
+- !private ["s7CVarArgP", "direction"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "leftSwipeReceived"]
+- !private ["s7CVarArgP", "numberOfPages"]
+- !private ["s7CVarArgP", "pageBar"]
+- !private ["s7CVarArgP", "rightSwipeReceived"]
+- !private ["s7CVarArgP", "roleExplaination"]
+- !private ["s7CVarArgP", "roleName"]
+- !private ["s7CVarArgP", "roleRules"]
+- !private ["s7CVarArgP", "roles"]
+- !private ["s7CVarArgP", "setPage"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "view"]
+- !private ["s7CVarArgP", "viewDidLoad"]
+- ["s7CVarArgP", ""]
+- !private ["s10CollectionP", "count"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "subscript"]
+- ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "GameSession"]
+- !private ["s28CustomDebugStringConvertibleP", "RoleRulesReviewViewController"]
+- !private ["s28CustomDebugStringConvertibleP", "UISwipeGestureRecognizer"]
+- !private ["s28CustomDebugStringConvertibleP", "UISwipeGestureRecognizerDirection"]
+- !private ["s28CustomDebugStringConvertibleP", "addGestureRecognizer"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "currentPage"]
+- !private ["s28CustomDebugStringConvertibleP", "didReceiveMemoryWarning"]
+- !private ["s28CustomDebugStringConvertibleP", "direction"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "leftSwipeReceived"]
+- !private ["s28CustomDebugStringConvertibleP", "numberOfPages"]
+- !private ["s28CustomDebugStringConvertibleP", "pageBar"]
+- !private ["s28CustomDebugStringConvertibleP", "rightSwipeReceived"]
+- !private ["s28CustomDebugStringConvertibleP", "roleExplaination"]
+- !private ["s28CustomDebugStringConvertibleP", "roleName"]
+- !private ["s28CustomDebugStringConvertibleP", "roleRules"]
+- !private ["s28CustomDebugStringConvertibleP", "roles"]
+- !private ["s28CustomDebugStringConvertibleP", "setPage"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "view"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "count"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "GameSession"]
+- !private ["s23CustomStringConvertibleP", "RoleRulesReviewViewController"]
+- !private ["s23CustomStringConvertibleP", "UISwipeGestureRecognizer"]
+- !private ["s23CustomStringConvertibleP", "UISwipeGestureRecognizerDirection"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "addGestureRecognizer"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "currentPage"]
+- !private ["s23CustomStringConvertibleP", "didReceiveMemoryWarning"]
+- !private ["s23CustomStringConvertibleP", "direction"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "leftSwipeReceived"]
+- !private ["s23CustomStringConvertibleP", "numberOfPages"]
+- !private ["s23CustomStringConvertibleP", "pageBar"]
+- !private ["s23CustomStringConvertibleP", "rightSwipeReceived"]
+- !private ["s23CustomStringConvertibleP", "roleExplaination"]
+- !private ["s23CustomStringConvertibleP", "roleName"]
+- !private ["s23CustomStringConvertibleP", "roleRules"]
+- !private ["s23CustomStringConvertibleP", "roles"]
+- !private ["s23CustomStringConvertibleP", "setPage"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "view"]
+- !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "count"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s10DictionaryV", "subscript"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "count"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "subscript"]
+- !private ["s9EquatableP", "GameSession"]
+- !private ["s9EquatableP", "RoleRulesReviewViewController"]
+- !private ["s9EquatableP", "UISwipeGestureRecognizer"]
+- !private ["s9EquatableP", "UISwipeGestureRecognizerDirection"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "addGestureRecognizer"]
+- !private ["s9EquatableP", "currentPage"]
+- !private ["s9EquatableP", "didReceiveMemoryWarning"]
+- !private ["s9EquatableP", "direction"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "left"]
+- !private ["s9EquatableP", "leftSwipeReceived"]
+- !private ["s9EquatableP", "numberOfPages"]
+- !private ["s9EquatableP", "pageBar"]
+- !private ["s9EquatableP", "right"]
+- !private ["s9EquatableP", "rightSwipeReceived"]
+- !private ["s9EquatableP", "roleExplaination"]
+- !private ["s9EquatableP", "roleName"]
+- !private ["s9EquatableP", "roleRules"]
+- !private ["s9EquatableP", "roles"]
+- !private ["s9EquatableP", "setPage"]
+- !private ["s9EquatableP", "text"]
+- !private ["s9EquatableP", "view"]
+- !private ["s9EquatableP", "viewDidLoad"]
+- ["s9EquatableP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "left"]
+- !private ["s25ExpressibleByArrayLiteralP", "right"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["8Werewolf11GameSessionC", "active"]
+- !private ["8Werewolf11GameSessionC", "activeRoles"]
+- !private ["s8HashableP", "GameSession"]
+- !private ["s8HashableP", "RoleRulesReviewViewController"]
+- !private ["s8HashableP", "UISwipeGestureRecognizer"]
+- !private ["s8HashableP", "UISwipeGestureRecognizerDirection"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "addGestureRecognizer"]
+- !private ["s8HashableP", "currentPage"]
+- !private ["s8HashableP", "didReceiveMemoryWarning"]
+- !private ["s8HashableP", "direction"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "leftSwipeReceived"]
+- !private ["s8HashableP", "numberOfPages"]
+- !private ["s8HashableP", "pageBar"]
+- !private ["s8HashableP", "rightSwipeReceived"]
+- !private ["s8HashableP", "roleExplaination"]
+- !private ["s8HashableP", "roleName"]
+- !private ["s8HashableP", "roleRules"]
+- !private ["s8HashableP", "roles"]
+- !private ["s8HashableP", "setPage"]
+- !private ["s8HashableP", "text"]
+- !private ["s8HashableP", "view"]
+- !private ["s8HashableP", "viewDidLoad"]
+- ["s8HashableP", ""]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- !private ["s17MutableCollectionP", "count"]
+- !private ["s17MutableCollectionP", "subscript"]
+- !private ["So8NSCodingP", "GameSession"]
+- !private ["So8NSCodingP", "RoleRulesReviewViewController"]
+- !private ["So8NSCodingP", "UISwipeGestureRecognizer"]
+- !private ["So8NSCodingP", "UISwipeGestureRecognizerDirection"]
+- !private ["So8NSCodingP", "addGestureRecognizer"]
+- !private ["So8NSCodingP", "currentPage"]
+- !private ["So8NSCodingP", "didReceiveMemoryWarning"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "leftSwipeReceived"]
+- !private ["So8NSCodingP", "numberOfPages"]
+- !private ["So8NSCodingP", "pageBar"]
+- !private ["So8NSCodingP", "rightSwipeReceived"]
+- !private ["So8NSCodingP", "roleExplaination"]
+- !private ["So8NSCodingP", "roleName"]
+- !private ["So8NSCodingP", "roleRules"]
+- !private ["So8NSCodingP", "roles"]
+- !private ["So8NSCodingP", "setPage"]
+- !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "view"]
+- !private ["So8NSCodingP", "viewDidLoad"]
+- ["So8NSCodingP", ""]
+- ["So9NSCopyingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "GameSession"]
+- !private ["So26NSExtensionRequestHandlingP", "RoleRulesReviewViewController"]
+- !private ["So26NSExtensionRequestHandlingP", "UISwipeGestureRecognizer"]
+- !private ["So26NSExtensionRequestHandlingP", "UISwipeGestureRecognizerDirection"]
+- !private ["So26NSExtensionRequestHandlingP", "didReceiveMemoryWarning"]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "leftSwipeReceived"]
+- !private ["So26NSExtensionRequestHandlingP", "pageBar"]
+- !private ["So26NSExtensionRequestHandlingP", "rightSwipeReceived"]
+- !private ["So26NSExtensionRequestHandlingP", "roleExplaination"]
+- !private ["So26NSExtensionRequestHandlingP", "roleName"]
+- !private ["So26NSExtensionRequestHandlingP", "roleRules"]
+- !private ["So26NSExtensionRequestHandlingP", "roles"]
+- !private ["So26NSExtensionRequestHandlingP", "setPage"]
+- !private ["So26NSExtensionRequestHandlingP", "view"]
+- !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- ["So26NSExtensionRequestHandlingP", ""]
+- ["So21NSItemProviderReadingP", "init"]
+- ["So21NSItemProviderWritingP", "init"]
+- ["So16NSMutableCopyingP", "init"]
+- ["So8NSObjectC", "Bool"]
+- !private ["So8NSObjectC", "GameSession"]
+- !private ["So8NSObjectC", "RoleRulesReviewViewController"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "UILabel"]
+- ["So8NSObjectC", "UIPageControl"]
+- ["So8NSObjectC", "UISwipeGestureRecognizer"]
+- !private ["So8NSObjectC", "UISwipeGestureRecognizerDirection"]
+- !private ["So8NSObjectC", "addGestureRecognizer"]
+- !private ["So8NSObjectC", "currentPage"]
+- ["So8NSObjectC", "didReceiveMemoryWarning"]
+- !private ["So8NSObjectC", "direction"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "leftSwipeReceived"]
+- !private ["So8NSObjectC", "numberOfPages"]
+- ["So8NSObjectC", "pageBar"]
+- ["So8NSObjectC", "pageSwitched"]
+- ["So8NSObjectC", "rightSwipeReceived"]
+- ["So8NSObjectC", "roleExplaination"]
+- ["So8NSObjectC", "roleName"]
+- ["So8NSObjectC", "roleRules"]
+- ["So8NSObjectC", "roles"]
+- ["So8NSObjectC", "setPage"]
+- !private ["So8NSObjectC", "text"]
+- !private ["So8NSObjectC", "view"]
+- ["So8NSObjectC", "viewDidLoad"]
+- ["So8NSObjectC", "viewWillAppear"]
+- !private ["So16NSObjectProtocolP", "GameSession"]
+- !private ["So16NSObjectProtocolP", "RoleRulesReviewViewController"]
+- !private ["So16NSObjectProtocolP", "UISwipeGestureRecognizer"]
+- !private ["So16NSObjectProtocolP", "UISwipeGestureRecognizerDirection"]
+- !private ["So16NSObjectProtocolP", "addGestureRecognizer"]
+- !private ["So16NSObjectProtocolP", "currentPage"]
+- !private ["So16NSObjectProtocolP", "didReceiveMemoryWarning"]
+- !private ["So16NSObjectProtocolP", "direction"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "leftSwipeReceived"]
+- !private ["So16NSObjectProtocolP", "numberOfPages"]
+- !private ["So16NSObjectProtocolP", "pageBar"]
+- !private ["So16NSObjectProtocolP", "rightSwipeReceived"]
+- !private ["So16NSObjectProtocolP", "roleExplaination"]
+- !private ["So16NSObjectProtocolP", "roleName"]
+- !private ["So16NSObjectProtocolP", "roleRules"]
+- !private ["So16NSObjectProtocolP", "roles"]
+- !private ["So16NSObjectProtocolP", "setPage"]
+- !private ["So16NSObjectProtocolP", "text"]
+- !private ["So16NSObjectProtocolP", "view"]
+- !private ["So16NSObjectProtocolP", "viewDidLoad"]
+- ["So16NSObjectProtocolP", ""]
+- ["So14NSSecureCodingP", "init"]
+- ["So8NSStringC", "init"]
+- !private ["s9OptionSetP", "left"]
+- !private ["s9OptionSetP", "right"]
+- !private ["s22RandomAccessCollectionP", "count"]
+- !private ["s22RandomAccessCollectionP", "subscript"]
+- !private ["s26RangeReplaceableCollectionP", "count"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "subscript"]
+- !private ["s16RawRepresentableP", "left"]
+- !private ["s16RawRepresentableP", "right"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "Bool"]
+- !private ["8Werewolf29RoleRulesReviewViewControllerC", "GameSession"]
+- !private ["8Werewolf29RoleRulesReviewViewControllerC", "RoleRulesReviewViewController"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "String"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "UILabel"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "UIPageControl"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "UISwipeGestureRecognizer"]
+- !private ["8Werewolf29RoleRulesReviewViewControllerC", "UISwipeGestureRecognizerDirection"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "deinit"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "didReceiveMemoryWarning"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "init"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "leftSwipeReceived"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "pageBar"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "pageSwitched"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "rightSwipeReceived"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "roleExplaination"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "roleName"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "roleRules"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "roles"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "setPage"]
+- !private ["8Werewolf29RoleRulesReviewViewControllerC", "view"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "viewDidLoad"]
+- ["8Werewolf29RoleRulesReviewViewControllerC", "viewWillAppear"]
+- !private ["s8SequenceP", "count"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["s10SetAlgebraP", "left"]
+- !private ["s10SetAlgebraP", "right"]
+- ["SS", "init"]
+- ["s14StringProtocolP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "addGestureRecognizer"]
+- !private ["So29UIAccessibilityIdentificationP", "currentPage"]
+- !private ["So29UIAccessibilityIdentificationP", "numberOfPages"]
+- !private ["So29UIAccessibilityIdentificationP", "text"]
+- !private ["So12UIAppearanceP", "addGestureRecognizer"]
+- !private ["So12UIAppearanceP", "currentPage"]
+- !private ["So12UIAppearanceP", "numberOfPages"]
+- !private ["So12UIAppearanceP", "text"]
+- !private ["So21UIAppearanceContainerP", "GameSession"]
+- !private ["So21UIAppearanceContainerP", "RoleRulesReviewViewController"]
+- !private ["So21UIAppearanceContainerP", "UISwipeGestureRecognizer"]
+- !private ["So21UIAppearanceContainerP", "UISwipeGestureRecognizerDirection"]
+- !private ["So21UIAppearanceContainerP", "addGestureRecognizer"]
+- !private ["So21UIAppearanceContainerP", "currentPage"]
+- !private ["So21UIAppearanceContainerP", "didReceiveMemoryWarning"]
+- !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "leftSwipeReceived"]
+- !private ["So21UIAppearanceContainerP", "numberOfPages"]
+- !private ["So21UIAppearanceContainerP", "pageBar"]
+- !private ["So21UIAppearanceContainerP", "rightSwipeReceived"]
+- !private ["So21UIAppearanceContainerP", "roleExplaination"]
+- !private ["So21UIAppearanceContainerP", "roleName"]
+- !private ["So21UIAppearanceContainerP", "roleRules"]
+- !private ["So21UIAppearanceContainerP", "roles"]
+- !private ["So21UIAppearanceContainerP", "setPage"]
+- !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "view"]
+- !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- ["So21UIAppearanceContainerP", ""]
+- !private ["So18UIContentContainerP", "GameSession"]
+- !private ["So18UIContentContainerP", "RoleRulesReviewViewController"]
+- !private ["So18UIContentContainerP", "UISwipeGestureRecognizer"]
+- !private ["So18UIContentContainerP", "UISwipeGestureRecognizerDirection"]
+- !private ["So18UIContentContainerP", "didReceiveMemoryWarning"]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "leftSwipeReceived"]
+- !private ["So18UIContentContainerP", "pageBar"]
+- !private ["So18UIContentContainerP", "rightSwipeReceived"]
+- !private ["So18UIContentContainerP", "roleExplaination"]
+- !private ["So18UIContentContainerP", "roleName"]
+- !private ["So18UIContentContainerP", "roleRules"]
+- !private ["So18UIContentContainerP", "roles"]
+- !private ["So18UIContentContainerP", "setPage"]
+- !private ["So18UIContentContainerP", "view"]
+- !private ["So18UIContentContainerP", "viewDidLoad"]
+- ["So18UIContentContainerP", ""]
+- !private ["So30UIContentSizeCategoryAdjustingP", "text"]
+- !private ["So9UIControlC", "currentPage"]
+- !private ["So9UIControlC", "numberOfPages"]
+- !private ["So17UICoordinateSpaceP", "addGestureRecognizer"]
+- !private ["So17UICoordinateSpaceP", "currentPage"]
+- !private ["So17UICoordinateSpaceP", "numberOfPages"]
+- !private ["So17UICoordinateSpaceP", "text"]
+- !private ["So13UIDynamicItemP", "addGestureRecognizer"]
+- !private ["So13UIDynamicItemP", "currentPage"]
+- !private ["So13UIDynamicItemP", "numberOfPages"]
+- !private ["So13UIDynamicItemP", "text"]
+- !private ["So18UIFocusEnvironmentP", "GameSession"]
+- !private ["So18UIFocusEnvironmentP", "RoleRulesReviewViewController"]
+- !private ["So18UIFocusEnvironmentP", "UISwipeGestureRecognizer"]
+- !private ["So18UIFocusEnvironmentP", "UISwipeGestureRecognizerDirection"]
+- !private ["So18UIFocusEnvironmentP", "addGestureRecognizer"]
+- !private ["So18UIFocusEnvironmentP", "currentPage"]
+- !private ["So18UIFocusEnvironmentP", "didReceiveMemoryWarning"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "leftSwipeReceived"]
+- !private ["So18UIFocusEnvironmentP", "numberOfPages"]
+- !private ["So18UIFocusEnvironmentP", "pageBar"]
+- !private ["So18UIFocusEnvironmentP", "rightSwipeReceived"]
+- !private ["So18UIFocusEnvironmentP", "roleExplaination"]
+- !private ["So18UIFocusEnvironmentP", "roleName"]
+- !private ["So18UIFocusEnvironmentP", "roleRules"]
+- !private ["So18UIFocusEnvironmentP", "roles"]
+- !private ["So18UIFocusEnvironmentP", "setPage"]
+- !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "view"]
+- !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So11UIFocusItemP", "addGestureRecognizer"]
+- !private ["So11UIFocusItemP", "currentPage"]
+- !private ["So11UIFocusItemP", "numberOfPages"]
+- !private ["So11UIFocusItemP", "text"]
+- !private ["So19UIGestureRecognizerC", "direction"]
+- !private ["So19UIGestureRecognizerC", "init"]
+- !private ["So7UILabelC", "text"]
+- !private ["So13UIPageControlC", "currentPage"]
+- !private ["So13UIPageControlC", "numberOfPages"]
+- !private ["So30UIPasteConfigurationSupportingP", "GameSession"]
+- !private ["So30UIPasteConfigurationSupportingP", "RoleRulesReviewViewController"]
+- !private ["So30UIPasteConfigurationSupportingP", "UISwipeGestureRecognizer"]
+- !private ["So30UIPasteConfigurationSupportingP", "UISwipeGestureRecognizerDirection"]
+- !private ["So30UIPasteConfigurationSupportingP", "addGestureRecognizer"]
+- !private ["So30UIPasteConfigurationSupportingP", "currentPage"]
+- !private ["So30UIPasteConfigurationSupportingP", "didReceiveMemoryWarning"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "leftSwipeReceived"]
+- !private ["So30UIPasteConfigurationSupportingP", "numberOfPages"]
+- !private ["So30UIPasteConfigurationSupportingP", "pageBar"]
+- !private ["So30UIPasteConfigurationSupportingP", "rightSwipeReceived"]
+- !private ["So30UIPasteConfigurationSupportingP", "roleExplaination"]
+- !private ["So30UIPasteConfigurationSupportingP", "roleName"]
+- !private ["So30UIPasteConfigurationSupportingP", "roleRules"]
+- !private ["So30UIPasteConfigurationSupportingP", "roles"]
+- !private ["So30UIPasteConfigurationSupportingP", "setPage"]
+- !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "view"]
+- !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- ["So11UIResponderC", "Bool"]
+- !private ["So11UIResponderC", "GameSession"]
+- !private ["So11UIResponderC", "RoleRulesReviewViewController"]
+- ["So11UIResponderC", "String"]
+- ["So11UIResponderC", "UILabel"]
+- ["So11UIResponderC", "UIPageControl"]
+- ["So11UIResponderC", "UISwipeGestureRecognizer"]
+- !private ["So11UIResponderC", "UISwipeGestureRecognizerDirection"]
+- !private ["So11UIResponderC", "addGestureRecognizer"]
+- !private ["So11UIResponderC", "currentPage"]
+- ["So11UIResponderC", "didReceiveMemoryWarning"]
+- ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "leftSwipeReceived"]
+- !private ["So11UIResponderC", "numberOfPages"]
+- ["So11UIResponderC", "pageBar"]
+- ["So11UIResponderC", "pageSwitched"]
+- ["So11UIResponderC", "rightSwipeReceived"]
+- ["So11UIResponderC", "roleExplaination"]
+- ["So11UIResponderC", "roleName"]
+- ["So11UIResponderC", "roleRules"]
+- ["So11UIResponderC", "roles"]
+- ["So11UIResponderC", "setPage"]
+- !private ["So11UIResponderC", "text"]
+- !private ["So11UIResponderC", "view"]
+- ["So11UIResponderC", "viewDidLoad"]
+- ["So11UIResponderC", "viewWillAppear"]
+- !private ["So30UIResponderStandardEditActionsP", "GameSession"]
+- !private ["So30UIResponderStandardEditActionsP", "RoleRulesReviewViewController"]
+- !private ["So30UIResponderStandardEditActionsP", "UISwipeGestureRecognizer"]
+- !private ["So30UIResponderStandardEditActionsP", "UISwipeGestureRecognizerDirection"]
+- !private ["So30UIResponderStandardEditActionsP", "addGestureRecognizer"]
+- !private ["So30UIResponderStandardEditActionsP", "currentPage"]
+- !private ["So30UIResponderStandardEditActionsP", "didReceiveMemoryWarning"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "leftSwipeReceived"]
+- !private ["So30UIResponderStandardEditActionsP", "numberOfPages"]
+- !private ["So30UIResponderStandardEditActionsP", "pageBar"]
+- !private ["So30UIResponderStandardEditActionsP", "rightSwipeReceived"]
+- !private ["So30UIResponderStandardEditActionsP", "roleExplaination"]
+- !private ["So30UIResponderStandardEditActionsP", "roleName"]
+- !private ["So30UIResponderStandardEditActionsP", "roleRules"]
+- !private ["So30UIResponderStandardEditActionsP", "roles"]
+- !private ["So30UIResponderStandardEditActionsP", "setPage"]
+- !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "view"]
+- !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So16UIStateRestoringP", "GameSession"]
+- !private ["So16UIStateRestoringP", "RoleRulesReviewViewController"]
+- !private ["So16UIStateRestoringP", "UISwipeGestureRecognizer"]
+- !private ["So16UIStateRestoringP", "UISwipeGestureRecognizerDirection"]
+- !private ["So16UIStateRestoringP", "didReceiveMemoryWarning"]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "leftSwipeReceived"]
+- !private ["So16UIStateRestoringP", "pageBar"]
+- !private ["So16UIStateRestoringP", "rightSwipeReceived"]
+- !private ["So16UIStateRestoringP", "roleExplaination"]
+- !private ["So16UIStateRestoringP", "roleName"]
+- !private ["So16UIStateRestoringP", "roleRules"]
+- !private ["So16UIStateRestoringP", "roles"]
+- !private ["So16UIStateRestoringP", "setPage"]
+- !private ["So16UIStateRestoringP", "view"]
+- !private ["So16UIStateRestoringP", "viewDidLoad"]
+- ["So16UIStateRestoringP", ""]
+- !private ["So24UISwipeGestureRecognizerC", "direction"]
+- !private ["So24UISwipeGestureRecognizerC", "init"]
+- !private ["SC33UISwipeGestureRecognizerDirectionV", "left"]
+- !private ["SC33UISwipeGestureRecognizerDirectionV", "right"]
+- !private ["So18UITraitEnvironmentP", "GameSession"]
+- !private ["So18UITraitEnvironmentP", "RoleRulesReviewViewController"]
+- !private ["So18UITraitEnvironmentP", "UISwipeGestureRecognizer"]
+- !private ["So18UITraitEnvironmentP", "UISwipeGestureRecognizerDirection"]
+- !private ["So18UITraitEnvironmentP", "addGestureRecognizer"]
+- !private ["So18UITraitEnvironmentP", "currentPage"]
+- !private ["So18UITraitEnvironmentP", "didReceiveMemoryWarning"]
+- !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "leftSwipeReceived"]
+- !private ["So18UITraitEnvironmentP", "numberOfPages"]
+- !private ["So18UITraitEnvironmentP", "pageBar"]
+- !private ["So18UITraitEnvironmentP", "rightSwipeReceived"]
+- !private ["So18UITraitEnvironmentP", "roleExplaination"]
+- !private ["So18UITraitEnvironmentP", "roleName"]
+- !private ["So18UITraitEnvironmentP", "roleRules"]
+- !private ["So18UITraitEnvironmentP", "roles"]
+- !private ["So18UITraitEnvironmentP", "setPage"]
+- !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "view"]
+- !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- ["So18UITraitEnvironmentP", ""]
+- !private ["So6UIViewC", "addGestureRecognizer"]
+- !private ["So6UIViewC", "currentPage"]
+- !private ["So6UIViewC", "numberOfPages"]
+- !private ["So6UIViewC", "text"]
+- ["So16UIViewControllerC", "Bool"]
+- !private ["So16UIViewControllerC", "GameSession"]
+- !private ["So16UIViewControllerC", "RoleRulesReviewViewController"]
+- ["So16UIViewControllerC", "String"]
+- ["So16UIViewControllerC", "UILabel"]
+- ["So16UIViewControllerC", "UIPageControl"]
+- ["So16UIViewControllerC", "UISwipeGestureRecognizer"]
+- !private ["So16UIViewControllerC", "UISwipeGestureRecognizerDirection"]
+- ["So16UIViewControllerC", "didReceiveMemoryWarning"]
+- ["So16UIViewControllerC", "init"]
+- ["So16UIViewControllerC", "leftSwipeReceived"]
+- ["So16UIViewControllerC", "pageBar"]
+- ["So16UIViewControllerC", "pageSwitched"]
+- ["So16UIViewControllerC", "rightSwipeReceived"]
+- ["So16UIViewControllerC", "roleExplaination"]
+- ["So16UIViewControllerC", "roleName"]
+- ["So16UIViewControllerC", "roleRules"]
+- ["So16UIViewControllerC", "roles"]
+- ["So16UIViewControllerC", "setPage"]
+- !private ["So16UIViewControllerC", "view"]
+- ["So16UIViewControllerC", "viewDidLoad"]
+- ["So16UIViewControllerC", "viewWillAppear"]
+- ["So16UIViewControllerC", ""]
+- !private ["s14_ArrayProtocolP", "count"]
+- !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s23_BidirectionalIndexableP", "count"]
+- ["s23_BidirectionalIndexableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "subscript"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addGestureRecognizer"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "currentPage"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "numberOfPages"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "count"]
+- ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "subscript"]
+- !private ["s14_IndexableBaseP", "count"]
+- ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "GameSession"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "RoleRulesReviewViewController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UISwipeGestureRecognizer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UISwipeGestureRecognizerDirection"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addGestureRecognizer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "currentPage"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "didReceiveMemoryWarning"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "direction"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "leftSwipeReceived"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "numberOfPages"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "pageBar"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "rightSwipeReceived"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "roleExplaination"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "roleName"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "roleRules"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "roles"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setPage"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "view"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s17_MutableIndexableP", "count"]
+- !private ["s17_MutableIndexableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s22_RandomAccessIndexableP", "count"]
+- !private ["s22_RandomAccessIndexableP", "subscript"]
+- !private ["s26_RangeReplaceableIndexableP", "count"]
+- ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "subscript"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "Sa"
+- "s23BidirectionalCollectionP"
+- !private "Sb"
+- !private "So15CALayerDelegateP"
+- "s7CVarArgP"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- !private "s10DictionaryV"
+- "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "8Werewolf11GameSessionC"
+- "s8HashableP"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- !private "s17MutableCollectionP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So26NSExtensionRequestHandlingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "So14NSSecureCodingP"
+- "So8NSStringC"
+- !private "s9OptionSetP"
+- !private "s22RandomAccessCollectionP"
+- "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- "8Werewolf29RoleRulesReviewViewControllerC"
+- "s8SequenceP"
+- !private "s10SetAlgebraP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- "So18UIContentContainerP"
+- !private "So30UIContentSizeCategoryAdjustingP"
+- !private "So9UIControlC"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So19UIGestureRecognizerC"
+- !private "So7UILabelC"
+- !private "So13UIPageControlC"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So16UIStateRestoringP"
+- !private "So24UISwipeGestureRecognizerC"
+- !private "SC33UISwipeGestureRecognizerDirectionV"
+- "So18UITraitEnvironmentP"
+- !private "So6UIViewC"
+- "So16UIViewControllerC"
+- !private "s14_ArrayProtocolP"
+- "s23_BidirectionalIndexableP"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s17_MutableIndexableP"
+- "s21_ObjectiveCBridgeableP"
+- !private "s22_RandomAccessIndexableP"
+- "s26_RangeReplaceableIndexableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SceneKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SpriteKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/GameplayKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "d85b76da9e71b51a2d6fa76789d7b0f4"

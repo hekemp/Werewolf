@@ -21,7 +21,7 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     
     var villageList = [[String]]()
     
-    var voteList = GameSession.active?.seerVoteList
+    var voteList = GameSession.active.seerVoteList
     
     var resultList = [String]()
     
@@ -35,7 +35,7 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         super.viewDidLoad()
         mcSession.delegate = self
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(SeerViewController.updateStatus), userInfo: nil, repeats: true)
-        let character = GameSession.active?.myCharacter
+        let character = GameSession.active.myCharacter
         myRole = character?.role
 
         
@@ -44,7 +44,7 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList?.count {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
             finalTally()
         }
     }
@@ -197,7 +197,7 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         myVote = voteIndex
         let vote:String = villageList[voteIndex][0]
         tableView.allowsSelection = false
-        self.voteList!.append([vote,myRole!])
+        self.voteList.append([vote,myRole!])
         Networking.shared.sendText(vote + "," + myRole!, prefixCode: "Seer")
         confirmButton.isEnabled = false
     }

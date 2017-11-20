@@ -37,10 +37,6 @@ class LobbyViewController: UIViewController, MCSessionDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        GameSession.active?.villageList = self.villageList
-    }
-    
     @objc func updateLabel() {
         let newText = "Number of Players: " + String(mcSession.connectedPeers.count + 1)
         theLabel.text = newText
@@ -59,6 +55,9 @@ class LobbyViewController: UIViewController, MCSessionDelegate {
         if segue.identifier == "startCharacterCreation" {
             destVC.mcSession = mcSession
             destVC.villageList = self.villageList
+            GameSession.active.villageList = self.villageList
+            print("Village List!")
+            print(GameSession.active.villageList)
             
             
         }

@@ -27,7 +27,7 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     var resultList = [String]()
     
-    var voteList = GameSession.active?.doctorVoteList
+    var voteList = GameSession.active.doctorVoteList
     
     var timer: Timer!
     
@@ -38,12 +38,12 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(DoctorViewController.updateStatus), userInfo: nil, repeats: true)
-        let character = GameSession.active?.myCharacter
+        let character = GameSession.active.myCharacter
         myRole = character?.role
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList?.count {
+        if mcSession.connectedPeers.count + 1 == voteList.count {
             finalTally()
         }
     }
@@ -58,7 +58,7 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         }
         
         
-        for player in voteList! {
+        for player in voteList {
             if player[1] == "Doctor"{
                 
                 countingVotes[Int(player[0])!] += 1
@@ -186,7 +186,7 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         // vote for self
         let voteIndex:Int = (tableView.indexPathForSelectedRow! as NSIndexPath).row
         tableView.allowsSelection = false
-        self.voteList!.append([String(voteIndex),myRole!])
+        self.voteList.append([String(voteIndex),myRole!])
         Networking.shared.sendText(String(voteIndex) + "," + myRole!, prefixCode: "Doctor")
         confirmButton.isEnabled = false
     }

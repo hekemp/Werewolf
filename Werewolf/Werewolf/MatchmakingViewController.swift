@@ -38,7 +38,7 @@ class MatchmakingViewController: UIViewController, UITableViewDelegate, UITableV
     }
     func matchFound(match: GKMatch?, err: Error?){
         if let match = match{
-            GameSession.active?.match = match
+            GameSession.active.match = match
             shouldPerformSegue(withIdentifier: "matched", sender: self)
         }
     }

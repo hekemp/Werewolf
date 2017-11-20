@@ -92,7 +92,7 @@ class ExecuteViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        GameSession.active?.villageList = self.villageList
-        GameSession.active?.mySession = self.mcSession
+        GameSession.active.villageList = self.villageList
+        GameSession.active.mySession = self.mcSession
     }
 }

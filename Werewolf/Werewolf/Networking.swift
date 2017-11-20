@@ -52,61 +52,68 @@ class Networking{
                 DispatchQueue.main.async { [unowned self] in
                     let characterArray = actualString!.components(separatedBy: ",")
                     let prefixCode = characterArray[0]
+                    print(prefixCode)
                     if(prefixCode=="initiative"){
                         let otherInitiative = Int(characterArray[1])!
-                        if(GameSession.active?.initiative == nil){
-                            GameSession.active?.initiative = Int(arc4random_uniform(UInt32.max))
-                            GameSession.active?.peersToGetInitiativeFrom = self.mcSession?.connectedPeers.count
+                        if(GameSession.active.initiative == nil){
+                            GameSession.active.initiative = Int(arc4random_uniform(UInt32.max))
+                            GameSession.active.peersToGetInitiativeFrom = self.mcSession?.connectedPeers.count
                             
                         }
-                        if((GameSession.active?.initiative!)!>otherInitiative){
-                            GameSession.active?.rank! += 1
+                        if((GameSession.active.initiative!)>otherInitiative){
+                            GameSession.active.rank! += 1
                         }
-                        GameSession.active?.peersToGetInitiativeFrom! -= 1
+                        GameSession.active.peersToGetInitiativeFrom! -= 1
                     }
                     else if(prefixCode=="Playerdata"){
+                        print(actualString!)
                         let name = characterArray[1]
                         let role = characterArray[2]
-                        GameSession.active?.villageList!.append([name, role])
+                        print(GameSession.active.villageList)
+                        GameSession.active.villageList!.append([name, role])
                     }
-                    else if(prefixCode=="Villagename"){
-                        if(GameSession.active?.villageName==nil){
-                            GameSession.active?.villageName=characterArray[1]
+                    else if(prefixCode=="VillageName"){
+                        print("Got village")
+                        print(characterArray[1])
+                        if(GameSession.active.villageName==nil){
+                            print("Setting village name!")
+                            GameSession.active.villageName=characterArray[1]
+                            print(GameSession.active.villageName)
                         }
                     }
                     else if(prefixCode=="Nominate"){
                         let name    = characterArray[1]
                         let role = characterArray[2]
-                        GameSession.active?.voteList.append([name, role])
+                        GameSession.active.voteList.append([name, role])
                     }
                     else if(prefixCode=="Vote"){
                         let name    = characterArray[1]
-                        GameSession.active?.killedList.append(name)
+                        GameSession.active.killedList.append(name)
                     }
                     else if(prefixCode=="Seer"){
                         let name    = characterArray[1]
                         let role = characterArray[2]
-                        GameSession.active?.seerVoteList.append([name, role])
+                        GameSession.active.seerVoteList.append([name, role])
                     }
                     else if(prefixCode=="Werewolf"){
                         let name    = characterArray[1]
                         let role = characterArray[2]
-                        GameSession.active?.werewolfVoteList.append([name, role])
+                        GameSession.active.werewolfVoteList.append([name, role])
                     }
                     else if(prefixCode=="Doctor"){
                         let name    = characterArray[1]
                         let role = characterArray[2]
-                        GameSession.active?.doctorVoteList.append([name, role])
+                        GameSession.active.doctorVoteList.append([name, role])
                     }
                     else if(prefixCode=="Potion"){
                         let name    = characterArray[1]
                         let role = characterArray[2]
-                        GameSession.active?.potionVoteList.append([name, role])
+                        GameSession.active.potionVoteList.append([name, role])
                     }
                     else if(prefixCode=="Poison"){
                         let name    = characterArray[1]
                         let role = characterArray[2]
-                        GameSession.active?.poisonVoteList.append([name, role])
+                        GameSession.active.poisonVoteList.append([name, role])
                     }
                 }
             }
