@@ -19,9 +19,20 @@ class GameSession{
     var myCharacter: PlayerCharacter?
     var mySession: MCSession?
     var match: GKMatch?
+    var initiative : Int?
+    var rank : Int?
+    var peersToGetInitiativeFrom : Int?
     var canUsePotion = true
     var canUsePoison = true
+    var voteList : [[String]] = []
+    var werewolfVoteList : [[String]] = []
+    var seerVoteList : [[String]] = []
+    var doctorVoteList : [[String]] = []
+    var potionVoteList : [[String]] = []
+    var poisonVoteList : [[String]] = []
+    var killedList : [String] = []
     init(){
         GameSession.active = self
     }
+    
 }

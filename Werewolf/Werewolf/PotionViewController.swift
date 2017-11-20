@@ -25,7 +25,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     var resultList = [String]()
     
-    var voteList = [[String]]()
+    var voteList = GameSession.active?.voteList
     
     var timer: Timer!
     
@@ -46,7 +46,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList.count {
+        if mcSession.connectedPeers.count + 1 == voteList?.count {
             finalTally()
         }
     }
@@ -56,7 +56,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         
         var potionVote = -1
         
-        for player in voteList {
+        for player in voteList! {
             if player[1] == "Witch"{
                 
                 potionVote = Int(player[0])!
@@ -118,52 +118,13 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     
     
-    // This function should be CALLED when attempting to send the text
-    func sendText(_ plainString: String) {
-        print("Sending Data")
-        if mcSession.connectedPeers.count > 0 {
-            print("Sending Data 2")
-            
-            guard let plainData = (plainString as NSString).data(using: String.Encoding.utf8.rawValue) else {
-                fatalError()
-            }
-            
-            let base64String = (plainData as NSData).base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-            
-            if  let data = Data.init(base64Encoded: base64String){
-                do {
-                    print("Sending Data 3")
-                    try mcSession.send(data, toPeers: mcSession.connectedPeers, with: .reliable)
-                    
-                } catch let error as NSError {
-                    let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default))
-                    present(ac, animated: true)
-                }
-            }
-        }
-    }
     
     
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        
-        
-        if data != nil {
-            do {
-                let actualString = String(data: data, encoding: String.Encoding.utf8)
-                print(actualString)
-                DispatchQueue.main.async { [unowned self] in
-                    let characterArray = actualString!.components(separatedBy: ",")
-                    
-                    let name    = characterArray[0]
-                    let role = characterArray[1]
-                    self.voteList.append([name, role])
-                }
-            }
-            
+        Networking.shared.session(session, didReceive: data, fromPeer: peerID)
+
         }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue: \(String(describing: segue.identifier))")
@@ -215,8 +176,8 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     @IBAction func abstainButtonClicked(_ sender: Any) {
         tableView.allowsSelection = false
-        self.voteList.append([String(-1),myRole!])
-        sendText(String(-1) + "," + myRole!)
+        self.voteList!.append([String(-1),myRole!])
+        Networking.shared.sendText(String(-1) + "," + myRole!, prefixCode: "Potion")
         confirmButton.isEnabled = false
         abstainButton.isEnabled = false
     }
@@ -236,8 +197,8 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         print(voteIndex)
         
         tableView.allowsSelection = false
-        self.voteList.append([String(voteIndex),myRole!])
-        sendText(String(voteIndex) + "," + myRole!)
+        self.voteList!.append([String(voteIndex),myRole!])
+        Networking.shared.sendText(String(voteIndex) + "," + myRole!, prefixCode: "Potion")
         confirmButton.isEnabled = false
         abstainButton.isEnabled = false
     }

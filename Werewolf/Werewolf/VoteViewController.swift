@@ -23,7 +23,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     
     var tempVillageList = [[String]]()
     
-    var killedList = [String]()
+    var killedList = GameSession.active?.killedList
     
     var tempKilledList = [String]()
     
@@ -122,53 +122,15 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     
     
     
-    // This function should be CALLED when attempting to send the text
-    func sendText(_ plainString: String) {
-        print("Sending Data")
-        if mcSession.connectedPeers.count > 0 {
-            print("Sending Data 2")
-            
-            guard let plainData = (plainString as NSString).data(using: String.Encoding.utf8.rawValue) else {
-                fatalError()
-            }
-            
-            let base64String = (plainData as NSData).base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-            
-            if  let data = Data.init(base64Encoded: base64String){
-                do {
-                    print("Sending Data 3")
-                    try mcSession.send(data, toPeers: mcSession.connectedPeers, with: .reliable)
-                    
-                } catch let error as NSError {
-                    let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default))
-                    present(ac, animated: true)
-                }
-            }
-        }
-    }
-    
     
     // This function checks for if you are recieving data and if you are it executes
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        if data != nil {
-            do {
-                let actualString = String(data: data, encoding: String.Encoding.utf8)
-                print(actualString)
-                DispatchQueue.main.async { [unowned self] in
-                    let characterArray = actualString!.components(separatedBy: ",")
-                    
-                    let name    = characterArray[0]
-                    //let role = characterArray[1]
-                    self.killedList.append(name)
-                }
-            }
-            
-        }
+        Networking.shared.session(session, didReceive: data, fromPeer: peerID)
+
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == killedList.count {
+        if mcSession.connectedPeers.count + 1 == killedList?.count {
             finalTally()
         }
     }
@@ -190,7 +152,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         
         resultList.append(String(maxVotesLocation))
         
-        killedList.forEach { item in
+        killedList?.forEach { item in
             
             if(item != "Abstain" ){
                 tempKilledList.append(item)
@@ -201,7 +163,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         }
         killedList = tempKilledList
         
-        let countedSet = NSCountedSet(array: killedList)
+        let countedSet = NSCountedSet(array: killedList!)
         let mostFrequent = countedSet.max { countedSet.count(for: $0) < countedSet.count(for: $1) }
         
         villageList.forEach { item in
@@ -240,8 +202,8 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let vote:String = voteList[voteIndex][0]
         print("vote is" + vote)
         VoteTableView.allowsSelection = false
-        self.killedList.append(vote)
-        sendText(vote)
+        self.killedList!.append(vote)
+        Networking.shared.sendText(vote, prefixCode: "Vote")
         voteButton.isEnabled = false
         abstainButton.isEnabled = false
     }
@@ -251,8 +213,8 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         let vote:String = "Abstain"
         print("vote is" + vote)
         VoteTableView.allowsSelection = false
-        self.killedList.append(vote)
-        sendText(vote)
+        self.killedList!.append(vote)
+        Networking.shared.sendText(vote, prefixCode: "Vote")
         voteButton.isEnabled = false
         abstainButton.isEnabled  = false
         
