@@ -44,6 +44,7 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
     }
     
     func performSegueToVillage() {
+        timer.invalidate()
         performSegue(withIdentifier: "moveToVillage", sender: self)
         
     }

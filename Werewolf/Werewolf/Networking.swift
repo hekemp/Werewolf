@@ -81,7 +81,7 @@ class Networking{
                             print(GameSession.active.villageName)
                         }
                     }
-                    else if(prefixCode=="Nominate"){
+                    else if(prefixCode=="Nomination"){
                         let name    = characterArray[1]
                         let role = characterArray[2]
                         GameSession.active.voteList.append([name, role])

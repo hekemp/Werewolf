@@ -95,7 +95,6 @@ depends-member:
 - !private ["s7CVarArgP", "abstainButton"]
 - !private ["s7CVarArgP", "allowsSelection"]
 - !private ["s7CVarArgP", "append"]
-- !private ["s7CVarArgP", "connectedPeers"]
 - !private ["s7CVarArgP", "count"]
 - !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "dequeueReusableCell"]
@@ -178,7 +177,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "abstainButton"]
 - !private ["s28CustomDebugStringConvertibleP", "allowsSelection"]
 - !private ["s28CustomDebugStringConvertibleP", "append"]
-- !private ["s28CustomDebugStringConvertibleP", "connectedPeers"]
 - !private ["s28CustomDebugStringConvertibleP", "count"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "dequeueReusableCell"]
@@ -263,7 +261,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "abstainButton"]
 - !private ["s23CustomStringConvertibleP", "allowsSelection"]
 - !private ["s23CustomStringConvertibleP", "append"]
-- !private ["s23CustomStringConvertibleP", "connectedPeers"]
 - !private ["s23CustomStringConvertibleP", "count"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "dequeueReusableCell"]
@@ -356,7 +353,6 @@ depends-member:
 - !private ["s9EquatableP", "abstainButton"]
 - !private ["s9EquatableP", "allowsSelection"]
 - ["s9EquatableP", "connected"]
-- !private ["s9EquatableP", "connectedPeers"]
 - ["s9EquatableP", "connecting"]
 - !private ["s9EquatableP", "delegate"]
 - !private ["s9EquatableP", "dequeueReusableCell"]
@@ -446,7 +442,6 @@ depends-member:
 - !private ["s8HashableP", "abstainButton"]
 - !private ["s8HashableP", "allowsSelection"]
 - ["s8HashableP", "connected"]
-- !private ["s8HashableP", "connectedPeers"]
 - ["s8HashableP", "connecting"]
 - !private ["s8HashableP", "delegate"]
 - !private ["s8HashableP", "dequeueReusableCell"]
@@ -509,7 +504,6 @@ depends-member:
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["So8MCPeerIDC", "displayName"]
-- !private ["So9MCSessionC", "connectedPeers"]
 - !private ["So9MCSessionC", "delegate"]
 - ["So17MCSessionDelegateP", "GameSession"]
 - !private ["So17MCSessionDelegateP", "Int"]
@@ -716,7 +710,6 @@ depends-member:
 - !private ["So8NSObjectC", "allowsSelection"]
 - ["So8NSObjectC", "browserViewControllerDidFinish"]
 - ["So8NSObjectC", "browserViewControllerWasCancelled"]
-- !private ["So8NSObjectC", "connectedPeers"]
 - !private ["So8NSObjectC", "delegate"]
 - !private ["So8NSObjectC", "dequeueReusableCell"]
 - !private ["So8NSObjectC", "destination"]
@@ -782,7 +775,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "Timer"]
 - !private ["So16NSObjectProtocolP", "abstainButton"]
 - !private ["So16NSObjectProtocolP", "allowsSelection"]
-- !private ["So16NSObjectProtocolP", "connectedPeers"]
 - !private ["So16NSObjectProtocolP", "delegate"]
 - !private ["So16NSObjectProtocolP", "dequeueReusableCell"]
 - !private ["So16NSObjectProtocolP", "destination"]
@@ -1771,7 +1763,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Timer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "abstainButton"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "allowsSelection"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "connectedPeers"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dequeueReusableCell"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "destination"]
@@ -2016,4 +2007,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/Headers/MultipeerConnectivity.apinotes"
-interface-hash: "859763f01c867f6775ba422f6d7e8743"
+interface-hash: "928b38e8e413122ca675b271a66b6880"

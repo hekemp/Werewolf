@@ -65,13 +65,13 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return villageList.count
+        return GameSession.active.villageList!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-        cell.textLabel!.text = villageList[cellNum][0]
+        cell.textLabel!.text = GameSession.active.villageList![cellNum][0]
         if (cellNum == 0) {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
@@ -139,7 +139,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList.count {
+        if GameSession.active.villageList!.count == GameSession.active.voteList.count {
             finalTally()
         }
     }
@@ -148,7 +148,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         timer.invalidate()
         var countingVotes = [Int]()
         
-        for _ in villageList {
+        for _ in GameSession.active.villageList! {
             countingVotes.append(0)
         }
         
@@ -164,14 +164,14 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         
         resultList.append(String(maxVotesLocation))
         
-        voteList.forEach { item in
+        GameSession.active.voteList.forEach { item in
             
             if(item[0] != "Abstain" ){
                 tempVoteList.append(item)
             }
         }
-        voteList = tempVoteList
-        if (voteList.isEmpty){
+        GameSession.active.voteList = tempVoteList
+        if (GameSession.active.voteList.isEmpty){
             
             performSegue(withIdentifier: "noNominations", sender: self)
             
@@ -185,21 +185,21 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue: \(String(describing: segue.identifier))")
         
-        if(voteList.isEmpty){
+        if(GameSession.active.voteList.isEmpty){
             
             let destVC: ExecuteViewController = segue.destination as! ExecuteViewController
             destVC.mcSession = mcSession
-            destVC.villageList = self.villageList
+            destVC.villageList = GameSession.active.villageList!
             print(villageList)
         }
         else{
         let destVC: VoteViewController = segue.destination as! VoteViewController
             destVC.mcSession = mcSession
-            destVC.villageList = self.villageList
+            destVC.villageList = GameSession.active.villageList!
             print(villageList)
             destVC.resultList = self.resultList
             print(resultList)
-            destVC.voteList = self.voteList
+            destVC.voteList = GameSession.active.voteList
             print(voteList)
         }
         
@@ -209,10 +209,10 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         
         let voteIndex:Int = (NominationTableView.indexPathForSelectedRow! as NSIndexPath).row
         myVote = voteIndex
-        let vote:String = villageList[voteIndex][0]
+        let vote:String = GameSession.active.villageList![voteIndex][0]
         print("vote is" + vote)
         NominationTableView.allowsSelection = false
-        self.voteList.append([vote,myRole!])
+        GameSession.active.voteList.append([vote,myRole!])
         Networking.shared.sendText(vote + "," + myRole!, prefixCode: "Nomination")
         nominateButton.isEnabled = false
         abstainButton.isEnabled = false
@@ -224,7 +224,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         let vote:String = "Abstain"
         print("vote is" + vote)
         NominationTableView.allowsSelection = false
-        self.voteList.append([vote,myRole!])
+        GameSession.active.voteList.append([vote,myRole!])
         Networking.shared.sendText(vote + "," + myRole!, prefixCode: "Nomination")
         nominateButton.isEnabled = false
         abstainButton.isEnabled  = false
