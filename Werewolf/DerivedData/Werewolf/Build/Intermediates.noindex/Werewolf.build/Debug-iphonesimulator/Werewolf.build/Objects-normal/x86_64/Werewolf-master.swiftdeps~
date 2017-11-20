@@ -1,6 +1,6 @@
 version: "Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)"
 options: "85efad0bd39e5194d05b1bb68b438bf6"
-build_time: [1511154232, 207395000]
+build_time: [1511154307, 166447000]
 inputs:
   "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/VoteViewController.swift": [1511150278, 0]
   "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/MatchmakingViewController.swift": [1511150281, 0]
@@ -9,7 +9,7 @@ inputs:
   "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/PlayerCharacter.swift": [1509298186, 0]
   "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/StreamReader.swift": [1510969845, 0]
   "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/RandomGenerators.swift": [1510975758, 0]
-  "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/CharacterCreationViewController.swift": [1511154213, 0]
+  "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/CharacterCreationViewController.swift": [1511154307, 0]
   "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/WerewolfViewController.swift": [1511150449, 0]
   "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/RoleRulesReviewViewController.swift": [1511150473, 0]
   "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/ViewController.swift": [1510497868, 0]

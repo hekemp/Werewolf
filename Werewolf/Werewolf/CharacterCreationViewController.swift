@@ -19,28 +19,63 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
     var villageName : String?
     var villageList : [[String]]?
     var mcSession: MCSession!
-    var roles = ["Werewolf", "Doctor", "Seer", "Witch", "Villager"]
+    var roles = [String]()
+    
     
     @IBAction func doRandomCharacterCreation(_ sender: Any) {
         let name = RandomGenerators.gen.getRandomName()
         let age = RandomGenerators.gen.getRandomAge()
         let gender = RandomGenerators.gen.getRandomGender()
         let occupation = RandomGenerators.gen.getRandomOccupation()
-        var role : String
-
-        print(GameSession.active.rank)
         
-        if((GameSession.active.rank)! < roles.count){
-            role = roles[(GameSession.active.rank!)]
+        if(mcSession.connectedPeers.count + 1 == 1){
+            roles.append("Villager")
+        }
+        else if(mcSession.connectedPeers.count + 1 == 2){
+            roles.append(contentsOf: ["Villager", "Werewolf"])
+        }
+        else if(mcSession.connectedPeers.count + 1 == 3){
+            roles.append(contentsOf: ["Villager", "Werewolf", "Seer"])
+        }
+        else if(mcSession.connectedPeers.count + 1 == 4){
+            roles.append(contentsOf: ["Villager", "Werewolf", "Seer", "Doctor"])
+        }
+        else if(mcSession.connectedPeers.count + 1 == 5){
+            roles.append(contentsOf: ["Villager", "Werewolf", "Seer", "Doctor", "Werewolf"])
         }
         else{
-            if((GameSession.active.rank)!%5 == 0){
-                role = "Werewolf"
-            }
-            else{
-                role = "Villager"
+            roles.append(contentsOf: ["Werewolf", "Seer", "Doctor", "Witch"])
+            while(mcSession.connectedPeers.count + 1 > roles.count){
+                roles.append("Villager")
             }
         }
+        
+        for villager in villageList! {
+            let location = roles.index(of: villager[1])
+            if (location != nil){
+                roles.remove(at: location!)
+            }
+        }
+        
+        let randomIndex = Int(arc4random_uniform(UInt32(roles.count)))
+        
+        let role = roles[randomIndex]
+        
+        roles.remove(at: randomIndex)
+
+        //print(GameSession.active.rank)
+        
+        //if((GameSession.active.rank)! < roles.count){
+        //    role = roles[(GameSession.active.rank!)]
+        //}
+        //else{
+        //    if((GameSession.active.rank)!%5 == 0){
+        //        role = "Werewolf"
+       //     }
+       //     else{
+       //         role = "Villager"
+       //     }
+       // }
         self.villageList!.append([name,role])
         GameSession.active.villageList!.append([name, role])
         Networking.shared.sendText(name + "," + role, prefixCode: "Playerdata")
@@ -58,8 +93,43 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         let age = ageField?.text
         let gender = genderField?.text
         let occupation = occupationField?.text
-        var role : String
-        if((GameSession.active.rank!) < roles.count){
+        
+        if(mcSession.connectedPeers.count + 1 == 1){
+            roles.append("Villager")
+        }
+        else if(mcSession.connectedPeers.count + 1 == 2){
+            roles.append(contentsOf: ["Villager", "Werewolf"])
+        }
+        else if(mcSession.connectedPeers.count + 1 == 3){
+            roles.append(contentsOf: ["Villager", "Werewolf", "Seer"])
+        }
+        else if(mcSession.connectedPeers.count + 1 == 4){
+            roles.append(contentsOf: ["Villager", "Werewolf", "Seer", "Doctor"])
+        }
+        else if(mcSession.connectedPeers.count + 1 == 5){
+            roles.append(contentsOf: ["Villager", "Werewolf", "Seer", "Doctor", "Werewolf"])
+        }
+        else{
+            roles.append(contentsOf: ["Werewolf", "Seer", "Doctor", "Witch"])
+            while(mcSession.connectedPeers.count + 1 > roles.count){
+                roles.append("Villager")
+            }
+        }
+        
+        for villager in villageList! {
+            let location = roles.index(of: villager[1])
+            if (location != nil){
+                roles.remove(at: location!)
+            }
+        }
+        
+        let randomIndex = Int(arc4random_uniform(UInt32(roles.count)))
+        
+        let role = roles[randomIndex]
+        
+        roles.remove(at: randomIndex)
+        
+        /*if((GameSession.active.rank!) < roles.count){
             role = roles[(GameSession.active.rank!)]
         }
         else{
@@ -69,7 +139,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
             else{
                 role = "Villager"
             }
-        }
+        }*/
         self.villageList!.append([name!, role])
         GameSession.active.villageList!.append([name!, role])
         Networking.shared.sendText(name! + "," + role, prefixCode: "Playerdata")
@@ -83,14 +153,14 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         }
         
     }
-    func rollForInitiative(){
+   /* func rollForInitiative(){
         //assign an increasing number to every user
         if(GameSession.active.initiative == nil){
             GameSession.active.initiative = Int(arc4random_uniform(UInt32.max))
             GameSession.active.peersToGetInitiativeFrom = mcSession.connectedPeers.count
         }
         Networking.shared.sendText(String(describing: GameSession.active.initiative!), prefixCode: "Initiative")
-    }
+    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -105,7 +175,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         print(GameSession.active.rank)
         self.villageName = RandomGenerators.gen.getRandomVillageName()
         
-        rollForInitiative()
+        //rollForInitiative()
     }
     
     override func didReceiveMemoryWarning() {
