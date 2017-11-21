@@ -302,6 +302,7 @@ depends-member:
 - !private ["So12GKMatchmakerC", "init"]
 - !private ["So8GKPlayerC", "alias"]
 - !private ["8Werewolf11GameSessionC", "active"]
+- !private ["8Werewolf11GameSessionC", "match"]
 - !private ["s8HashableP", "GKInviteeResponse"]
 - !private ["s8HashableP", "GKMatchRequest"]
 - !private ["s8HashableP", "GKMatchmaker"]

@@ -366,10 +366,10 @@ SWIFT_CLASS("_TtC8Werewolf25MatchmakingViewController")
 
 SWIFT_CLASS("_TtC8Werewolf26NightSummaryViewController")
 @interface NightSummaryViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified summaryText;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)timeToMoveOn;
-- (void)viewWillDisappear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -405,7 +405,10 @@ SWIFT_CLASS("_TtC8Werewolf24NominationViewController")
 SWIFT_CLASS("_TtC8Werewolf20PoisonViewController")
 @interface PoisonViewController : UIViewController <MCSessionDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified confirmButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified abstainButton;
 - (void)viewDidLoad;
+- (void)updateStatus;
 - (void)didReceiveMemoryWarning;
 - (void)session:(MCSession * _Nonnull)session didReceiveStream:(NSInputStream * _Nonnull)stream withName:(NSString * _Nonnull)streamName fromPeer:(MCPeerID * _Nonnull)peerID;
 - (void)session:(MCSession * _Nonnull)session didStartReceivingResourceWithName:(NSString * _Nonnull)resourceName fromPeer:(MCPeerID * _Nonnull)peerID withProgress:(NSProgress * _Nonnull)progress;
@@ -418,6 +421,8 @@ SWIFT_CLASS("_TtC8Werewolf20PoisonViewController")
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)tableView:(UITableView * _Nonnull)tableView didDeselectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (NSIndexPath * _Nullable)tableView:(UITableView * _Nonnull)tableView willSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (IBAction)confirmClicked:(id _Nonnull)sender;
+- (IBAction)abstainClicked:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -563,6 +568,26 @@ SWIFT_CLASS("_TtC8Werewolf22WerewolfViewController")
 - (void)tableView:(UITableView * _Nonnull)tableView didDeselectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (NSIndexPath * _Nullable)tableView:(UITableView * _Nonnull)tableView willSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (IBAction)confirmButtonClicked:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC8Werewolf23humansWinViewController")
+@interface humansWinViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified summaryText;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC8Werewolf27werewolvesWinViewController")
+@interface werewolvesWinViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified summaryText;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

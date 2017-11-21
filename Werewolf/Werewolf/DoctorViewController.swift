@@ -43,7 +43,7 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList.count {
+        if GameSession.active.villageList!.count == GameSession.active.doctorVoteList.count {
             finalTally()
         }
     }
@@ -53,12 +53,12 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         
         var countingVotes = [Int]()
         
-        for _ in villageList {
+        for _ in GameSession.active.villageList! {
             countingVotes.append(0)
         }
         
         
-        for player in voteList {
+        for player in GameSession.active.doctorVoteList {
             if player[1] == "Doctor"{
                 
                 countingVotes[Int(player[0])!] += 1
@@ -144,8 +144,9 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         print("preparing for segue: \(String(describing: segue.identifier))")
         let destVC: PotionViewController = segue.destination as! PotionViewController
         destVC.mcSession = mcSession
-        destVC.villageList = self.villageList
+        destVC.villageList = GameSession.active.villageList!
         destVC.resultList = self.resultList
+        print(resultList)
         
         
     }
@@ -157,13 +158,13 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return villageList.count
+        return GameSession.active.villageList!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-        cell.textLabel!.text = villageList[cellNum][0]
+        cell.textLabel!.text = GameSession.active.villageList![cellNum][0]
         
         if (cellNum == 0) {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
@@ -186,7 +187,7 @@ class DoctorViewController: UIViewController, MCSessionDelegate, UITableViewDele
         // vote for self
         let voteIndex:Int = (tableView.indexPathForSelectedRow! as NSIndexPath).row
         tableView.allowsSelection = false
-        self.voteList.append([String(voteIndex),myRole!])
+        GameSession.active.doctorVoteList.append([String(voteIndex),myRole!])
         Networking.shared.sendText(String(voteIndex) + "," + myRole!, prefixCode: "Doctor")
         confirmButton.isEnabled = false
     }

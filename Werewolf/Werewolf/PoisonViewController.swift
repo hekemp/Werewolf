@@ -15,16 +15,65 @@ class PoisonViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var confirmButton: UIButton!
+    
+    @IBOutlet weak var abstainButton: UIButton!
+    
+    
     var mcSession: MCSession!
     
     var villageList = [[String]]()
     
     var resultList = [String]()
     
+    var voteList = GameSession.active.poisonVoteList
+    
+    var timer: Timer!
+    
+    var myRole : String?
+    
+    var canUse : Bool?
+    
+    //GameSession.active.villageList!.count == GameSession.active.poisonVoteList.count
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(PoisonViewController.updateStatus), userInfo: nil, repeats: true)
+        let character = GameSession.active.myCharacter
+        myRole = character?.role
+        let canUse = GameSession.active.canUsePoison
+        
+    }
+    
+    @objc func updateStatus() {
+        if  GameSession.active.villageList!.count == GameSession.active.poisonVoteList.count
+        {
+            finalTally()
+        }
+    }
+    
+    func finalTally() {
+        timer.invalidate()
+        
+        var poisonVote = -1
+        
+        for player in GameSession.active.poisonVoteList {
+            if player[1] == "Witch"{
+                
+                poisonVote = Int(player[0])!
+                
+            }
+        }
+        
+        
+        resultList.append(String(poisonVote))
+        
+        print(resultList)
+        
+        performSegue(withIdentifier: "toNightSummary", sender: self)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,7 +133,7 @@ class PoisonViewController: UIViewController, MCSessionDelegate, UITableViewDele
         print("preparing for segue: \(String(describing: segue.identifier))")
         let destVC: NightSummaryViewController = segue.destination as! NightSummaryViewController
         destVC.mcSession = mcSession
-        destVC.villageList = self.villageList
+        destVC.villageList = GameSession.active.villageList!
         destVC.resultList = self.resultList
         
         
@@ -97,13 +146,18 @@ class PoisonViewController: UIViewController, MCSessionDelegate, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return villageList.count
+        return GameSession.active.villageList!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
         cell.textLabel!.text = villageList[cellNum][0]
+        
+        if (cellNum == 0) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
+        
         return cell
     }
     
@@ -115,6 +169,33 @@ class PoisonViewController: UIViewController, MCSessionDelegate, UITableViewDele
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         print("will select row \(indexPath.row)")
         return indexPath
+    }
+    
+    @IBAction func confirmClicked(_ sender: Any) {
+        var voteIndex : Int
+        if GameSession.active.canUsePoison {
+            voteIndex = (tableView.indexPathForSelectedRow! as NSIndexPath).row
+            GameSession.active.canUsePoison = false
+        }
+        else{
+            voteIndex = -1
+        }
+        
+        print(voteIndex)
+        
+        tableView.allowsSelection = false
+        GameSession.active.poisonVoteList.append([String(voteIndex),myRole!])
+        Networking.shared.sendText(String(voteIndex) + "," + myRole!, prefixCode: "Poison")
+        confirmButton.isEnabled = false
+        abstainButton.isEnabled = false
+    }
+    
+    @IBAction func abstainClicked(_ sender: Any) {
+        tableView.allowsSelection = false
+        GameSession.active.poisonVoteList.append([String(-1),myRole!])
+        Networking.shared.sendText(String(-1) + "," + myRole!, prefixCode: "Poison")
+        confirmButton.isEnabled = false
+        abstainButton.isEnabled = false
     }
     
     

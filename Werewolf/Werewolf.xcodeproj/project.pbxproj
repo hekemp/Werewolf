@@ -35,6 +35,8 @@
 		DB679DC41FB9E5E200524C9D /* PotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB679DC31FB9E5E200524C9D /* PotionViewController.swift */; };
 		DB679DC61FB9E62C00524C9D /* PoisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB679DC51FB9E62C00524C9D /* PoisonViewController.swift */; };
 		DBA0FA741FA6597300861C19 /* NightSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */; };
+		DBB1D1D91FC3CFE300DEA007 /* werewolvesWinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB1D1D81FC3CFE300DEA007 /* werewolvesWinViewController.swift */; };
+		DBB1D1DB1FC3CFFA00DEA007 /* humansWinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB1D1DA1FC3CFFA00DEA007 /* humansWinViewController.swift */; };
 		DBBBE1D51FB7B0C700D01726 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */; };
 		DBBBE1D71FB8954000D01726 /* VillageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE1D61FB8953F00D01726 /* VillageViewController.swift */; };
 		DBBBE1D91FB89E6600D01726 /* CharacterCreationLobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE1D81FB89E6600D01726 /* CharacterCreationLobby.swift */; };
@@ -92,6 +94,8 @@
 		DB679DC31FB9E5E200524C9D /* PotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionViewController.swift; sourceTree = "<group>"; };
 		DB679DC51FB9E62C00524C9D /* PoisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonViewController.swift; sourceTree = "<group>"; };
 		DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightSummaryViewController.swift; sourceTree = "<group>"; };
+		DBB1D1D81FC3CFE300DEA007 /* werewolvesWinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = werewolvesWinViewController.swift; sourceTree = "<group>"; };
+		DBB1D1DA1FC3CFFA00DEA007 /* humansWinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = humansWinViewController.swift; sourceTree = "<group>"; };
 		DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		DBBBE1D61FB8953F00D01726 /* VillageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageViewController.swift; sourceTree = "<group>"; };
 		DBBBE1D81FB89E6600D01726 /* CharacterCreationLobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCreationLobby.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				DB679DC31FB9E5E200524C9D /* PotionViewController.swift */,
 				DB679DC51FB9E62C00524C9D /* PoisonViewController.swift */,
 				DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */,
+				DBB1D1DA1FC3CFFA00DEA007 /* humansWinViewController.swift */,
+				DBB1D1D81FC3CFE300DEA007 /* werewolvesWinViewController.swift */,
 				CC3CEA0B1F9E44FC00AED6C4 /* Assets.xcassets */,
 				CCA0D8021FBBA04000C6E3E0 /* town-name-corpus.csv */,
 				CC3CEA0D1F9E44FC00AED6C4 /* LaunchScreen.storyboard */,
@@ -340,8 +346,10 @@
 				CC895D5C1FA0F4990090D495 /* PlayerCharacter.swift in Sources */,
 				CCA0D8011FBB78F700C6E3E0 /* StreamReader.swift in Sources */,
 				CCA0D7FF1FBB72DF00C6E3E0 /* RandomGenerators.swift in Sources */,
+				DBB1D1DB1FC3CFFA00DEA007 /* humansWinViewController.swift in Sources */,
 				CC895D641FA0FC1D0090D495 /* CharacterCreationViewController.swift in Sources */,
 				DB679DC01FB9E5A900524C9D /* WerewolfViewController.swift in Sources */,
+				DBB1D1D91FC3CFE300DEA007 /* werewolvesWinViewController.swift in Sources */,
 				CCA525E01F9E8AE6007118B9 /* RoleRulesReviewViewController.swift in Sources */,
 				CC3CEA071F9E44FC00AED6C4 /* ViewController.swift in Sources */,
 				DB679DC61FB9E62C00524C9D /* PoisonViewController.swift in Sources */,

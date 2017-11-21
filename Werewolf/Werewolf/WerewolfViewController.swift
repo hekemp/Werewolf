@@ -39,7 +39,7 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList.count {
+        if GameSession.active.villageList!.count == GameSession.active.werewolfVoteList.count {
             finalTally()
         }
     }
@@ -49,12 +49,12 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
         
         var countingVotes = [Int]()
         
-        for _ in villageList {
+        for _ in GameSession.active.villageList! {
             countingVotes.append(0)
         }
         
         
-        for player in voteList {
+        for player in GameSession.active.werewolfVoteList {
             if player[1] == "Werewolf"{
                 
                 countingVotes[Int(player[0])!] += 1
@@ -62,16 +62,22 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
             }
         }
         
-        // don't have to cover if a werewolf doesn't exist/0 votes, because if there are  0 werewolves
-        // then the game ends before we get to this point
-        var maxVotes = countingVotes.max()!
+        if(countingVotes.max()! != 0)
+            
+        {var maxVotes = countingVotes.max()!
+            
+            
+            var maxVotesLocation = countingVotes.index(of: maxVotes)!
+            
+            
+            resultList.append(String(maxVotesLocation))}
+            
+        else { // only reached in solo games, not needed, but covers case
+            resultList.append(String(-1))
+        }
         
-        
-        var maxVotesLocation = countingVotes.index(of: maxVotes)!
-        
-        
-        resultList.append(String(maxVotesLocation))
-    
+
+        print(resultList)
         
         performSegue(withIdentifier: "toDoctor", sender: self)
 
@@ -135,7 +141,7 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
         print("preparing for segue: \(String(describing: segue.identifier))")
         let destVC: DoctorViewController = segue.destination as! DoctorViewController
         destVC.mcSession = mcSession
-        destVC.villageList = self.villageList
+        destVC.villageList = GameSession.active.villageList!
         destVC.resultList = self.resultList
         
         
@@ -148,13 +154,13 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return villageList.count
+        return GameSession.active.villageList!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-        cell.textLabel!.text = villageList[cellNum][0]
+        cell.textLabel!.text = GameSession.active.villageList![cellNum][0]
         
         if (cellNum == 0) {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
@@ -177,7 +183,7 @@ class WerewolfViewController: UIViewController, MCSessionDelegate, UITableViewDe
         // vote for self
         let voteIndex:Int = (tableView.indexPathForSelectedRow! as NSIndexPath).row
         tableView.allowsSelection = false
-        self.voteList.append([String(voteIndex),myRole!])
+        GameSession.active.werewolfVoteList.append([String(voteIndex),myRole!])
         Networking.shared.sendText(String(voteIndex) + "," + myRole!, prefixCode: "Werewolf")
         confirmButton.isEnabled = false
     }

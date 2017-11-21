@@ -16,7 +16,6 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "!="
 - !private "+"
-- !private "<"
 - !private "=="
 - "AssignmentPrecedence"
 - "Bool"
@@ -173,6 +172,8 @@ depends-member:
 - ["s26ExpressibleByStringLiteralP", "init"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["8Werewolf11GameSessionC", "active"]
+- !private ["8Werewolf11GameSessionC", "mySession"]
+- !private ["8Werewolf11GameSessionC", "villageList"]
 - !private ["s8HashableP", "GameSession"]
 - !private ["s8HashableP", "String"]
 - !private ["s8HashableP", "Timer"]

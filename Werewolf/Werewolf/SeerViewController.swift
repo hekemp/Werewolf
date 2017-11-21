@@ -44,13 +44,17 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList.count {
+        if GameSession.active.villageList!.count == GameSession.active.seerVoteList.count {
             finalTally()
         }
     }
     
     func finalTally() {
         timer.invalidate()
+        
+        if(myVote == nil){
+            myVote = 0
+        }
         
         let indexLocation = IndexPath(row: myVote, section: 0)
         
@@ -59,7 +63,7 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         
         if myRole == "Seer" {
             let bgColorView = UIView()
-            if villageList[myVote][1] == "Werewolf"{
+            if GameSession.active.villageList![myVote][1] == "Werewolf"{
                 bgColorView.backgroundColor = UIColor.red
             }
             else{
@@ -91,7 +95,7 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     }
     
     @objc func performSegueToWerewolf() {
-        
+        timer.invalidate()
         performSegue(withIdentifier: "toWerewolf", sender: self)
         
     }
@@ -151,8 +155,9 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC: WerewolfViewController = segue.destination as! WerewolfViewController
         destVC.mcSession = mcSession
-        destVC.villageList = self.villageList
+        destVC.villageList = GameSession.active.villageList!
         destVC.resultList = self.resultList
+        print(resultList)
         
         
     }
@@ -164,13 +169,13 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return villageList.count
+        return GameSession.active.villageList!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-        cell.textLabel!.text = villageList[cellNum][0]
+        cell.textLabel!.text = GameSession.active.villageList![cellNum][0]
         
         if (cellNum == 0) {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
@@ -195,9 +200,9 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
         // vote for self
         let voteIndex:Int = (tableView.indexPathForSelectedRow! as NSIndexPath).row
         myVote = voteIndex
-        let vote:String = villageList[voteIndex][0]
+        let vote:String = GameSession.active.villageList![voteIndex][0]
         tableView.allowsSelection = false
-        self.voteList.append([vote,myRole!])
+        GameSession.active.seerVoteList.append([vote,myRole!])
         Networking.shared.sendText(vote + "," + myRole!, prefixCode: "Seer")
         confirmButton.isEnabled = false
     }

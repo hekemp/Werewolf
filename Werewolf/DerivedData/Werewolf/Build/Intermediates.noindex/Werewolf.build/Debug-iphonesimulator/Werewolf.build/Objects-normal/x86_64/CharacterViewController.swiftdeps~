@@ -81,6 +81,7 @@ depends-member:
 - !private ["s9EquatableP", "viewDidLoad"]
 - ["s9EquatableP", ""]
 - !private ["8Werewolf11GameSessionC", "active"]
+- !private ["8Werewolf11GameSessionC", "myCharacter"]
 - !private ["s8HashableP", "GameSession"]
 - !private ["s8HashableP", "characterAge"]
 - !private ["s8HashableP", "characterGender"]
@@ -137,6 +138,11 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "text"]
 - !private ["So16NSObjectProtocolP", "viewDidLoad"]
 - ["So16NSObjectProtocolP", ""]
+- !private ["8Werewolf15PlayerCharacterC", "age"]
+- !private ["8Werewolf15PlayerCharacterC", "gender"]
+- !private ["8Werewolf15PlayerCharacterC", "name"]
+- !private ["8Werewolf15PlayerCharacterC", "occupation"]
+- !private ["8Werewolf15PlayerCharacterC", "role"]
 - !private ["So29UIAccessibilityIdentificationP", "text"]
 - !private ["So12UIAppearanceP", "text"]
 - !private ["So21UIAppearanceContainerP", "GameSession"]
@@ -271,6 +277,7 @@ depends-nominal:
 - "So26NSExtensionRequestHandlingP"
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
+- !private "8Werewolf15PlayerCharacterC"
 - !private "So29UIAccessibilityIdentificationP"
 - !private "So12UIAppearanceP"
 - "So21UIAppearanceContainerP"

@@ -25,7 +25,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     var resultList = [String]()
     
-    var voteList = GameSession.active.voteList
+    var voteList = GameSession.active.potionVoteList
     
     var timer: Timer!
     
@@ -45,7 +45,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     }
     
     @objc func updateStatus() {
-        if mcSession.connectedPeers.count + 1 == voteList.count {
+        if GameSession.active.villageList!.count == GameSession.active.potionVoteList.count {
             finalTally()
         }
     }
@@ -55,7 +55,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         
         var potionVote = -1
         
-        for player in voteList {
+        for player in GameSession.active.potionVoteList {
             if player[1] == "Witch"{
                 
                 potionVote = Int(player[0])!
@@ -129,7 +129,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         print("preparing for segue: \(String(describing: segue.identifier))")
         let destVC: PoisonViewController = segue.destination as! PoisonViewController
         destVC.mcSession = mcSession
-        destVC.villageList = self.villageList
+        destVC.villageList = GameSession.active.villageList!
         destVC.resultList = self.resultList
         
         
@@ -142,23 +142,28 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return villageList.count
+        return GameSession.active.villageList!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
-        cell.textLabel!.text = villageList[cellNum][0]
+        cell.textLabel!.text = GameSession.active.villageList![cellNum][0]
+        
+        if (cellNum == 0) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
         
         if(myRole! == "Witch") {
             if (cellNum == Int(resultList[0])){
                 tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+                cell.textLabel!.text = "-" + GameSession.active.villageList![cellNum][0]
             }
         }
         
-        else if (cellNum == 0) {
-            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-        }
+       // else if (cellNum == 0) {
+       //     tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+       // }
         
         return cell
     }
@@ -175,7 +180,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     
     @IBAction func abstainButtonClicked(_ sender: Any) {
         tableView.allowsSelection = false
-        self.voteList.append([String(-1),myRole!])
+        GameSession.active.potionVoteList.append([String(-1),myRole!])
         Networking.shared.sendText(String(-1) + "," + myRole!, prefixCode: "Potion")
         confirmButton.isEnabled = false
         abstainButton.isEnabled = false
@@ -184,9 +189,8 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
     @IBAction func confirmButtonClicked(_ sender: Any) {
         
         var voteIndex : Int
-        if canUse! {
+        if GameSession.active.canUsePotion {
             voteIndex = (tableView.indexPathForSelectedRow! as NSIndexPath).row
-            canUse = false
             GameSession.active.canUsePotion = false
         }
         else{
@@ -196,7 +200,7 @@ class PotionViewController: UIViewController, MCSessionDelegate, UITableViewDele
         print(voteIndex)
         
         tableView.allowsSelection = false
-        self.voteList.append([String(voteIndex),myRole!])
+        GameSession.active.potionVoteList.append([String(voteIndex),myRole!])
         Networking.shared.sendText(String(voteIndex) + "," + myRole!, prefixCode: "Potion")
         confirmButton.isEnabled = false
         abstainButton.isEnabled = false

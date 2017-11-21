@@ -16,8 +16,11 @@ provides-dynamic-lookup:
 - "updateStatus"
 - "viewDidLoad"
 depends-top-level:
+- !private "!="
 - !private "+"
+- !private "+="
 - !private "=="
+- !private "Array"
 - "AssignmentPrecedence"
 - !private "BooleanLiteralType"
 - "CastingPrecedence"
@@ -65,6 +68,7 @@ depends-member:
 - !private ["s23BidirectionalCollectionP", "max"]
 - !private ["s23BidirectionalCollectionP", "row"]
 - !private ["s23BidirectionalCollectionP", "subscript"]
+- !private ["s13BinaryIntegerP", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["So15CALayerDelegateP", "allowsSelection"]
 - !private ["So15CALayerDelegateP", "dequeueReusableCell"]
@@ -82,7 +86,6 @@ depends-member:
 - !private ["s7CVarArgP", "allowsSelection"]
 - !private ["s7CVarArgP", "append"]
 - !private ["s7CVarArgP", "confirmButton"]
-- !private ["s7CVarArgP", "connectedPeers"]
 - !private ["s7CVarArgP", "count"]
 - !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "dequeueReusableCell"]
@@ -136,7 +139,6 @@ depends-member:
 - ["s7CVarArgP", "viewForZooming"]
 - ["s7CVarArgP", "viewForZoomingInScrollView"]
 - !private ["s7CVarArgP", "villageList"]
-- !private ["s7CVarArgP", "voteList"]
 - ["s7CVarArgP", ""]
 - !private ["s10CollectionP", "append"]
 - !private ["s10CollectionP", "count"]
@@ -156,7 +158,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "allowsSelection"]
 - !private ["s28CustomDebugStringConvertibleP", "append"]
 - !private ["s28CustomDebugStringConvertibleP", "confirmButton"]
-- !private ["s28CustomDebugStringConvertibleP", "connectedPeers"]
 - !private ["s28CustomDebugStringConvertibleP", "count"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "dequeueReusableCell"]
@@ -210,7 +211,6 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "viewForZooming"]
 - ["s28CustomDebugStringConvertibleP", "viewForZoomingInScrollView"]
 - !private ["s28CustomDebugStringConvertibleP", "villageList"]
-- !private ["s28CustomDebugStringConvertibleP", "voteList"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
@@ -232,7 +232,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "allowsSelection"]
 - !private ["s23CustomStringConvertibleP", "append"]
 - !private ["s23CustomStringConvertibleP", "confirmButton"]
-- !private ["s23CustomStringConvertibleP", "connectedPeers"]
 - !private ["s23CustomStringConvertibleP", "count"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "dequeueReusableCell"]
@@ -286,7 +285,6 @@ depends-member:
 - ["s23CustomStringConvertibleP", "viewForZooming"]
 - ["s23CustomStringConvertibleP", "viewForZoomingInScrollView"]
 - !private ["s23CustomStringConvertibleP", "villageList"]
-- !private ["s23CustomStringConvertibleP", "voteList"]
 - ["s23CustomStringConvertibleP", ""]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "append"]
@@ -317,7 +315,6 @@ depends-member:
 - !private ["s9EquatableP", "allowsSelection"]
 - !private ["s9EquatableP", "confirmButton"]
 - ["s9EquatableP", "connected"]
-- !private ["s9EquatableP", "connectedPeers"]
 - ["s9EquatableP", "connecting"]
 - !private ["s9EquatableP", "delegate"]
 - !private ["s9EquatableP", "dequeueReusableCell"]
@@ -370,7 +367,6 @@ depends-member:
 - ["s9EquatableP", "viewForZooming"]
 - ["s9EquatableP", "viewForZoomingInScrollView"]
 - !private ["s9EquatableP", "villageList"]
-- !private ["s9EquatableP", "voteList"]
 - ["s9EquatableP", ""]
 - !private ["s25ExpressibleByArrayLiteralP", "append"]
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
@@ -381,9 +377,14 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "init"]
 - ["8Werewolf11GameSessionC", "active"]
+- !private ["8Werewolf11GameSessionC", "myCharacter"]
+- !private ["8Werewolf11GameSessionC", "villageList"]
+- ["8Werewolf11GameSessionC", "werewolfVoteList"]
 - ["s8HashableP", "GameSession"]
 - !private ["s8HashableP", "Int"]
 - !private ["s8HashableP", "Networking"]
@@ -394,7 +395,6 @@ depends-member:
 - !private ["s8HashableP", "allowsSelection"]
 - !private ["s8HashableP", "confirmButton"]
 - ["s8HashableP", "connected"]
-- !private ["s8HashableP", "connectedPeers"]
 - ["s8HashableP", "connecting"]
 - !private ["s8HashableP", "delegate"]
 - !private ["s8HashableP", "dequeueReusableCell"]
@@ -447,13 +447,12 @@ depends-member:
 - ["s8HashableP", "viewForZooming"]
 - ["s8HashableP", "viewForZoomingInScrollView"]
 - !private ["s8HashableP", "villageList"]
-- !private ["s8HashableP", "voteList"]
 - ["s8HashableP", ""]
 - !private ["10Foundation9IndexPathV", "row"]
+- !private ["Si", "init"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["So8MCPeerIDC", "displayName"]
-- !private ["So9MCSessionC", "connectedPeers"]
 - !private ["So9MCSessionC", "delegate"]
 - ["So17MCSessionDelegateP", "GameSession"]
 - !private ["So17MCSessionDelegateP", "Int"]
@@ -495,7 +494,6 @@ depends-member:
 - ["So17MCSessionDelegateP", "viewForZooming"]
 - ["So17MCSessionDelegateP", "viewForZoomingInScrollView"]
 - !private ["So17MCSessionDelegateP", "villageList"]
-- !private ["So17MCSessionDelegateP", "voteList"]
 - ["So17MCSessionDelegateP", ""]
 - ["SC14MCSessionStateO", "connected"]
 - ["SC14MCSessionStateO", "connecting"]
@@ -560,7 +558,6 @@ depends-member:
 - ["So8NSCodingP", "viewForZooming"]
 - ["So8NSCodingP", "viewForZoomingInScrollView"]
 - !private ["So8NSCodingP", "villageList"]
-- !private ["So8NSCodingP", "voteList"]
 - ["So8NSCodingP", ""]
 - !private ["So9NSCopyingP", "displayName"]
 - !private ["So9NSCopyingP", "init"]
@@ -608,7 +605,6 @@ depends-member:
 - ["So26NSExtensionRequestHandlingP", "viewForZooming"]
 - ["So26NSExtensionRequestHandlingP", "viewForZoomingInScrollView"]
 - !private ["So26NSExtensionRequestHandlingP", "villageList"]
-- !private ["So26NSExtensionRequestHandlingP", "voteList"]
 - ["So26NSExtensionRequestHandlingP", ""]
 - !private ["So11NSIndexPathC", "row"]
 - !private ["So21NSItemProviderReadingP", "init"]
@@ -641,7 +637,6 @@ depends-member:
 - ["So8NSObjectC", "browserViewControllerWasCancelled"]
 - ["So8NSObjectC", "confirmButton"]
 - ["So8NSObjectC", "confirmButtonClicked"]
-- !private ["So8NSObjectC", "connectedPeers"]
 - !private ["So8NSObjectC", "delegate"]
 - !private ["So8NSObjectC", "dequeueReusableCell"]
 - !private ["So8NSObjectC", "destination"]
@@ -692,7 +687,7 @@ depends-member:
 - ["So8NSObjectC", "viewForZooming"]
 - ["So8NSObjectC", "viewForZoomingInScrollView"]
 - ["So8NSObjectC", "villageList"]
-- !private ["So8NSObjectC", "voteList"]
+- ["So8NSObjectC", "voteList"]
 - ["So16NSObjectProtocolP", "GameSession"]
 - !private ["So16NSObjectProtocolP", "Int"]
 - !private ["So16NSObjectProtocolP", "Networking"]
@@ -701,7 +696,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "WerewolfViewController"]
 - !private ["So16NSObjectProtocolP", "allowsSelection"]
 - !private ["So16NSObjectProtocolP", "confirmButton"]
-- !private ["So16NSObjectProtocolP", "connectedPeers"]
 - !private ["So16NSObjectProtocolP", "delegate"]
 - !private ["So16NSObjectProtocolP", "dequeueReusableCell"]
 - !private ["So16NSObjectProtocolP", "destination"]
@@ -751,7 +745,6 @@ depends-member:
 - ["So16NSObjectProtocolP", "viewForZooming"]
 - ["So16NSObjectProtocolP", "viewForZoomingInScrollView"]
 - !private ["So16NSObjectProtocolP", "villageList"]
-- !private ["So16NSObjectProtocolP", "voteList"]
 - ["So16NSObjectProtocolP", ""]
 - !private ["So14NSSecureCodingP", "displayName"]
 - !private ["So14NSSecureCodingP", "init"]
@@ -760,6 +753,8 @@ depends-member:
 - !private ["8Werewolf10NetworkingC", "sendText"]
 - !private ["8Werewolf10NetworkingC", "session"]
 - !private ["8Werewolf10NetworkingC", "shared"]
+- !private ["s7NumericP", "init"]
+- !private ["8Werewolf15PlayerCharacterC", "role"]
 - !private ["s22RandomAccessCollectionP", "append"]
 - !private ["s22RandomAccessCollectionP", "count"]
 - !private ["s22RandomAccessCollectionP", "index"]
@@ -785,6 +780,9 @@ depends-member:
 - !private ["s8SequenceP", "max"]
 - !private ["s8SequenceP", "row"]
 - !private ["s8SequenceP", "subscript"]
+- !private ["s13SignedIntegerP", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s10StrideableP", "init"]
 - !private ["SS", "init"]
 - !private ["s14StringProtocolP", "init"]
 - !private ["s16TextOutputStreamP", "init"]
@@ -856,7 +854,6 @@ depends-member:
 - ["So21UIAppearanceContainerP", "viewForZooming"]
 - ["So21UIAppearanceContainerP", "viewForZoomingInScrollView"]
 - !private ["So21UIAppearanceContainerP", "villageList"]
-- !private ["So21UIAppearanceContainerP", "voteList"]
 - ["So21UIAppearanceContainerP", ""]
 - !private ["So8UIButtonC", "isEnabled"]
 - ["So18UIContentContainerP", "GameSession"]
@@ -902,7 +899,6 @@ depends-member:
 - ["So18UIContentContainerP", "viewForZooming"]
 - ["So18UIContentContainerP", "viewForZoomingInScrollView"]
 - !private ["So18UIContentContainerP", "villageList"]
-- !private ["So18UIContentContainerP", "voteList"]
 - ["So18UIContentContainerP", ""]
 - !private ["So30UIContentSizeCategoryAdjustingP", "text"]
 - !private ["So9UIControlC", "isEnabled"]
@@ -974,7 +970,6 @@ depends-member:
 - ["So18UIFocusEnvironmentP", "viewForZooming"]
 - ["So18UIFocusEnvironmentP", "viewForZoomingInScrollView"]
 - !private ["So18UIFocusEnvironmentP", "villageList"]
-- !private ["So18UIFocusEnvironmentP", "voteList"]
 - ["So18UIFocusEnvironmentP", ""]
 - !private ["So11UIFocusItemP", "allowsSelection"]
 - !private ["So11UIFocusItemP", "dequeueReusableCell"]
@@ -1035,7 +1030,6 @@ depends-member:
 - ["So30UIPasteConfigurationSupportingP", "viewForZooming"]
 - ["So30UIPasteConfigurationSupportingP", "viewForZoomingInScrollView"]
 - !private ["So30UIPasteConfigurationSupportingP", "villageList"]
-- !private ["So30UIPasteConfigurationSupportingP", "voteList"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - ["So11UIResponderC", "Data"]
 - !private ["So11UIResponderC", "DoctorViewController"]
@@ -1107,7 +1101,7 @@ depends-member:
 - ["So11UIResponderC", "viewForZooming"]
 - ["So11UIResponderC", "viewForZoomingInScrollView"]
 - ["So11UIResponderC", "villageList"]
-- !private ["So11UIResponderC", "voteList"]
+- ["So11UIResponderC", "voteList"]
 - ["So30UIResponderStandardEditActionsP", "GameSession"]
 - !private ["So30UIResponderStandardEditActionsP", "Int"]
 - !private ["So30UIResponderStandardEditActionsP", "Networking"]
@@ -1158,7 +1152,6 @@ depends-member:
 - ["So30UIResponderStandardEditActionsP", "viewForZooming"]
 - ["So30UIResponderStandardEditActionsP", "viewForZoomingInScrollView"]
 - !private ["So30UIResponderStandardEditActionsP", "villageList"]
-- !private ["So30UIResponderStandardEditActionsP", "voteList"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So12UIScrollViewC", "allowsSelection"]
 - !private ["So12UIScrollViewC", "dequeueReusableCell"]
@@ -1204,7 +1197,6 @@ depends-member:
 - ["So20UIScrollViewDelegateP", "viewForZooming"]
 - ["So20UIScrollViewDelegateP", "viewForZoomingInScrollView"]
 - !private ["So20UIScrollViewDelegateP", "villageList"]
-- !private ["So20UIScrollViewDelegateP", "voteList"]
 - ["So20UIScrollViewDelegateP", ""]
 - !private ["So35UISpringLoadedInteractionSupportingP", "allowsSelection"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "dequeueReusableCell"]
@@ -1254,7 +1246,6 @@ depends-member:
 - ["So16UIStateRestoringP", "viewForZooming"]
 - ["So16UIStateRestoringP", "viewForZoomingInScrollView"]
 - !private ["So16UIStateRestoringP", "villageList"]
-- !private ["So16UIStateRestoringP", "voteList"]
 - ["So16UIStateRestoringP", ""]
 - !private ["So17UIStoryboardSegueC", "destination"]
 - !private ["So17UIStoryboardSegueC", "identifier"]
@@ -1303,7 +1294,6 @@ depends-member:
 - ["So21UITableViewDataSourceP", "viewForZooming"]
 - ["So21UITableViewDataSourceP", "viewForZoomingInScrollView"]
 - !private ["So21UITableViewDataSourceP", "villageList"]
-- !private ["So21UITableViewDataSourceP", "voteList"]
 - ["So21UITableViewDataSourceP", ""]
 - ["So19UITableViewDelegateP", "GameSession"]
 - !private ["So19UITableViewDelegateP", "Int"]
@@ -1345,7 +1335,6 @@ depends-member:
 - ["So19UITableViewDelegateP", "viewForZooming"]
 - ["So19UITableViewDelegateP", "viewForZoomingInScrollView"]
 - !private ["So19UITableViewDelegateP", "villageList"]
-- !private ["So19UITableViewDelegateP", "voteList"]
 - ["So19UITableViewDelegateP", ""]
 - !private ["SC25UITableViewScrollPositionO", "none"]
 - ["So18UITraitEnvironmentP", "GameSession"]
@@ -1398,7 +1387,6 @@ depends-member:
 - ["So18UITraitEnvironmentP", "viewForZooming"]
 - ["So18UITraitEnvironmentP", "viewForZoomingInScrollView"]
 - !private ["So18UITraitEnvironmentP", "villageList"]
-- !private ["So18UITraitEnvironmentP", "voteList"]
 - ["So18UITraitEnvironmentP", ""]
 - !private ["So6UIViewC", "allowsSelection"]
 - !private ["So6UIViewC", "dequeueReusableCell"]
@@ -1470,7 +1458,7 @@ depends-member:
 - ["So16UIViewControllerC", "viewForZooming"]
 - ["So16UIViewControllerC", "viewForZoomingInScrollView"]
 - ["So16UIViewControllerC", "villageList"]
-- !private ["So16UIViewControllerC", "voteList"]
+- ["So16UIViewControllerC", "voteList"]
 - ["So16UIViewControllerC", ""]
 - ["8Werewolf0A14ViewControllerC", "Data"]
 - !private ["8Werewolf0A14ViewControllerC", "DoctorViewController"]
@@ -1536,7 +1524,7 @@ depends-member:
 - ["8Werewolf0A14ViewControllerC", "viewForZooming"]
 - ["8Werewolf0A14ViewControllerC", "viewForZoomingInScrollView"]
 - ["8Werewolf0A14ViewControllerC", "villageList"]
-- !private ["8Werewolf0A14ViewControllerC", "voteList"]
+- ["8Werewolf0A14ViewControllerC", "voteList"]
 - !private ["s14_ArrayProtocolP", "append"]
 - !private ["s14_ArrayProtocolP", "count"]
 - !private ["s14_ArrayProtocolP", "index"]
@@ -1550,6 +1538,7 @@ depends-member:
 - !private ["s23_BidirectionalIndexableP", "max"]
 - !private ["s23_BidirectionalIndexableP", "row"]
 - !private ["s23_BidirectionalIndexableP", "subscript"]
+- !private ["s18_BitwiseOperationsP", "init"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "allowsSelection"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "dequeueReusableCell"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "indexPathForSelectedRow"]
@@ -1565,6 +1554,7 @@ depends-member:
 - !private ["s24_DestructorSafeContainerP", "subscript"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
@@ -1593,7 +1583,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "WerewolfViewController"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "allowsSelection"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "confirmButton"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "connectedPeers"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dequeueReusableCell"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "destination"]
@@ -1643,7 +1632,6 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "viewForZooming"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "viewForZoomingInScrollView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "villageList"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "voteList"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["s17_MutableIndexableP", "append"]
 - !private ["s17_MutableIndexableP", "count"]
@@ -1673,11 +1661,13 @@ depends-member:
 - ["s26_RangeReplaceableIndexableP", "init"]
 - !private ["s26_RangeReplaceableIndexableP", "max"]
 - !private ["s26_RangeReplaceableIndexableP", "subscript"]
+- !private ["s11_StrideableP", "init"]
 - !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
 - "Sa"
 - !private "s10ArraySliceV"
 - "s23BidirectionalCollectionP"
+- !private "s13BinaryIntegerP"
 - !private "Sb"
 - !private "So15CALayerDelegateP"
 - "s7CVarArgP"
@@ -1694,11 +1684,14 @@ depends-nominal:
 - "s25ExpressibleByArrayLiteralP"
 - !private "s27ExpressibleByBooleanLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s17FixedWidthIntegerP"
 - "8Werewolf11GameSessionC"
 - "s8HashableP"
 - !private "10Foundation9IndexPathV"
+- !private "Si"
 - !private "s25LosslessStringConvertibleP"
 - !private "So8MCPeerIDC"
 - !private "So9MCSessionC"
@@ -1718,11 +1711,16 @@ depends-nominal:
 - !private "So14NSSecureCodingP"
 - !private "So8NSStringC"
 - !private "8Werewolf10NetworkingC"
+- !private "s7NumericP"
+- !private "8Werewolf15PlayerCharacterC"
 - "s22RandomAccessCollectionP"
 - "s26RangeReplaceableCollectionP"
 - "s16RawRepresentableP"
 - !private "10Foundation20ReferenceConvertibleP"
 - "s8SequenceP"
+- !private "s13SignedIntegerP"
+- !private "s13SignedNumericP"
+- !private "s10StrideableP"
 - !private "SS"
 - !private "s14StringProtocolP"
 - !private "s16TextOutputStreamP"
@@ -1762,10 +1760,12 @@ depends-nominal:
 - "8Werewolf0A14ViewControllerC"
 - "s14_ArrayProtocolP"
 - "s23_BidirectionalIndexableP"
+- !private "s18_BitwiseOperationsP"
 - !private "s37_DefaultCustomPlaygroundQuickLookableP"
 - "s24_DestructorSafeContainerP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
 - !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
@@ -1778,6 +1778,7 @@ depends-nominal:
 - "s21_ObjectiveCBridgeableP"
 - "s22_RandomAccessIndexableP"
 - "s26_RangeReplaceableIndexableP"
+- !private "s11_StrideableP"
 - !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
@@ -1803,4 +1804,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SpriteKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/GameplayKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "cc97d0a41c288f5ab5e3a9204ff1ee14"
+interface-hash: "205d92ca7d99ba438e1ebdee3ed9debe"
