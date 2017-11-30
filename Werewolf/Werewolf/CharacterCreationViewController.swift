@@ -41,7 +41,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
             roles.append(contentsOf: ["Villager", "Werewolf", "Seer", "Doctor"])
         }
         else if(mcSession.connectedPeers.count + 1 == 5){
-            roles.append(contentsOf: ["Villager", "Werewolf", "Seer", "Doctor", "Werewolf"])
+            roles.append(contentsOf: ["Villager", "Werewolf", "Seer", "Doctor", "Witch"])
         }
         else{
             roles.append(contentsOf: ["Werewolf", "Seer", "Doctor", "Witch"])
