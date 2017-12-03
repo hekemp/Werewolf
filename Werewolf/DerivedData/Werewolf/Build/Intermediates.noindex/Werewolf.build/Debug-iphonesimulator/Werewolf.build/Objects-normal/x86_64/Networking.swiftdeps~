@@ -14,6 +14,7 @@ depends-top-level:
 - !private ">"
 - "Array"
 - !private "AssignmentPrecedence"
+- "BooleanLiteralType"
 - "CastingPrecedence"
 - "Data"
 - !private "DispatchQueue"
@@ -188,6 +189,9 @@ depends-member:
 - !private ["s17FixedWidthIntegerP", "max"]
 - !private ["8Werewolf11GameSessionC", "active"]
 - !private ["8Werewolf11GameSessionC", "doctorVoteList"]
+- !private ["8Werewolf11GameSessionC", "gameOver"]
+- !private ["8Werewolf11GameSessionC", "gameSurvivors"]
+- !private ["8Werewolf11GameSessionC", "gameWinner"]
 - !private ["8Werewolf11GameSessionC", "initiative"]
 - !private ["8Werewolf11GameSessionC", "killedList"]
 - !private ["8Werewolf11GameSessionC", "peersToGetInitiativeFrom"]

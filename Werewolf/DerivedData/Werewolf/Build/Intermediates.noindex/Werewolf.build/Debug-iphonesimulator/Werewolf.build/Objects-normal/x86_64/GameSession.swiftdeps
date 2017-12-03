@@ -9,6 +9,7 @@ provides-dynamic-lookup:
 depends-top-level:
 - "Array"
 - "AssignmentPrecedence"
+- "Bool"
 - "BooleanLiteralType"
 - "GKMatch"
 - "GameSession"
@@ -33,6 +34,7 @@ depends-member:
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - ["s26ExpressibleByStringLiteralP", "init"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["8Werewolf11GameSessionC", "Bool"]
 - ["8Werewolf11GameSessionC", "GKMatch"]
 - ["8Werewolf11GameSessionC", "GameSession"]
 - ["8Werewolf11GameSessionC", "Int"]
@@ -46,6 +48,9 @@ depends-member:
 - ["8Werewolf11GameSessionC", "canUsePotion"]
 - ["8Werewolf11GameSessionC", "deinit"]
 - ["8Werewolf11GameSessionC", "doctorVoteList"]
+- ["8Werewolf11GameSessionC", "gameOver"]
+- ["8Werewolf11GameSessionC", "gameSurvivors"]
+- ["8Werewolf11GameSessionC", "gameWinner"]
 - ["8Werewolf11GameSessionC", "init"]
 - ["8Werewolf11GameSessionC", "initiative"]
 - ["8Werewolf11GameSessionC", "killedList"]
@@ -162,4 +167,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SpriteKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/GameplayKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "3c867ff07267fafec365a23d8d3f85d8"
+interface-hash: "107ed54147e67452181e8a627030ae25"

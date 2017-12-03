@@ -26,6 +26,20 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
         print(villageList)
         mcSession.delegate = self
         
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        imageViewBackground.image = UIImage(named: "OpeningBackground.png")
+        
+        imageViewBackground.alpha = 0.3
+        
+        // you can change the content mode:
+        imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.view.addSubview(imageViewBackground)
+        self.view.sendSubview(toBack: imageViewBackground)
+        
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(CharacterCreationLobby.updateStatus), userInfo: nil, repeats: true)
 
         self.villageList = GameSession.active.villageList!
@@ -37,6 +51,7 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
  
         print("Status: ")
         print( GameSession.active.villageList)
+        villageListView.reloadData()
         if mcSession.connectedPeers.count + 1 == GameSession.active.villageList?.count {
             print("Nyoom")
             performSegueToVillage()
@@ -75,6 +90,7 @@ class CharacterCreationLobby: UIViewController, UITableViewDelegate, UITableView
         let cellNum:Int = indexPath.row
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
         cell.textLabel!.text = GameSession.active.villageList![cellNum][0]
+        cell.textLabel!.font = UIFont (name: "Luminari-Regular", size: 17.0)
         return cell
     }
     

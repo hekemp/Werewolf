@@ -60,6 +60,7 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
         
+        cell.textLabel!.font = UIFont (name: "Luminari-Regular", size: 17.0)
         
         return cell
     }
@@ -68,6 +69,21 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        imageViewBackground.image = UIImage(named: "AfternoonBackground.png")
+        
+        imageViewBackground.alpha = 0.3
+        
+        // you can change the content mode:
+        imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.view.addSubview(imageViewBackground)
+        self.view.sendSubview(toBack: imageViewBackground)
+        
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(NominationViewController.updateStatus), userInfo: nil, repeats: true)
@@ -130,6 +146,8 @@ class VoteViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     }
     
     @objc func updateStatus() {
+        print(GameSession.active.villageList!.count)
+        print(GameSession.active.killedList.count)
         if GameSession.active.villageList!.count == GameSession.active.killedList.count {
             finalTally()
         }

@@ -33,6 +33,22 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        imageViewBackground.image = UIImage(named: "NighttimeBackground.png")
+        
+        imageViewBackground.alpha = 0.3
+        
+        // you can change the content mode:
+        imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.view.addSubview(imageViewBackground)
+        self.view.sendSubview(toBack: imageViewBackground)
+        
+        
         mcSession.delegate = self
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(SeerViewController.updateStatus), userInfo: nil, repeats: true)
         let character = GameSession.active.myCharacter
@@ -181,6 +197,7 @@ class SeerViewController: UIViewController, MCSessionDelegate, UITableViewDelega
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
     
+        cell.textLabel!.font = UIFont (name: "Luminari-Regular", size: 17.0)
         
         return cell
     }

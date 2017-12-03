@@ -23,10 +23,35 @@ class NightSummaryViewController: UIViewController {
     
     var killed = [String]()
     
+    var playerLives = false
+    
     @IBOutlet weak var summaryText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GameSession.active.voteList = []
+        GameSession.active.werewolfVoteList = []
+        GameSession.active.seerVoteList = []
+        GameSession.active.doctorVoteList = []
+        GameSession.active.potionVoteList = []
+        GameSession.active.poisonVoteList = []
+        GameSession.active.killedList = []
+   
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        imageViewBackground.image = UIImage(named: "NighttimeBackground.png")
+        
+        imageViewBackground.alpha = 0.3
+        
+        // you can change the content mode:
+        imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.view.addSubview(imageViewBackground)
+        self.view.sendSubview(toBack: imageViewBackground)
+        
         _ = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(timeToMoveOn), userInfo: nil, repeats: false)
         
         var werewolfResult = Int (resultList[0])
@@ -91,7 +116,11 @@ class NightSummaryViewController: UIViewController {
     }
     
     func checkStatus(){
-        for player in villageList {
+
+        for player in GameSession.active.villageList! {
+            if player[0] == GameSession.active.myCharacter!.name{
+                playerLives = true
+            }
             if player[1] == "Werewolf"{
                 werewolvesAlive = werewolvesAlive + 1
             }
@@ -106,11 +135,19 @@ class NightSummaryViewController: UIViewController {
         
         checkStatus()
         
-        if(humansAlive < werewolvesAlive){
+        print("Player lives: " + String(playerLives))
+        
+        if(humansAlive <= werewolvesAlive){
+            Networking.shared.sendText("werewolf," + String(self.villageList.count), prefixCode: "Gameover")
             self.performSegue(withIdentifier: "goToVillagerGameOver", sender: self)
         }
         else if(werewolvesAlive == 0){
+            Networking.shared.sendText("villager," + String(self.villageList.count), prefixCode: "Gameover")
             self.performSegue(withIdentifier: "goToWerewolfGameOver", sender: self)
+        }
+        else if (!playerLives){
+            print("I'm dead!")
+            self.performSegue(withIdentifier: "toDead", sender: self)
         }
         else{
             self.performSegue(withIdentifier: "restartDay", sender: self)

@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Werewolf.xcodeproj">
+      location = "group:/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/deadLobbyViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/WerewolfWinBackground.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -44,13 +44,13 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
             roles.append(contentsOf: ["Villager", "Werewolf", "Seer", "Doctor", "Witch"])
         }
         else{
-            roles.append(contentsOf: ["Werewolf", "Seer", "Doctor", "Witch"])
+            roles.append(contentsOf: ["Werewolf", "Seer", "Doctor", "Witch", "Werewolf"])
             while(mcSession.connectedPeers.count + 1 > roles.count){
                 roles.append("Villager")
             }
         }
         
-        for villager in villageList! {
+        for villager in GameSession.active.villageList! {
             let location = roles.index(of: villager[1])
             if (location != nil){
                 roles.remove(at: location!)
@@ -76,7 +76,6 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
        //         role = "Villager"
        //     }
        // }
-        self.villageList!.append([name,role])
         GameSession.active.villageList!.append([name, role])
         Networking.shared.sendText(name + "," + role, prefixCode: "Playerdata")
        // let _ = GameSession()
@@ -116,7 +115,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
             }
         }
         
-        for villager in villageList! {
+        for villager in GameSession.active.villageList! {
             let location = roles.index(of: villager[1])
             if (location != nil){
                 roles.remove(at: location!)
@@ -140,7 +139,7 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
                 role = "Villager"
             }
         }*/
-        self.villageList!.append([name!, role])
+
         GameSession.active.villageList!.append([name!, role])
         Networking.shared.sendText(name! + "," + role, prefixCode: "Playerdata")
         //let _ = GameSession()
@@ -165,6 +164,20 @@ class CharacterCreationViewController: UIViewController, MCSessionDelegate {
         super.viewDidLoad()
         
         print(GameSession.active.villageList)
+        
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        imageViewBackground.image = UIImage(named: "OpeningBackground.png")
+        
+        imageViewBackground.alpha = 0.3
+        
+        // you can change the content mode:
+        imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.view.addSubview(imageViewBackground)
+        self.view.sendSubview(toBack: imageViewBackground)
         
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.

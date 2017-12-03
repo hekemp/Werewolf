@@ -573,6 +573,22 @@ SWIFT_CLASS("_TtC8Werewolf22WerewolfViewController")
 @end
 
 
+SWIFT_CLASS("_TtC8Werewolf23deadLobbyViewController")
+@interface deadLobbyViewController : UIViewController <MCSessionDelegate>
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified theLabel;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)updateLabel;
+- (void)session:(MCSession * _Nonnull)session didReceiveStream:(NSInputStream * _Nonnull)stream withName:(NSString * _Nonnull)streamName fromPeer:(MCPeerID * _Nonnull)peerID;
+- (void)session:(MCSession * _Nonnull)session didStartReceivingResourceWithName:(NSString * _Nonnull)resourceName fromPeer:(MCPeerID * _Nonnull)peerID withProgress:(NSProgress * _Nonnull)progress;
+- (void)session:(MCSession * _Nonnull)session didFinishReceivingResourceWithName:(NSString * _Nonnull)resourceName fromPeer:(MCPeerID * _Nonnull)peerID atURL:(NSURL * _Nullable)localURL withError:(NSError * _Nullable)error;
+- (void)session:(MCSession * _Nonnull)session peer:(MCPeerID * _Nonnull)peerID didChangeState:(MCSessionState)state;
+- (void)session:(MCSession * _Nonnull)session didReceiveData:(NSData * _Nonnull)data fromPeer:(MCPeerID * _Nonnull)peerID;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC8Werewolf23humansWinViewController")
 @interface humansWinViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified summaryText;

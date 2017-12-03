@@ -13,7 +13,7 @@ class RandomGenerators{
     private var villageMarkovChain : [String : [Character : Double]]
     private var nameMarkovChain : [String : [Character : Double]]
     private var random : GKRandom
-    private var occupations = ["Doctor",
+    private var occupations = ["Brewer",
                                "Baker",
                                "Farmer",
                                "Farmer",
@@ -47,7 +47,7 @@ class RandomGenerators{
     }
     func getRandomGender() -> String{
         let choice = Int(arc4random_uniform(2))
-        return ["male", "female"][choice]
+        return ["Male", "Female"][choice]
     }
     static func getRandomMkv(_ randomSrc: GKRandom, _ mkv:[String : [Character : Double]]) -> String{
         var c1 = "^"

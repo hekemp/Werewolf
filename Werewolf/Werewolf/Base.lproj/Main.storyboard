@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Luminari-Regular.ttf">
+            <string>Luminari-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Join Game View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -23,9 +28,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQm-7Y-wQJ">
-                                <rect key="frame" x="114" y="356" width="129" height="30"/>
+                                <rect key="frame" x="123" y="356" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <state key="normal" title="Join Game">
                                     <color key="titleColor" red="0.94560514419999997" green="0.93479276109999998" blue="0.95820514899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -34,9 +40,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2u-FV-piO">
-                                <rect key="frame" x="114" y="394" width="129" height="30"/>
+                                <rect key="frame" x="104" y="394" width="167" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <state key="normal" title="Create New Room">
                                     <color key="titleColor" red="0.94560514419999997" green="0.93479276109999998" blue="0.95820514899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -50,12 +57,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="Vph-o6-X1j" kind="show" identifier="moveToCharacterCreation" id="DeD-J7-HGR"/>
+                        <segue destination="Vph-o6-X1j" kind="presentation" identifier="moveToCharacterCreation" modalTransitionStyle="crossDissolve" id="DeD-J7-HGR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1241" y="33"/>
+            <point key="canvasLocation" x="-1242.4000000000001" y="32.833583208395808"/>
         </scene>
         <!--CharacterCreationViewController-->
         <scene sceneID="dbp-67-ynn">
@@ -69,52 +76,54 @@
                                 <rect key="frame" x="16" y="154" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fx1-oc-XL8">
                                 <rect key="frame" x="16" y="192" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xaw-ci-BYT">
                                 <rect key="frame" x="16" y="230" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Occupation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jmp-qx-czh">
                                 <rect key="frame" x="16" y="268" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVs-7t-Tya">
                                 <rect key="frame" x="16" y="306" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.26666666666666666" green="0.72156862745098038" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <state key="normal" title="Create Character">
                                     <color key="titleColor" red="0.94923101067816573" green="1" blue="0.97932961505673821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="doManualCharacterCreation:" destination="YuI-h6-JEk" eventType="touchUpInside" id="wfU-Rl-y8R"/>
-                                    <segue destination="PZY-dd-s6C" kind="show" id="3vU-cj-SJJ"/>
+                                    <segue destination="PZY-dd-s6C" kind="presentation" modalTransitionStyle="crossDissolve" id="3vU-cj-SJJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPc-dQ-nSH">
                                 <rect key="frame" x="16" y="344" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21176470588235294" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <state key="normal" title="Randomize">
                                     <color key="titleColor" red="0.94923101070000004" green="1" blue="0.97932961510000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="doRandomCharacterCreation:" destination="YuI-h6-JEk" eventType="touchUpInside" id="67s-AA-hXd"/>
-                                    <segue destination="PZY-dd-s6C" kind="show" id="PwB-RA-OAJ"/>
+                                    <segue destination="PZY-dd-s6C" kind="presentation" modalTransitionStyle="crossDissolve" id="PwB-RA-OAJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -182,9 +191,9 @@
                                 <rect key="frame" x="16" y="68" width="343" height="505"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <string key="text">The the role placeholder text. there are many like it, but this one is mine. It takes the place of a regulare role text. When the app is run it will be replaced by the actual role explaination text. It is very verbose, so I can know it will look alright no matter how long it is. In other words, it needs to be very long in order to do its job properly. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <mutableString key="text">The the role placeholder text. there are many like it, but this one is mine. It takes the place of a regulare role text. When the app is run it will be replaced by the actual role explaination text. It is very verbose, so I can know it will look alright no matter how long it is. In other words, it needs to be very long in order to do its job properly. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</mutableString>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -212,14 +221,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder for Village Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qv-iO-xu1">
-                                <rect key="frame" x="16" y="20" width="343" height="21"/>
+                                <rect key="frame" x="16" y="20" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="24"/>
                                 <color key="textColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ime-jB-j0X">
-                                <rect key="frame" x="16" y="49" width="343" height="493"/>
+                                <rect key="frame" x="16" y="62" width="343" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -242,11 +251,12 @@
                                 <rect key="frame" x="69" y="550" width="236" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <state key="normal" title="End Day">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t3e-Ox-Co1" kind="show" identifier="moveToNominations" id="e6t-FI-6L0"/>
+                                    <segue destination="t3e-Ox-Co1" kind="presentation" identifier="moveToNominations" modalTransitionStyle="flipHorizontal" id="e6t-FI-6L0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -274,7 +284,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nominations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4M-5N-5nZ">
                                 <rect key="frame" x="16" y="7" width="343" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="38"/>
                                 <color key="textColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -282,6 +292,7 @@
                                 <rect key="frame" x="207" y="568" width="152" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Abstain">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -293,6 +304,7 @@
                                 <rect key="frame" x="16" y="568" width="137" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Nominate">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -329,8 +341,8 @@
                         <outlet property="NominationTableView" destination="CQa-lu-m5w" id="j5d-dr-R6V"/>
                         <outlet property="abstainButton" destination="Vgz-RA-tFQ" id="CbK-JP-s3r"/>
                         <outlet property="nominateButton" destination="DI7-4d-j6R" id="3QY-ci-tb4"/>
-                        <segue destination="bP9-G8-qKC" kind="show" identifier="toVote" id="1y5-CT-Ecw"/>
-                        <segue destination="Kbm-WQ-AOw" kind="show" identifier="noNominations" id="Kvf-Wb-FK8"/>
+                        <segue destination="bP9-G8-qKC" kind="presentation" identifier="toVote" modalTransitionStyle="crossDissolve" id="1y5-CT-Ecw"/>
+                        <segue destination="Kbm-WQ-AOw" kind="presentation" identifier="noNominations" modalTransitionStyle="crossDissolve" id="Kvf-Wb-FK8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuu-q5-fNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,6 +375,7 @@
                                 <rect key="frame" x="16" y="570" width="137" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Vote">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -394,6 +407,7 @@
                                 <rect key="frame" x="207" y="570" width="152" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Abstain">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -409,7 +423,7 @@
                         <outlet property="VoteTableView" destination="uhP-8Q-BP4" id="qPr-On-eUS"/>
                         <outlet property="abstainButton" destination="oX0-Bc-RyQ" id="7y8-gH-j5d"/>
                         <outlet property="voteButton" destination="xQF-qa-3LB" id="mQ1-a7-Kg1"/>
-                        <segue destination="Kbm-WQ-AOw" kind="show" identifier="toResults" id="RR0-WP-1p2"/>
+                        <segue destination="Kbm-WQ-AOw" kind="presentation" identifier="toResults" modalTransitionStyle="crossDissolve" id="RR0-WP-1p2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mC5-A7-jtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -431,17 +445,17 @@
                                     <fragment content="End of Day Summary">
                                         <attributes>
                                             <color key="NSColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="36" name="Luminari-Regular"/>
+                                            <font key="NSFont" size="29" name="Luminari-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No One Killed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-mu-3e2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No One Killed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-mu-3e2">
                                 <rect key="frame" x="16" y="258" width="343" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="27"/>
                                 <color key="textColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -451,9 +465,10 @@
                     </view>
                     <connections>
                         <outlet property="killedLabel" destination="exZ-mu-3e2" id="EfM-vg-2bY"/>
-                        <segue destination="VnG-dp-JPH" kind="modal" identifier="transToSeer" id="6yy-vz-27Y"/>
-                        <segue destination="Kri-Kh-zZR" kind="show" identifier="villagerGameOver" id="DP4-sF-neM"/>
-                        <segue destination="91l-Kb-vu8" kind="show" identifier="werewolfGameOver" id="5BB-J2-E8o"/>
+                        <segue destination="VnG-dp-JPH" kind="presentation" identifier="transToSeer" modalTransitionStyle="flipHorizontal" id="6yy-vz-27Y"/>
+                        <segue destination="Kri-Kh-zZR" kind="presentation" identifier="villagerGameOver" modalTransitionStyle="flipHorizontal" id="DP4-sF-neM"/>
+                        <segue destination="91l-Kb-vu8" kind="presentation" identifier="werewolfGameOver" modalTransitionStyle="flipHorizontal" id="5BB-J2-E8o"/>
+                        <segue destination="wLL-Sa-qOA" kind="presentation" identifier="toDead" modalTransitionStyle="flipHorizontal" id="w1w-Ct-RTq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0GP-Ro-1Pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,35 +501,35 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character Name Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fa-gb-8TO">
                                 <rect key="frame" x="16" y="161" width="343" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character Age Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4og-La-c8U">
                                 <rect key="frame" x="16" y="196" width="343" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character Gender Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsI-jx-UaR">
                                 <rect key="frame" x="16" y="231" width="343" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character Occupation Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raN-6x-rjY">
                                 <rect key="frame" x="16" y="266" width="343" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character Role Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSF-Di-fpc">
                                 <rect key="frame" x="16" y="301" width="343" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -567,6 +582,7 @@
                                 <rect key="frame" x="69" y="576" width="236" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -596,7 +612,7 @@
                     <connections>
                         <outlet property="confirmButton" destination="oS5-nb-24c" id="6hD-OG-KFJ"/>
                         <outlet property="tableView" destination="tJ4-q4-qWj" id="yUU-ze-G4i"/>
-                        <segue destination="Iry-3m-jZW" kind="show" identifier="toWerewolf" id="KZg-ff-pk2"/>
+                        <segue destination="Iry-3m-jZW" kind="presentation" identifier="toWerewolf" modalTransitionStyle="crossDissolve" id="KZg-ff-pk2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPT-Zo-Gfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,6 +651,7 @@
                                 <rect key="frame" x="69" y="576" width="236" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -664,7 +681,7 @@
                     <connections>
                         <outlet property="confirmButton" destination="4rr-8k-LET" id="DS3-l3-maS"/>
                         <outlet property="tableView" destination="ptH-uv-ypn" id="Tnz-Hm-5RJ"/>
-                        <segue destination="Ada-Lb-8mu" kind="show" identifier="toDoctor" id="J3F-aL-QzF"/>
+                        <segue destination="Ada-Lb-8mu" kind="presentation" identifier="toDoctor" modalTransitionStyle="crossDissolve" id="J3F-aL-QzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wp9-6t-xXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -703,6 +720,7 @@
                                 <rect key="frame" x="69" y="576" width="236" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -732,7 +750,7 @@
                     <connections>
                         <outlet property="confirmButton" destination="kQI-Hr-xUL" id="njF-yq-RjQ"/>
                         <outlet property="tableView" destination="8cf-bG-Bgr" id="V3k-UI-qaV"/>
-                        <segue destination="3gd-yz-Pk6" kind="show" identifier="toPotion" id="zAq-VJ-ovm"/>
+                        <segue destination="3gd-yz-Pk6" kind="presentation" identifier="toPotion" modalTransitionStyle="crossDissolve" id="zAq-VJ-ovm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dsm-l5-iqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -771,6 +789,7 @@
                                 <rect key="frame" x="208" y="576" width="150" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Abstain">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -779,13 +798,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epq-bo-oal">
-                                <rect key="frame" x="9" y="13" width="358" height="52"/>
+                                <rect key="frame" x="3" y="13" width="370" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Witch, Use Your Poison">
                                         <attributes>
                                             <color key="NSColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="34" name="Luminari-Regular"/>
+                                            <font key="NSFont" size="32" name="Luminari-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -796,6 +815,7 @@
                                 <rect key="frame" x="32" y="576" width="150" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -812,7 +832,7 @@
                         <outlet property="abstainButton" destination="aRR-bY-QYn" id="O2E-aW-XlS"/>
                         <outlet property="confirmButton" destination="uH7-fj-SLR" id="yye-mC-eev"/>
                         <outlet property="tableView" destination="W91-uI-5QA" id="V0W-Zg-IoD"/>
-                        <segue destination="jAJ-4R-syc" kind="show" identifier="toNightSummary" id="f4A-Ja-j7x"/>
+                        <segue destination="jAJ-4R-syc" kind="presentation" identifier="toNightSummary" modalTransitionStyle="crossDissolve" id="f4A-Ja-j7x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqa-I3-8cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -851,6 +871,7 @@
                                 <rect key="frame" x="18" y="576" width="150" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" red="0.90666848160000002" green="0.95460249350000004" blue="0.9325833979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -863,6 +884,7 @@
                                 <rect key="frame" x="208" y="576" width="150" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Abstain">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -877,7 +899,7 @@
                                     <fragment content="Witch, Use Your Potion">
                                         <attributes>
                                             <color key="NSColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="34" name="Luminari-Regular"/>
+                                            <font key="NSFont" size="32" name="Luminari-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -886,6 +908,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.28496525894735142" green="0.21703650940720601" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ccW-Rx-qHE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="2Kw-cj-k1g"/>
@@ -893,7 +916,7 @@
                         <outlet property="abstainButton" destination="yaq-rW-itH" id="2kA-IF-9qi"/>
                         <outlet property="confirmButton" destination="zgX-5O-Fma" id="k26-kx-wwj"/>
                         <outlet property="tableView" destination="Yxf-6E-GOU" id="nI6-n2-zoS"/>
-                        <segue destination="ZhH-A4-N4W" kind="show" identifier="toPoison" id="1g5-sf-F9l"/>
+                        <segue destination="ZhH-A4-N4W" kind="presentation" identifier="toPoison" modalTransitionStyle="crossDissolve" id="1g5-sf-F9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcs-zU-gdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -915,17 +938,17 @@
                                     <fragment content="End of Night Summary">
                                         <attributes>
                                             <color key="NSColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="34" name="Luminari-Regular"/>
+                                            <font key="NSFont" size="30" name="Luminari-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary text here." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D55-9p-zzx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary text here." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D55-9p-zzx">
                                 <rect key="frame" x="16" y="73" width="343" height="551"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="23"/>
                                 <color key="textColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -936,9 +959,10 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Sbn-Xz-HpT"/>
                     <connections>
                         <outlet property="summaryText" destination="D55-9p-zzx" id="3ld-11-QUD"/>
-                        <segue destination="91l-Kb-vu8" kind="show" identifier="goToVillagerGameOver" id="7fi-tO-siD"/>
-                        <segue destination="6Hn-6l-xiL" kind="show" identifier="restartDay" id="dy9-Pw-md7"/>
-                        <segue destination="Kri-Kh-zZR" kind="show" identifier="goToWerewolfGameOver" id="QBF-rH-12g"/>
+                        <segue destination="91l-Kb-vu8" kind="presentation" identifier="goToVillagerGameOver" modalTransitionStyle="flipHorizontal" id="7fi-tO-siD"/>
+                        <segue destination="6Hn-6l-xiL" kind="presentation" identifier="restartDay" modalTransitionStyle="flipHorizontal" id="dy9-Pw-md7"/>
+                        <segue destination="Kri-Kh-zZR" kind="presentation" identifier="goToWerewolfGameOver" modalTransitionStyle="flipHorizontal" id="QBF-rH-12g"/>
+                        <segue destination="wLL-Sa-qOA" kind="presentation" identifier="toDead" modalTransitionStyle="flipHorizontal" id="Plc-Ak-dB7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfX-2P-4EA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -964,17 +988,17 @@
                                     <fragment content="Werewolves Win!">
                                         <attributes>
                                             <color key="NSColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="35"/>
+                                            <font key="NSFont" size="35" name="Luminari-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dead: / Alive" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVE-40-guK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dead: / Alive" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVE-40-guK">
                                 <rect key="frame" x="16" y="120" width="343" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="23"/>
                                 <color key="textColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -982,11 +1006,12 @@
                                 <rect key="frame" x="112" y="590" width="150" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Play Again?">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="BSC-Md-pj2"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="partialCurl" id="BSC-Md-pj2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1031,7 +1056,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dead: / Alive" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osd-i1-a3V">
                                 <rect key="frame" x="16" y="120" width="343" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="23"/>
                                 <color key="textColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1039,11 +1064,12 @@
                                 <rect key="frame" x="112" y="590" width="150" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
                                 <state key="normal" title="Play Again?">
                                     <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="fZi-fQ-lYK"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="partialCurl" id="fZi-fQ-lYK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1067,26 +1093,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Players: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTT-7x-sbb">
-                                <rect key="frame" x="107" y="300" width="161" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdU-9k-vdv">
-                                <rect key="frame" x="144" y="354" width="88" height="30"/>
+                                <rect key="frame" x="128" y="354" width="117" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="17"/>
                                 <state key="normal" title="Begin Game!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.92650749877406935" green="1" blue="0.94191238807719146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="startGame:" destination="Vph-o6-X1j" eventType="touchUpInside" id="xau-7L-gQp"/>
-                                    <segue destination="YuI-h6-JEk" kind="show" identifier="startCharacterCreation" id="ReF-HA-5DL"/>
+                                    <segue destination="YuI-h6-JEk" kind="presentation" identifier="startCharacterCreation" modalTransitionStyle="crossDissolve" id="ReF-HA-5DL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Players: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTT-7x-sbb">
+                                <rect key="frame" x="26" y="293" width="320" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="UGn-O2-0gp"/>
@@ -1097,7 +1124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4HR-hk-KBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-556" y="33"/>
+            <point key="canvasLocation" x="-556" y="32.833583208395808"/>
         </scene>
         <!--CharacterCreationViewController-->
         <scene sceneID="qsP-U4-rf6">
@@ -1132,12 +1159,118 @@
                     </view>
                     <connections>
                         <outlet property="villageListView" destination="s4s-xB-aBM" id="IDs-Xj-wfi"/>
-                        <segue destination="6Hn-6l-xiL" kind="show" identifier="moveToVillage" id="gGa-PV-oUk"/>
+                        <segue destination="6Hn-6l-xiL" kind="presentation" identifier="moveToVillage" modalTransitionStyle="flipHorizontal" id="gGa-PV-oUk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yr2-Au-7rU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824.79999999999995" y="-699.40029985007504"/>
+        </scene>
+        <!--Humans Win View Controller-->
+        <scene sceneID="F7I-B5-NNb">
+            <objects>
+                <viewController id="Ucl-1E-g3C" customClass="humansWinViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7t0-1D-Ukz" customClass="Join">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Werewolf Logo" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-FT-25E">
+                                <rect key="frame" x="16" y="278" width="343" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLH-98-t8k">
+                                <rect key="frame" x="16" y="60" width="343" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Villagers Win!">
+                                        <attributes>
+                                            <color key="NSColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="34" name="Luminari-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dead: / Alive" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9g-2Y-SKJ">
+                                <rect key="frame" x="16" y="120" width="343" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="23"/>
+                                <color key="textColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBq-s4-s6r">
+                                <rect key="frame" x="112" y="590" width="150" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="19"/>
+                                <state key="normal" title="Play Again?">
+                                    <color key="titleColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.52604841319999995" green="0.52604841319999995" blue="0.52604841319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="uT2-LU-F17"/>
+                    </view>
+                    <connections>
+                        <outlet property="summaryText" destination="k9g-2Y-SKJ" id="XkC-Sq-vgq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tE1-Ga-erx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4298" y="2866"/>
+        </scene>
+        <!--Dead Lobby View Controller-->
+        <scene sceneID="yrf-MK-aj8">
+            <objects>
+                <viewController id="wLL-Sa-qOA" customClass="deadLobbyViewController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iLi-ga-bS8" customClass="Join">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdL-l4-eAq">
+                                <rect key="frame" x="16" y="232" width="343" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="You are Dead!">
+                                        <attributes>
+                                            <color key="NSColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="34" name="Luminari-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxK-au-5kp">
+                                <rect key="frame" x="16" y="327" width="343" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Remaining: 0">
+                                        <attributes>
+                                            <color key="NSColor" red="0.98431372549999996" green="1" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="34" name="Luminari-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3294117647" green="0.41960784309999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.52604841319999995" green="0.52604841319999995" blue="0.52604841319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="jXt-pG-Buc"/>
+                    </view>
+                    <connections>
+                        <outlet property="theLabel" destination="oxK-au-5kp" id="1Ba-Y1-3fc"/>
+                        <segue destination="91l-Kb-vu8" kind="presentation" identifier="goToVillagerGameOver" id="eKx-Uu-dho"/>
+                        <segue destination="Kri-Kh-zZR" kind="presentation" identifier="goToWerewolfGameOver" modalTransitionStyle="flipHorizontal" id="8Wh-RF-Ire"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbN-Mp-84A" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5671" y="2151"/>
         </scene>
     </scenes>
     <resources>
@@ -1147,10 +1280,11 @@
         <image name="Werewolf Logo" width="293" height="275"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1g5-sf-F9l"/>
+        <segue reference="6yy-vz-27Y"/>
+        <segue reference="w1w-Ct-RTq"/>
         <segue reference="3vU-cj-SJJ"/>
-        <segue reference="QBF-rH-12g"/>
-        <segue reference="7fi-tO-siD"/>
+        <segue reference="DP4-sF-neM"/>
+        <segue reference="5BB-J2-E8o"/>
         <segue reference="RR0-WP-1p2"/>
         <segue reference="dy9-Pw-md7"/>
         <segue reference="fZi-fQ-lYK"/>

@@ -40,6 +40,15 @@
 		DBBBE1D51FB7B0C700D01726 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */; };
 		DBBBE1D71FB8954000D01726 /* VillageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE1D61FB8953F00D01726 /* VillageViewController.swift */; };
 		DBBBE1D91FB89E6600D01726 /* CharacterCreationLobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBE1D81FB89E6600D01726 /* CharacterCreationLobby.swift */; };
+		DBDA8A241FD10A2100C3B000 /* Luminari-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBDA8A231FD10A1E00C3B000 /* Luminari-Regular.ttf */; };
+		DBDA8A261FD111E500C3B000 /* OpeningBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDA8A251FD111E500C3B000 /* OpeningBackground.png */; };
+		DBDA8A2C1FD1A95000C3B000 /* VillageWinBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDA8A271FD1A94900C3B000 /* VillageWinBackground.png */; };
+		DBDA8A2E1FD1A95000C3B000 /* DaytimeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDA8A291FD1A94B00C3B000 /* DaytimeBackground.png */; };
+		DBDA8A2F1FD1A95000C3B000 /* AfternoonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDA8A2A1FD1A94E00C3B000 /* AfternoonBackground.png */; };
+		DBDA8A301FD1A95000C3B000 /* NighttimeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDA8A2B1FD1A95000C3B000 /* NighttimeBackground.png */; };
+		DBDA8A331FD1AC7500C3B000 /* deadLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA8A321FD1AC7500C3B000 /* deadLobbyViewController.swift */; };
+		DBDA8A351FD1B17500C3B000 /* DeadBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDA8A341FD1B17500C3B000 /* DeadBackground.png */; };
+		DBDA8A371FD3040500C3B000 /* WerwolfWinBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDA8A361FD3040400C3B000 /* WerwolfWinBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +108,15 @@
 		DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		DBBBE1D61FB8953F00D01726 /* VillageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageViewController.swift; sourceTree = "<group>"; };
 		DBBBE1D81FB89E6600D01726 /* CharacterCreationLobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCreationLobby.swift; sourceTree = "<group>"; };
+		DBDA8A231FD10A1E00C3B000 /* Luminari-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Luminari-Regular.ttf"; sourceTree = "<group>"; };
+		DBDA8A251FD111E500C3B000 /* OpeningBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpeningBackground.png; sourceTree = "<group>"; };
+		DBDA8A271FD1A94900C3B000 /* VillageWinBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VillageWinBackground.png; sourceTree = "<group>"; };
+		DBDA8A291FD1A94B00C3B000 /* DaytimeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DaytimeBackground.png; sourceTree = "<group>"; };
+		DBDA8A2A1FD1A94E00C3B000 /* AfternoonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfternoonBackground.png; sourceTree = "<group>"; };
+		DBDA8A2B1FD1A95000C3B000 /* NighttimeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NighttimeBackground.png; sourceTree = "<group>"; };
+		DBDA8A321FD1AC7500C3B000 /* deadLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = deadLobbyViewController.swift; path = "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/deadLobbyViewController.swift"; sourceTree = "<absolute>"; };
+		DBDA8A341FD1B17500C3B000 /* DeadBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeadBackground.png; sourceTree = "<group>"; };
+		DBDA8A361FD3040400C3B000 /* WerwolfWinBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WerwolfWinBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,9 +167,16 @@
 		CC3CEA031F9E44FC00AED6C4 /* Werewolf */ = {
 			isa = PBXGroup;
 			children = (
+				DBDA8A361FD3040400C3B000 /* WerwolfWinBackground.png */,
+				DBDA8A2A1FD1A94E00C3B000 /* AfternoonBackground.png */,
+				DBDA8A291FD1A94B00C3B000 /* DaytimeBackground.png */,
+				DBDA8A2B1FD1A95000C3B000 /* NighttimeBackground.png */,
+				DBDA8A271FD1A94900C3B000 /* VillageWinBackground.png */,
+				DBDA8A231FD10A1E00C3B000 /* Luminari-Regular.ttf */,
 				CCA0D8001FBB78F700C6E3E0 /* StreamReader.swift */,
 				CC3CEA081F9E44FC00AED6C4 /* Main.storyboard */,
 				CC895D591F9F01620090D495 /* JoinGameViewController.swift */,
+				DBDA8A251FD111E500C3B000 /* OpeningBackground.png */,
 				DBBBE1D41FB7B0C700D01726 /* LobbyViewController.swift */,
 				CC895D631FA0FC1D0090D495 /* CharacterCreationViewController.swift */,
 				DBBBE1D81FB89E6600D01726 /* CharacterCreationLobby.swift */,
@@ -169,6 +194,8 @@
 				DBA0FA731FA6597300861C19 /* NightSummaryViewController.swift */,
 				DBB1D1DA1FC3CFFA00DEA007 /* humansWinViewController.swift */,
 				DBB1D1D81FC3CFE300DEA007 /* werewolvesWinViewController.swift */,
+				DBDA8A321FD1AC7500C3B000 /* deadLobbyViewController.swift */,
+				DBDA8A341FD1B17500C3B000 /* DeadBackground.png */,
 				CC3CEA0B1F9E44FC00AED6C4 /* Assets.xcassets */,
 				CCA0D8021FBBA04000C6E3E0 /* town-name-corpus.csv */,
 				CC3CEA0D1F9E44FC00AED6C4 /* LaunchScreen.storyboard */,
@@ -310,11 +337,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDA8A261FD111E500C3B000 /* OpeningBackground.png in Resources */,
 				CC3CEA0F1F9E44FC00AED6C4 /* LaunchScreen.storyboard in Resources */,
 				CCA0D8031FBBA04000C6E3E0 /* town-name-corpus.csv in Resources */,
+				DBDA8A371FD3040500C3B000 /* WerwolfWinBackground.png in Resources */,
+				DBDA8A241FD10A2100C3B000 /* Luminari-Regular.ttf in Resources */,
 				CC3CEA0C1F9E44FC00AED6C4 /* Assets.xcassets in Resources */,
+				DBDA8A2C1FD1A95000C3B000 /* VillageWinBackground.png in Resources */,
+				DBDA8A301FD1A95000C3B000 /* NighttimeBackground.png in Resources */,
+				DBDA8A351FD1B17500C3B000 /* DeadBackground.png in Resources */,
 				CC3CEA0A1F9E44FC00AED6C4 /* Main.storyboard in Resources */,
 				CC9A09701FBC9E210072C5CE /* CSV_Database_of_First_Names.csv in Resources */,
+				DBDA8A2E1FD1A95000C3B000 /* DaytimeBackground.png in Resources */,
+				DBDA8A2F1FD1A95000C3B000 /* AfternoonBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +391,7 @@
 				CC3CEA051F9E44FC00AED6C4 /* AppDelegate.swift in Sources */,
 				DBA0FA741FA6597300861C19 /* NightSummaryViewController.swift in Sources */,
 				DBBBE1D71FB8954000D01726 /* VillageViewController.swift in Sources */,
+				DBDA8A331FD1AC7500C3B000 /* deadLobbyViewController.swift in Sources */,
 				DB679DC21FB9E5C000524C9D /* DoctorViewController.swift in Sources */,
 				DBBBE1D91FB89E6600D01726 /* CharacterCreationLobby.swift in Sources */,
 				CC46A8301FAB9F4B00487200 /* NominationViewController.swift in Sources */,

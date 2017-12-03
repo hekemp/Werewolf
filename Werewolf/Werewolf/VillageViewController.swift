@@ -38,6 +38,19 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        imageViewBackground.image = UIImage(named: "DaytimeBackground.png")
+        
+        imageViewBackground.alpha = 0.3
+        
+        // you can change the content mode:
+        imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.view.addSubview(imageViewBackground)
+        self.view.sendSubview(toBack: imageViewBackground)
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -61,6 +74,7 @@ class VillageViewController: UIViewController, UITableViewDelegate, UITableViewD
     let cellNum:Int = indexPath.row
     let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "customcell")! as UITableViewCell
     cell.textLabel!.text = villageList[cellNum][0]
+    cell.textLabel!.font = UIFont (name: "Luminari-Regular", size: 17.0)
     return cell
     }
     

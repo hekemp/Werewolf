@@ -38,6 +38,21 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        imageViewBackground.image = UIImage(named: "AfternoonBackground.png")
+        
+        imageViewBackground.alpha = 0.3
+        
+        // you can change the content mode:
+        imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.view.addSubview(imageViewBackground)
+        self.view.sendSubview(toBack: imageViewBackground)
+        
         mcSession.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval:1.0, target:self, selector:#selector(NominationViewController.updateStatus), userInfo: nil, repeats: true)
@@ -76,6 +91,7 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
         
+        cell.textLabel!.font = UIFont (name: "Luminari-Regular", size: 17.0)
         
         return cell
     }
@@ -166,10 +182,21 @@ class NominationViewController: UIViewController, MCSessionDelegate, UITableView
         
         GameSession.active.voteList.forEach { item in
             
-            if(item[0] != "Abstain" ){
-                tempVoteList.append(item)
+            if(item[0] != "Abstain") {
+                var isDup = false
+                for myItem in tempVoteList{
+                    if myItem[0] == item[0]{
+                        isDup = true
+                    }
+                }
+                if (!isDup)
+                {
+                    tempVoteList.append(item)
+                    
+                }
             }
         }
+        
         GameSession.active.voteList = tempVoteList
         if (GameSession.active.voteList.isEmpty){
             

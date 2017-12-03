@@ -40,6 +40,9 @@ class GameSession{
     var potionVoteList : [[String]] = []
     var poisonVoteList : [[String]] = []
     var killedList : [String] = []
+    var gameOver : Bool = false
+    var gameWinner : String?
+    var gameSurvivors : String?
     init(){
         GameSession._active = self
         print("Instantiating GameSession")

@@ -53,6 +53,7 @@ class Networking{
                     let characterArray = actualString!.components(separatedBy: ",")
                     let prefixCode = characterArray[0]
                     print(prefixCode)
+                    
                     if(prefixCode=="initiative"){
                         let otherInitiative = Int(characterArray[1])!
                         if(GameSession.active.initiative == nil){
@@ -64,6 +65,12 @@ class Networking{
                             GameSession.active.rank! += 1
                         }
                         GameSession.active.peersToGetInitiativeFrom! -= 1
+                    }
+                    else if(prefixCode=="Gameover"){
+                        print(characterArray)
+                        GameSession.active.gameOver = true
+                        GameSession.active.gameWinner = characterArray[1]
+                        GameSession.active.gameSurvivors = characterArray[2]
                     }
                     else if(prefixCode=="Playerdata"){
                         print(actualString!)
