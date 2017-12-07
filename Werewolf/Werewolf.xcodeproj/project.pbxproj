@@ -114,7 +114,7 @@
 		DBDA8A291FD1A94B00C3B000 /* DaytimeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DaytimeBackground.png; sourceTree = "<group>"; };
 		DBDA8A2A1FD1A94E00C3B000 /* AfternoonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfternoonBackground.png; sourceTree = "<group>"; };
 		DBDA8A2B1FD1A95000C3B000 /* NighttimeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NighttimeBackground.png; sourceTree = "<group>"; };
-		DBDA8A321FD1AC7500C3B000 /* deadLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = deadLobbyViewController.swift; path = "/Users/heatherkemp/Desktop/Fall 2017/iOS Projects/Werewolf/Werewolf/Werewolf/deadLobbyViewController.swift"; sourceTree = "<absolute>"; };
+		DBDA8A321FD1AC7500C3B000 /* deadLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deadLobbyViewController.swift; sourceTree = "<group>"; };
 		DBDA8A341FD1B17500C3B000 /* DeadBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeadBackground.png; sourceTree = "<group>"; };
 		DBDA8A361FD3040400C3B000 /* WerwolfWinBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WerwolfWinBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
