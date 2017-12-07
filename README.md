@@ -7,6 +7,9 @@ This project is unaffiliated with the people behind Werewolf. It was created by 
 
 # Upcoming Features (In no particular order):
 -- Ability to play with people remotely
+
 -- Music to get you in that old Werewolf hunting mood
+
 -- Adjustable screen/button sizes so that it works on other devices
+
 -- Minor bug fixes here and there
